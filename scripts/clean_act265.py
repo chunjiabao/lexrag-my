@@ -1,63 +1,92 @@
-"""
-Cleaning script for Act 265 - Employment Act 1955
-Method: crops each page's visible area BEFORE extracting text, physically
-removing the header and footer bands rather than regex-stripping them after.
-
-Run from the root of the lexrag-my project folder.
-"""
-
 import fitz  # PyMuPDF
 import re
 import os
 
-INPUT_PATH = "Acts/Act265_EmploymentAct1955.pdf"
-OUTPUT_PATH = "extracted_text/Act265_EmploymentAct1955_clean.txt"
+DOCUMENTS = [
+    {
+        "input": "Act265_EmploymentAct1955.pdf",
+        "output": "Act265_EmploymentAct1955_clean.txt",
+        "start_page": 11,
+        "end_page": 108,
+        "top_margin": 87,
+        "bottom_margin": 736,
+        "footer_pattern": r"WJW23",
+    },
+    {
+        "input": "Act599_ConsumerProtectionAct1999.pdf",
+        "output": "Act599_ConsumerProtectionAct1999_clean.txt",
+        "start_page": 13,
+        "end_page": 134,
+        "top_margin": 127,
+        "bottom_margin": 775,
+        "footer_pattern": r"WJW\d+|\.indd|\d{1,2}/\d{1,2}/\d{4}\s+\d{1,2}:\d{2}\s*(AM|PM)",
+    },
+    {
+        "input": "Act709_PersonalDataProtectionAct2010.pdf",
+        "output": "Act709_PersonalDataProtectionAct2010_clean.txt",
+        "start_page": 11,
+        "end_page": 98,
+        "top_margin": 67,
+        "bottom_margin": 695,
+        "footer_pattern": None,
+    },
+]
 
-# Page range for actual Act content (1-indexed, as seen in a PDF viewer)
-START_PAGE = 11   # Section 1 begins here
-END_PAGE = 110    # End of Second Schedule; "List of Amendments" starts on 111
+INPUT_DIR = "Acts"
+OUTPUT_DIR = "extracted_text"
 
-# Crop band (in points) — measured from actual text positions on this PDF.
-# Header text ends at y=86, footer text starts at y=738, page height=750.7
-TOP_MARGIN = 87
-BOTTOM_MARGIN = 736
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
-doc = fitz.open(INPUT_PATH)
-full_text = []
+def clean_pdf(config):
+    input_path = os.path.join(INPUT_DIR, config["input"])
+    output_path = os.path.join(OUTPUT_DIR, config["output"])
 
-for page_num in range(START_PAGE - 1, min(END_PAGE, len(doc))):
-    page = doc[page_num]
-    rect = page.rect
+    doc = fitz.open(input_path)
+    full_text = []
 
-    # Crop the page: keep only the band between header and footer
-    crop_rect = fitz.Rect(rect.x0, TOP_MARGIN, rect.x1, BOTTOM_MARGIN)
-    page.set_cropbox(crop_rect)
+    start = config["start_page"] - 1
+    end = min(config["end_page"], len(doc))
 
-    text = page.get_text()
+    for page_num in range(start, end):
+        page = doc[page_num]
+        rect = page.rect
 
-    # Remove any stray standalone page-number lines that might survive
-    text = re.sub(r"^\s*\d+\s*$", "", text, flags=re.MULTILINE)
+        crop_rect = fitz.Rect(rect.x0, config["top_margin"], rect.x1, config["bottom_margin"])
+        page.set_cropbox(crop_rect)
 
-    # Collapse excess blank lines
-    text = re.sub(r"\n\s*\n+", "\n\n", text)
+        text = page.get_text()
 
-    full_text.append(text.strip())
+        # Remove stray standalone page-number lines
+        text = re.sub(r"^\s*\d+\s*$", "", text, flags=re.MULTILINE)
 
-doc.close()
+        # Remove footer/printer stamp lines if a pattern is defined
+        if config["footer_pattern"]:
+            text = re.sub(rf"^.*{config['footer_pattern']}.*$", "", text, flags=re.MULTILINE)
 
-result = "\n\n".join(full_text)
+        # Collapse excess blank lines
+        text = re.sub(r"\n\s*\n+", "\n\n", text)
 
-with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-    f.write(result)
+        full_text.append(text.strip())
 
-print(f"Cleaned text saved to: {OUTPUT_PATH}")
-print(f"Length: {len(result)} characters")
-print("\n--- First 500 chars (sanity check) ---")
-print(result[:500])
-print("\n--- Check for leftover footer stamp ---")
-if "WJW23" in result:
-    print("WARNING: footer text still present, adjust BOTTOM_MARGIN")
-else:
-    print("Clean: no footer stamp found")
+    doc.close()
+
+    result = "\n\n".join(full_text)
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(result)
+
+    # Sanity checks
+    stamp_leftover = False
+    if config["footer_pattern"] and re.search(config["footer_pattern"], result):
+        stamp_leftover = True
+
+    print(f"[{config['input']}] -> {output_path}")
+    print(f"  Pages processed: {start+1}-{end} ({end-start} pages)")
+    print(f"  Length: {len(result)} chars")
+    print(f"  Footer stamp leftover: {'WARNING - found' if stamp_leftover else 'clean'}")
+    print()
+
+
+for config in DOCUMENTS:
+    clean_pdf(config)
