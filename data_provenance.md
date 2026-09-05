@@ -10,7 +10,7 @@ Source statutes for this project, downloaded from the Attorney General's Chamber
 | `Act599_ConsumerProtectionAct1999.pdf` | Consumer Protection Act 1999 (Act 599) | `d518d00abed68ef9ab8212eba4e2a357` |
 | `Act709_PersonalDataProtectionAct2010.pdf` | Personal Data Protection Act 2010 (Act 709) | `165e8830a2b2cdffe30352b26ab82429` |
 
-Stored in: `Acts/`
+Stored in: `dataset/acts/`
 
 ## Verification
 
@@ -18,5 +18,5 @@ MD5 checksums recorded on download (see PROGRESS.MD, 4 Sept 2026) and re-verifie
 
 To re-verify:
 ```
-md5sum Acts/*.pdf
+md5sum dataset/acts/*.pdf
 ```

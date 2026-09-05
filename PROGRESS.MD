@@ -216,3 +216,34 @@ More real sections are now correctly split out (good), but "no heading detected"
 ### Next step
 - Continue A5 manual chunk validation across all 3 Acts
 - Complete the outstanding Act599/Act709 mid-document spot-check
+
+---
+
+## 5 Sept 2026 (continued)
+
+### Repo reorganization: all dataset files grouped under `dataset/`
+
+**Change made:** moved the three data folders under one parent directory instead of leaving them scattered at project root:
+- `Acts/` → `dataset/acts/`
+- `extracted_text/` → `dataset/extracted_text/`
+- `chunks/` → `dataset/chunks/`
+
+**Why:** keeps generated/source data separate from `scripts/` and project docs at root, and gives A5's validated output a clear home alongside the rest of the pipeline's data rather than mixed in with code.
+
+**New folder:** `dataset/chunks_validated/` added to hold the post-A5-validation chunk files, separate from the raw generator output in `dataset/chunks/`. Currently seeded with the same content as `dataset/chunks/` (Act265, Act599, Act709) — no corrections have been written into it yet; it's the destination for edits as manual validation proceeds, keeping the unvalidated generator output in `dataset/chunks/` untouched as a reference.
+
+**Scripts updated to match new paths:**
+- `scripts/clean_act265.py`: `INPUT_DIR`/`OUTPUT_DIR` now point to `dataset/acts` / `dataset/extracted_text`; also switched the PyMuPDF import from `import fitz` to `import pymupdf` (the maintained import name) and dropped the old footer-stamp-leftover sanity check print (no longer wired to a variable after edits).
+- `scripts/chunks_acts.py`: `INPUT_DIR`/`OUTPUT_DIR` now point to `dataset/extracted_text` / `dataset/chunks` (previously `extracted_chunk_code_output/`, the split-folder issue noted on 5 Sept — now consolidated under `dataset/`).
+- `data_provenance.md`: updated the "Stored in" path and the `md5sum` re-verification command to `dataset/acts/*.pdf`.
+
+### Not yet done
+- Populate `dataset/chunks_validated/` with actual corrections from A5 review — currently just a copy of the unvalidated chunks
+- A5 manual chunk validation — still in progress, not yet complete for any of the 3 Acts
+- Full internal spot-check of Act599/Act709 cleaned text (pre-chunking) — still outstanding from A3
+- Reorganization changes above are uncommitted — not yet staged/committed to git
+
+### Next step
+- Continue A5 manual chunk validation, writing corrected chunks into `dataset/chunks_validated/`
+- Commit the reorganization (folder moves + path updates in scripts and `data_provenance.md`)
+- Complete the outstanding Act599/Act709 mid-document spot-check

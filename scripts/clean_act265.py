@@ -1,5 +1,5 @@
 #PDF -> clean text
-import fitz  # PyMuPDF
+import pymupdf
 import re
 import os
 
@@ -33,8 +33,8 @@ DOCUMENTS = [
     },
 ]
 
-INPUT_DIR = "Acts"
-OUTPUT_DIR = "extracted_text"
+INPUT_DIR = "dataset/acts"
+OUTPUT_DIR = "dataset/extracted_text"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -43,7 +43,7 @@ def clean_pdf(config):
     input_path = os.path.join(INPUT_DIR, config["input"])
     output_path = os.path.join(OUTPUT_DIR, config["output"])
 
-    doc = fitz.open(input_path)
+    doc = pymupdf.open(input_path)
     full_text = []
 
     start = config["start_page"] - 1
@@ -53,7 +53,7 @@ def clean_pdf(config):
         page = doc[page_num]
         rect = page.rect
 
-        crop_rect = fitz.Rect(rect.x0, config["top_margin"], rect.x1, config["bottom_margin"])
+        crop_rect = pymupdf.Rect(rect.x0, config["top_margin"], rect.x1, config["bottom_margin"])
         page.set_cropbox(crop_rect)
 
         text = page.get_text()
@@ -77,15 +77,10 @@ def clean_pdf(config):
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(result)
 
-    # Sanity checks
-    stamp_leftover = False
-    if config["footer_pattern"] and re.search(config["footer_pattern"], result):
-        stamp_leftover = True
 
     print(f"[{config['input']}] -> {output_path}")
     print(f"  Pages processed: {start+1}-{end} ({end-start} pages)")
     print(f"  Length: {len(result)} chars")
-    print(f"  Footer stamp leftover: {'WARNING - found' if stamp_leftover else 'clean'}")
     print()
 
 

@@ -21,8 +21,8 @@ DOCUMENTS = [
     },
 ]
 
-INPUT_DIR = "extracted_text"
-OUTPUT_DIR = "extracted_chunk_code_output"
+INPUT_DIR = "dataset/extracted_text"
+OUTPUT_DIR = "dataset/chunks"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
