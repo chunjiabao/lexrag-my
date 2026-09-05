@@ -1,3 +1,4 @@
+#clean text -> JSON chunks 
 import re
 import json
 import os
@@ -25,7 +26,7 @@ OUTPUT_DIR = "extracted_chunk_code_output"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-SECTION_PATTERN = re.compile(r"^(\d+[a-zA-Z]{0,2})\.\t(.*)$")
+SECTION_PATTERN = re.compile(r"^(\d+[a-zA-Z]{0,2})\.\s+(.*)$")
 
 # Part headers (e.g. "Part I") and the all-caps Part title line that follows
 # them (e.g. "PRELIMINARY") aren't part of Table 3.1's schema, but they are

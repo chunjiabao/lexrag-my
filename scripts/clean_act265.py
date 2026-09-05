@@ -1,3 +1,4 @@
+#PDF -> clean text
 import fitz  # PyMuPDF
 import re
 import os

@@ -100,3 +100,80 @@ Repeated the same page-cropping approach for the remaining 2 Acts in final scope
 - Full spot-check of Act599 / Act709 internal pages (Schedules/tables) before proceeding
 - A4 — Section-level chunking (not started)
   - Still need the earlier decision on `(Deleted by Act A1651)` / `(Omitted)` markers and `*NOTE—...` footnotes: placeholder chunks vs. skip
+
+---
+
+## 4 Sept 2026 (continued)
+
+### A4 — Section-level chunking: built, corrected, then rescoped to match proposal — Done ✅ (generation)
+
+**Decision made:** repealed/omitted sections (`(Deleted by Act A1651)`, `(Omitted)`) kept as placeholder chunks rather than skipped, to preserve section numbering continuity. Added `is_deleted` boolean flag to each chunk to support this — a user querying a repealed section gets "this section was repealed," not silence or a gap in numbering.
+
+**Script (v1):** `lexrag-my/scripts/chunk_acts.py` — rule-based parser detecting section boundaries via `N.\t` line pattern (handles sub-lettered sections like `7a`, `33a`) and Part headers via `Part I` pattern.
+
+**Bugs found and fixed during testing on Act265:**
+1. Section titles were bleeding into the *previous* section's body text (e.g. "Interpretation" appearing at the end of Section 1's text instead of as Section 2's title) — fixed by popping title-like lines off the previous section before flushing.
+2. Multi-line titles (titles wrapping across 2 lines, e.g. "Contracts to be in writing and to include provision for / termination") only had their last line detected — fixed by walking backward through *all* consecutive title-looking lines, not just one.
+3. Footnote text was initially misidentified as a section title (heuristic false-positive) — refined `looks_like_title()` to reject lines containing digits or ending in sentence punctuation.
+
+**Scope correction — metadata schema:** built an "upgraded" version with additional extracted fields (`defined_terms`, `referenced_acts`, `referenced_sections`, `referenced_parts`, `referenced_schedules`, `notes`, `part`, `part_title`), based on a working critique of Section 2's large, undifferentiated definitions chunk. On review against **Table 3.1 of the proposal**, confirmed the approved schema only requires: `act_name`, `section_number`, `section_heading`, `full_text`. None of the extra fields are consumed by any pipeline component described in Section 3.4 (BM25 indexes and embeds `full_text` only; citation verification matches on `section_number` and `full_text`) — reverted to the simplified schema to avoid scope creep against the 13-week timeline.
+
+**Final script (v2):** `lexrag-my/scripts/chunk_acts.py` — outputs exactly:
+```json
+{
+  "act_name": "...",
+  "section_number": "...",
+  "section_heading": "...",
+  "full_text": "...",
+  "is_deleted": false
+}
+```
+(`is_deleted` kept as the one deliberate addition beyond Table 3.1, since it directly supports the repealed-section handling decision above.)
+
+**Bug fix during rescoping:** Part header lines ("Part I") and their all-caps title line ("PRELIMINARY") were leaking into `section_heading` after removing the dedicated Part-tracking fields — fixed by explicitly discarding those lines during parsing rather than letting them fall through to the heading-detection logic.
+
+**Output generated:** all 3 Acts chunked — `Act265_chunks.json`, `Act599_chunks.json`, `Act709_chunks.json` in `lexrag-my/chunks/`.
+- Act265: 89 chunks, 5 deleted/omitted, 6 chunks with no heading detected (flagged for manual check)
+- Act599 / Act709: chunk counts not yet reviewed — generated but not inspected
+
+### Not yet done
+- **Manual review of all 3 chunk files** — about to start (see next step)
+- MD5 checksum table still not saved to a file
+- Full internal spot-check of Act599/Act709 cleaned text (pre-chunking) still outstanding from A3
+
+### Next step
+- **Manually check the 3 generated chunk files** (`Act265_chunks.json`, `Act599_chunks.json`, `Act709_chunks.json`) against the actual Acts — this is the A5 chunk validation activity, confirming section boundaries, headings, and `is_deleted` flags are accurate before this becomes the "Validated statutory chunks" milestone (M1)
+
+---
+
+## 5 Sept 2026
+
+### A4 — Chunking bug found and fixed: regex only matched tab-delimited section lines
+
+**Bug found:** `SECTION_PATTERN` in `chunks_acts.py` required a literal tab character between the section number and its heading (`^(\d+[a-zA-Z]{0,2})\.\t(.*)$`). Any section line where the cleaned text used a space instead of a tab after `N.` was silently missed by the parser, so that section never started a new chunk — its text got absorbed into the *previous* section's chunk instead.
+
+**Fix:** loosened the pattern to match any whitespace: `^(\d+[a-zA-Z]{0,2})\.\s+(.*)$`.
+
+**Impact — Act265 regenerated with the fix:**
+
+| | Before fix | After fix |
+|---|---|---|
+| Total chunks | 89 | 137 |
+| Deleted/omitted | 5 | 10 |
+| No heading detected | 6 | 11 |
+
+More real sections are now correctly split out (good), but "no heading detected" also rose from 6 to 11 — need to confirm during manual review whether these are genuine edge cases the heading heuristic still can't catch, or false positives introduced by the looser whitespace match.
+
+**Generated for the first time — Act599:** `chunks/Act599_chunks.json` — 194 chunks, 4 deleted/omitted, 4 no-heading (not yet manually reviewed).
+
+**Act709 chunked, but output landed in a different folder:** `chunks_acts.py`'s `OUTPUT_DIR` is currently set to `extracted_chunk_code_output/` (changed from `chunks/`), so the latest run wrote `extracted_chunk_code_output/Act709_chunks.json` (146 chunks, 0 deleted, 3 no-heading) there instead of alongside the other two Acts. Act265's and Act599's chunk files are still sitting in `chunks/` from earlier runs with the old `OUTPUT_DIR` — the three Acts' chunk files are now split across two folders.
+
+### Not yet done
+- **Reconcile output location:** pick one canonical folder (`chunks/`) for all `_chunks.json` files and move/regenerate Act709's into it; `extracted_chunk_code_output/` is currently untracked and inconsistent with where Act265/Act599 live.
+- Manual review of all 3 chunk files (Act265, Act599, Act709) against the source Acts — still the outstanding A5 validation task, now against the corrected/regenerated chunk counts above.
+- MD5 checksum table still not saved to a file.
+- Full internal spot-check of Act599/Act709 cleaned text (pre-chunking) still outstanding from A3.
+
+### Next step
+- Decide on the chunk output folder and consolidate all 3 `_chunks.json` files into it
+- Begin manual chunk validation (A5) on the corrected chunk files
