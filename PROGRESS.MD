@@ -9,15 +9,13 @@
 - venv, .gitignore, requirements set up
 
 ### A2 — Statutory Downloading and Versioning: Done
-- Initially downloaded 5 Acts to explore scope expansion (see scope decision below)
 - Source: lom.agc.gov.my
 - PDFs stored in: `lexrag-my/Acts/`
-- MD5 checksums recorded for all 5 downloaded (see checksum table — not yet saved to a file, only in chat history)
+- MD5 checksums recorded (see checksum table — not yet saved to a file, only in chat history)
 
 ### A3 — PDF Text Extraction (raw, pre-cleaning): Done
 - Script: `lexrag-my/scripts/extract_text.py` (uses PyMuPDF)
 - Output: `lexrag-my/extracted_text/` (one raw .txt per Act)
-- Spot-checked Act514 — section numbering (incl. 7A/7B/7C) and structure extracted cleanly
 - Result: raw extraction contained page numbers, repeating headers/footers, ToC, and back matter — needed further cleaning (see below)
 
 ### Next step
@@ -31,7 +29,7 @@
 
 **Problem found:** initial extraction still contained page numbers, repeating headers ("Employment" / "Laws of Malaysia" / "Act 265"), footer print stamps (`WJW23/0686 Act 265.indd N`, date/time), plus Table of Contents and "List of Amendments" back matter — all noise that would pollute A4 chunking.
 
-**Approach decided:** clean each Act individually with its own config, since header/footer format, footer stamp, and front/back matter boundaries differ per Act (different typesetting software — e.g. Act265 was Adobe InDesign, Act514 was Word).
+**Approach decided:** clean each Act individually with its own config, since header/footer format, footer stamp, and front/back matter boundaries differ per Act.
 
 **Method used:** page-cropping (not regex-stripping). Measured exact y-coordinates of header/footer text via PyMuPDF word positions, then set each page's cropbox to exclude those bands *before* text extraction — physically removes header/footer rather than pattern-matching after the fact. More reliable than regex alone since it can't miss a wording variant.
 
@@ -54,22 +52,18 @@
 
 ## 4 Sept 2026
 
-### Scope decision: narrowed from 5 Acts down to 3
+### Scope: 3 Acts
 
-**Considered:** keeping all 5 downloaded Acts (Employment, Consumer Protection, Hire-Purchase, OSHA, PDPA) vs. narrowing to a smaller, more thematically coherent set.
-
-**Decided:** final scope is **3 Acts** — Employment Act 1955 (Act 265), Consumer Protection Act 1999 (Act 599), Personal Data Protection Act 2010 (Act 709).
+**Final scope:** Employment Act 1955 (Act 265), Consumer Protection Act 1999 (Act 599), Personal Data Protection Act 2010 (Act 709).
 
 **Why:**
-- Thematic coherence — all 3 are "individual rights against an entity" (workplace rights, consumer rights, data rights), giving the project a clear framing rather than 5 loosely related Acts.
-- PDPA 2010 chosen over Hire-Purchase Act 1967 and OSHA 1994 as the third Act — PDPA is current and highly relevant (2024 amendments, active enforcement), while Hire-Purchase is older and more procedurally dense with heavier amendment history, and OSHA would have made the set workplace-heavy (2 of 3 Acts) rather than balanced across domains.
+- Thematic coherence — all 3 are "individual rights against an entity" (workplace rights, consumer rights, data rights), giving the project a clear framing.
+- PDPA 2010 is current and highly relevant (2024 amendments, active enforcement).
 - Keeps A4/A5 (chunking/validation) workload manageable given the 13-week timeline, while still going beyond the original proposal's 2-Act scope.
-
-**Impact:** Act212 (Hire-Purchase) and Act514 (OSHA) — already downloaded and checksum-recorded — are set aside, not part of final dataset. Raw extraction (`extract_text.py`) had already run on all 5; only Act265, Act599, and Act709 proceed to crop-cleaning and beyond.
 
 ### A3 — Crop-cleaning: Consumer Protection Act 1999 and PDPA 2010 — Done ✅
 
-Repeated the same page-cropping approach for the remaining 2 Acts in final scope.
+Repeated the same page-cropping approach for the remaining 2 Acts in scope.
 
 **Script:** `lexrag-my/scripts/clean_all_acts.py` — consolidated all 3 Acts into one script (list of per-Act configs + shared `clean_pdf()` function) rather than separate scripts per Act, since the extraction logic is identical and only the parameters (page range, crop margins, footer pattern) differ.
 
@@ -85,16 +79,14 @@ Repeated the same page-cropping approach for the remaining 2 Acts in final scope
 
 **Output:** all 3 `_clean.txt` files in `lexrag-my/extracted_text/`.
 
-**Status:** Act212 and Act514 configs removed from script entirely (out of scope per decision above) — script now only processes the final 3 Acts.
-
 ### Environment note
 - Hit a path bug when moving scripts from Claude's sandbox to local: hardcoded sandbox paths (`/mnt/user-data/uploads`, `/mnt/user-data/outputs`) don't exist on Windows. Fixed by switching to relative paths (`INPUT_DIR = "Acts"`, `OUTPUT_DIR = "extracted_text"`), run from project root. Lesson: keep scripts environment-agnostic from the start.
 
 ### Not yet done
 - Full spot-check of Act599 and Act709 internal pages (Schedules/tables especially) — only start/end boundaries and footer-stamp checks confirmed so far, per script's automated sanity check output. Mid-document manual spot-check still outstanding.
-- MD5 checksum table not yet saved to a file (still only in chat history) — worth saving as `data_provenance.md` before final scope is locked in.
+- MD5 checksum table not yet saved to a file (still only in chat history) — worth saving as `data_provenance.md`.
 
-### A3 — Status: Done ✅ (for final 3-Act scope)
+### A3 — Status: Done ✅
 
 ### Next step
 - Full spot-check of Act599 / Act709 internal pages (Schedules/tables) before proceeding
@@ -177,3 +169,50 @@ More real sections are now correctly split out (good), but "no heading detected"
 ### Next step
 - Decide on the chunk output folder and consolidate all 3 `_chunks.json` files into it
 - Begin manual chunk validation (A5) on the corrected chunk files
+
+---
+
+## 6 Sept 2026
+
+### Output location reconciled — Done ✅
+- `chunks/` confirmed as the single canonical folder for all `_chunks.json` files
+- Act709's output moved/regenerated into `chunks/`; `extracted_chunk_code_output/` no longer used
+- All 3 Acts' chunk files (Act265, Act599, Act709) now live in one place
+
+### A5 — Manual chunk validation: started ✅
+- Began checking section boundaries, headings, and `is_deleted` flags in the corrected chunk files against the source Acts
+
+### MD5 checksum table — saved ✅
+
+| File | MD5 Checksum |
+|---|---|
+| Act265_EmploymentAct1955.pdf | `98443eaca7356d20c21f47e6070c0466` |
+| Act599_ConsumerProtectionAct1999.pdf | `d518d00abed68ef9ab8212eba4e2a357` |
+| Act709_PersonalDataProtectionAct2010.pdf | `165e8830a2b2cdffe30352b26ab82429` |
+
+(previously only recorded in chat history — now needs saving to `data_provenance.md` in the project repo)
+
+### Not yet done
+- Full internal spot-check of Act599/Act709 cleaned text (pre-chunking) — still outstanding from A3
+- A5 manual chunk validation — in progress, not yet complete for any of the 3 Acts
+
+### Next step
+- Continue A5 manual chunk validation across all 3 Acts
+- Save the MD5 checksum table above into `data_provenance.md`
+- Complete the outstanding Act599/Act709 mid-document spot-check
+
+---
+
+## 5 Sept 2026 (continued)
+
+### MD5 checksum table — moved to `data_provenance.md` ✅
+- Created `data_provenance.md` at project root with the checksum table, source (lom.agc.gov.my), and file locations
+- Re-verified all 3 PDFs' MD5s against `Acts/` — match the values originally recorded in chat/PROGRESS.MD
+
+### Not yet done
+- A5 manual chunk validation — in progress, not yet complete for any of the 3 Acts
+- Full internal spot-check of Act599/Act709 cleaned text (pre-chunking) — still outstanding from A3
+
+### Next step
+- Continue A5 manual chunk validation across all 3 Acts
+- Complete the outstanding Act599/Act709 mid-document spot-check
