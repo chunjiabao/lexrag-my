@@ -36,6 +36,7 @@ DOCUMENTS = [
 INPUT_DIR = "dataset/acts"
 OUTPUT_DIR = "dataset/extracted_text"
 
+# Create output directory if it doesn't exist
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
@@ -47,21 +48,22 @@ def clean_pdf(config):
     full_text = []
 
     start = config["start_page"] - 1
-    end = min(config["end_page"], len(doc))
+    end = config["end_page"]
 
     for page_num in range(start, end):
         page = doc[page_num]
-        rect = page.rect
 
+        # Crop the page to remove headers and footers based on the specified margins
+        rect = page.rect
         crop_rect = pymupdf.Rect(rect.x0, config["top_margin"], rect.x1, config["bottom_margin"])
         page.set_cropbox(crop_rect)
 
         text = page.get_text()
 
-        # Remove stray standalone page-number lines
+        # Remove standalone page number line 
         text = re.sub(r"^\s*\d+\s*$", "", text, flags=re.MULTILINE)
 
-        # Remove footer/printer stamp lines if a pattern is defined
+        # Remove footer pattern
         if config["footer_pattern"]:
             text = re.sub(rf"^.*{config['footer_pattern']}.*$", "", text, flags=re.MULTILINE)
 

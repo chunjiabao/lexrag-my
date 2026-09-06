@@ -247,3 +247,38 @@ More real sections are now correctly split out (good), but "no heading detected"
 - Continue A5 manual chunk validation, writing corrected chunks into `dataset/chunks_validated/`
 - Commit the reorganization (folder moves + path updates in scripts and `data_provenance.md`)
 - Complete the outstanding Act599/Act709 mid-document spot-check
+
+---
+
+## 5 Sept 2026 (continued)
+
+### A5 — Manual chunk validation: complete for all 3 Acts ✅
+
+**Status:** all corrections written into `dataset/chunks_validated/`, confirmed against `dataset/chunks/` (raw generator output) — the two folders now genuinely diverge, not just a copy.
+
+**Act265 (Employment Act 1955):** 141 → 137 chunks
+- Removed 3 duplicate `section_number` entries (raw parser had emitted the same section twice for 3 sections)
+- 40 sections corrected: 29 `section_heading` fixes, 23 `full_text` fixes (some sections had both)
+- 10 chunks flagged `is_deleted` with blank heading (repealed/omitted sections — expected, matches the placeholder-chunk design decision from A4)
+
+**Act599 (Consumer Protection Act 1999):** 204 → 194 chunks
+- Removed 10 duplicate `section_number` entries
+- 42 sections corrected: 33 `section_heading` fixes, 19 `full_text` fixes
+- 4 chunks flagged `is_deleted` with blank heading
+
+**Act709 (PDPA 2010):** 146 → 146 chunks (no duplicates to begin with)
+- 12 sections corrected: 9 `section_heading` fixes, 3 `full_text` fixes
+- Fixed the same Part-header-leaking-into-heading bug noted for Act265 in the A4 entry above (`"Part I PRELIMINARY 1"` → cleaned to `"1"` with heading corrected) — confirms this was a recurring parser edge case across Acts, not isolated to Act265
+- 0 deleted/omitted sections (expected — PDPA 2010 is a newer Act with no repealed provisions in scope)
+
+**Milestone M1 ("Validated statutory chunks," proposal Week 4) — reached ✅**
+All three Acts now have zero duplicate section numbers, corrected headings/text, and `dataset/chunks_validated/` is the confirmed canonical dataset going into Phase B (retrieval pipeline).
+
+### Not yet done
+- Full internal spot-check of Act599/Act709 cleaned text (pre-chunking, schedules/tables especially) — still outstanding from A3, though A5's section-level corrections above did not surface issues traceable back to this
+- MD5 checksum re-verification against `dataset/acts/*.pdf` post-reorg — confirm `data_provenance.md` command still resolves correctly
+- Reorganization + A5 validation work is uncommitted — not yet staged/committed to git
+
+### Next step
+- Commit the reorganization and A5 validation corrections
+- Begin Phase B (retrieval pipeline): B1 BM25 sparse index construction, using `dataset/chunks_validated/` as the source of truth
