@@ -43,7 +43,7 @@ _model = SentenceTransformer(MODEL_NAME)
 _client = chromadb.PersistentClient(path=str(INDEX_DIR))
 
 
-def build_index(force: bool = False):
+def build_index(force=False):
     """Build (Stage 0, one-time) or reuse the Chroma collection."""
     if force:
         try:
@@ -99,12 +99,13 @@ _collection = build_index()
 _corpus_by_id = {c["doc_id"]: c for c in load_all_chunks()}
 
 
-def search_dense(query: str, k: int = 10) -> list[tuple[str, float]]:
+def search_dense(query, k=10):
     """Return the top-k (doc_id, similarity) pairs for a plain-language query."""
     query_embedding = _model.encode(
         [_QUERY_PREFIX + query], normalize_embeddings=True
     ).tolist()
     results = _collection.query(query_embeddings=query_embedding, n_results=k)
+
     # cosine space: Chroma returns distance = 1 - cosine_similarity
     return [
         (doc_id, 1.0 - dist)
@@ -112,7 +113,7 @@ def search_dense(query: str, k: int = 10) -> list[tuple[str, float]]:
     ]
 
 
-def get_chunk(doc_id: str) -> dict:
+def get_chunk(doc_id):
     """Look up the full chunk metadata for a doc_id (mirrors b1's get_chunk)."""
     return _corpus_by_id[doc_id]
 
@@ -135,3 +136,4 @@ if __name__ == "__main__":
         meta = result["metadatas"][0]
         preview = result["documents"][0][:80].replace("\n", " ")
         print(f"{i}. [{score:.3f}] {doc_id}  ({meta['section_heading']})  {preview}")
+

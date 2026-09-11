@@ -1,4 +1,4 @@
-#clean text -> JSON chunks 
+#clean text -> JSON chunks
 import re
 import json
 import os
@@ -22,7 +22,7 @@ DOCUMENTS = [
 ]
 
 INPUT_DIR = "dataset/extracted_text"
-OUTPUT_DIR = "dataset/chunks_test"
+OUTPUT_DIR = "dataset/chunks"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -124,6 +124,6 @@ def main():
         print(f"[{doc['input']}] -> {output_path}")
         print(f"  Total chunks: {len(chunks)}")
         print()
-        
+
 if __name__ == "__main__":
     main()
