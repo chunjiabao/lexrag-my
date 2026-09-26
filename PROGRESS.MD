@@ -282,3 +282,77 @@ All three Acts now have zero duplicate section numbers, corrected headings/text,
 ### Next step
 - Commit the reorganization and A5 validation corrections
 - Begin Phase B (retrieval pipeline): B1 BM25 sparse index construction, using `dataset/chunks_validated/` as the source of truth
+
+---
+
+## 6 Sept 2026 (continued)
+
+### B1 — BM25 sparse index: Done ✅
+- Script: `scripts/b1_bm25_index.py`
+- Tokenizer: lowercases, matches `[a-z0-9]+`, strips English stopwords via `sklearn`'s `ENGLISH_STOP_WORDS`
+- `build_index()` fits `BM25Okapi` over all validated chunks' `full_text` and pickles `(retriever, corpus)` to `dataset/indexes/bm25/bm25_index.pkl`; reused on later runs unless `force=True`
+- `search_bm25(query, k)` and `get_chunk(doc_id)` expose the retrieval interface for downstream use (B5)
+
+### B2 — Dense retrieval index: Done ✅
+- Script: `scripts/b2_dense_index.py`
+- Model: `BAAI/bge-small-en-v1.5` (local SentenceTransformers, ~130MB) — same BGE family as the B4 cross-encoder reranker, for a consistent embedding/reranking story
+- Embeddings stored in a persistent ChromaDB collection (`dataset/indexes/chroma`, cosine similarity space), added in batches of 256
+- BGE's asymmetric-retrieval convention applied: queries are prefixed with `"Represent this sentence for searching relevant passages: "` before embedding; passages never are
+- `search_dense(query, k)` converts Chroma's cosine distance back to similarity (`1 - distance`)
+
+### B5 — Retrieval configuration controller: built (later removed — see 12 Sept entry)
+- Script: `scripts/b5_retrieval_controller.py` — single `retrieve(query, k, method)` entry point switching between the 4 proposal configs (Table 3.5): `bm25_only`, `dense_only`, `hybrid_no_rerank`, `full`
+- Wired: `bm25_only` (B1), `dense_only` (B2). `hybrid_no_rerank` / `full` raised `NotImplementedError`, pending B3 (RRF fusion) and B4 (cross-encoder reranker)
+
+### Not yet done
+- B3 — hybrid fusion (RRF), B4 — cross-encoder reranker (not started)
+- Commit the Phase B work above
+
+### Next step
+- Build B3 (RRF fusion of B1 + B2), then B4 (cross-encoder reranker)
+
+---
+
+## 11 Sept 2026
+
+### Code style decision: drop type hints/docstrings/argparse in favour of terse inline comments
+- `scripts/b1_bm25_index.py`: removed all type hints and function docstrings, the `--rebuild` CLI flag, and the Windows stdout UTF-8 `reconfigure` workaround — replaced with short inline `#` comments; `__main__` demo block simplified to a plain `print(score, doc_id, heading)` loop
+- House style going forward: no type hints, no argparse, no prose docstrings — short `#` comments only where the *why* isn't obvious
+- `scripts/chunks_acts.py`: fixed `OUTPUT_DIR` (`dataset/chunks_test` → `dataset/chunks`), a leftover from an earlier test run
+
+---
+
+## 12 Sept 2026
+
+### B2 restyled to match B1 — Done ✅
+- Applied the same style pass to `scripts/b2_dense_index.py`: dropped the module/function docstrings, removed the `--rebuild` argparse flag and the Windows stdout-encoding workaround, simplified `__main__` to match B1's plain print loop
+- Dense retrieval logic itself unchanged — same BGE model, query prefix, Chroma cosine index, batched insert
+
+### BGE 512-token limit audit — Done ✅
+- One-off terminal check (not saved as a script): tokenized all 477 validated chunks with the real `BAAI/bge-small-en-v1.5` tokenizer (`transformers.AutoTokenizer`)
+- Result: min 6 / max 2,583 / mean 199.1 / median 122 tokens
+- **36 chunks (7.5%) exceed BGE's 512-token window** — `sentence-transformers` truncates these silently (no error), so the tail of long sections is never embedded
+- 0 chunks exceed the absolute 8,192-token hard limit
+- Longest chunks are mostly definitions/interpretation sections: `Act265#2` (2583 tokens — Employment Act's definitions clause), `Act599#3` (1914), `Act265#60a` (1465), `Act709#4` (1367), `Act265#82` (1019)
+- **Flagged as a known limitation for the report** — no sub-chunking implemented; still need to decide whether to sub-chunk sections over 512 tokens or accept the truncation as-is
+
+### Scripts renamed to the activity-numbered convention — Done ✅
+- To match the `b1_bm25_index.py` / `b2_dense_index.py` naming pattern, renamed via `git mv` (history preserved):
+  - `scripts/clean_act265.py` → `scripts/a3_clean_acts.py` (A3 — PDF cleaning; despite the old filename it already cleaned all 3 Acts, not just 265)
+  - `scripts/chunks_acts.py` → `scripts/a4_chunk_acts.py` (A4 — section-level chunking)
+  - `scripts/load_chunks.py` → `scripts/a5_load_chunks.py` (A5 — loads the validated corpus for Phase B)
+- Updated `from load_chunks import load_all_chunks` to `from a5_load_chunks import load_all_chunks` in both `b1_bm25_index.py` and `b2_dense_index.py`
+- Verified `a5_load_chunks.load_all_chunks()` and `b1_bm25_index.py` still run correctly post-rename
+
+### `scripts/b5_retrieval_controller.py` — removed (intentional)
+- Deleted from the working tree at the user's request; not yet committed
+
+### Not yet done
+- Commit the accumulated Phase B work: B1/B2 builds, the B1/B2 style pass, the script renames, and the B5 removal — all currently uncommitted
+- Decide on sub-chunking for the 36 chunks exceeding BGE's 512-token limit
+- B3 — hybrid fusion (RRF), B4 — cross-encoder reranker (not started)
+- If a retrieval controller (B5) is rebuilt later, it will need to import from the renamed `a5_load_chunks` module
+
+### Next step
+- Commit the current uncommitted changes
+- Decide B3/B4 approach and begin implementation

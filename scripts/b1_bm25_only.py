@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 from rank_bm25 import BM25Okapi
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-from load_chunks import load_all_chunks
+from a5_load_chunks import load_all_chunks
 
 INDEX_DIR = Path("dataset/indexes/bm25")
 INDEX_PATH = INDEX_DIR / "bm25_index.pkl"
@@ -51,13 +51,3 @@ def search_bm25(query, k=10):
 def get_chunk(doc_id):
     # Retrieve a chunk from the corpus by its doc_id.
     return next(c for c in _corpus if c["doc_id"] == doc_id)
-
-
-if __name__ == "__main__":
-
-    query = "Can I get any refund for receiving a defective item?"
-    print(f"\nQuery: {query}\n")
-    for doc_id, score in search_bm25(query, k=5):
-        print(f"{score:.4f}", doc_id, get_chunk(doc_id)["section_heading"])
-        
-

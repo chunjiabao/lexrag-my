@@ -1,0 +1,45 @@
+"""
+BM25 Output 
+Query: Can I get any refund for receiving a defective item?
+
+10.5748 Act599#42 Satisfaction of requirement to remedy a failure
+7.9692 Act599#14 Gifts, prizes, free offers, etc.
+7.0161 Act599#46 Consumer’s option of refund or replacement
+5.8320 Act599#24s Rights and obligations of credit facility provider
+5.2775 Act599#69 Extent of liability for loss or damage
+"""
+
+"""
+Dense Output
+Query: Can I get any refund for receiving a defective item?
+
+0.6877 Act599#42 Satisfaction of requirement to remedy a failure
+0.6701 Act599#46 Consumer’s option of refund or replacement
+0.6508 Act599#64 Effect of cancellation of contract
+0.6483 Act599#60 Options against suppliers where services do not comply with guarantees
+0.6440 Act599#41 Options against suppliers where goods do not comply with guarantees
+"""
+
+"""
+RRF Output
+Query: Can I get any refund for receiving a defective item?
+
+0.0328 Act599#42 Satisfaction of requirement to remedy a failure
+0.0320 Act599#46 Consumer’s option of refund or replacement
+0.0296 Act599#64 Effect of cancellation of contract
+0.0294 Act599#68 Liability for defective products
+0.0292 Act599#140 Part XIV GENERAL AND MISCELLANEOUS Receipts
+"""
+
+"""
+Reranker Output 
+Query: Can I get any refund for receiving a defective item?
+
+0.4202 Act599#42 Satisfaction of requirement to remedy a failure
+0.0884 Act599#23 Prohibition against unsafe goods and services
+0.0466 Act599#46 Consumer’s option of refund or replacement
+0.0434 Act599#64 Effect of cancellation of contract
+0.0024 Act599#62 Failure of substantial character 
+"""
+
+

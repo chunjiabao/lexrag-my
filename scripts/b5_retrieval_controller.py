@@ -1,86 +1,42 @@
-"""
-B5 - Retrieval configuration controller.
+import time
+from b1_bm25_only import search_bm25, get_chunk
+from b2_dense_only import search_dense
+from b3_hybrid_no_rerank import search_hybrid
+from b4_full import search_full
 
-Single entry point that switches between the four retrieval configurations
-defined in Section 3.4 / Table 3.5 of the proposal, so the same interface
-can be used interactively during development now, and reused as-is by E1
-(batch evaluation across all 30 test questions) once the full pipeline
-exists. Import `retrieve()` rather than duplicating the method-selection
-logic elsewhere.
-
-Wired so far: bm25_only (B1), dense_only (B2).
-Not yet wired: hybrid_no_rerank (needs B3 RRF fusion), full (needs B3 + B4
-cross-encoder reranker) — calling these raises NotImplementedError with a
-message saying what's missing, rather than silently falling back to
-something else.
-"""
-
-import argparse
-import sys
-
-from b1_bm25_index import get_chunk as _get_chunk_bm25
-from b1_bm25_index import search_bm25
-from b2_dense_index import get_chunk as _get_chunk_dense
-from b2_dense_index import search_dense
-
-METHODS = ("bm25_only", "dense_only", "hybrid_no_rerank", "full")
-
-_NOT_YET_IMPLEMENTED = {
-    "hybrid_no_rerank": "requires B3 (RRF fusion) — not yet built",
-    "full": "requires B3 (RRF fusion) + B4 (cross-encoder reranker) — not yet built",
-}
+QUERY = "Can I get any refund for receiving a defective item?"
+METHOD = "full"        # bm25_only | dense_only | hybrid_no_rerank | full
+TOP_K = 5
+RETRIEVER_K = 20        # hybrid_no_rerank, full: how deep BM25/dense each search before fusion
+CANDIDATE_K = 20        # full only: how many fused results go into the reranker
 
 
-def retrieve(query: str, k: int = 5, method: str = "bm25_only") -> list[dict]:
-    """Retrieve top-k statutory chunks for a query using the given method.
-
-    Returns a list of dicts (best match first), each carrying:
-    doc_id, score, act_name, section_number, section_heading, full_text,
-    is_deleted — one consistent shape regardless of which method produced
-    it, so callers (this file's CLI, E1's batch runner, later C1's prompt
-    assembly) never need to branch on `method`.
-    """
-    if method not in METHODS:
-        raise ValueError(f"method must be one of {METHODS}, got {method!r}")
-    if method in _NOT_YET_IMPLEMENTED:
-        raise NotImplementedError(f"{method}: {_NOT_YET_IMPLEMENTED[method]}")
-
+def retrieve(query, k=10, method="full", retriever_k=20, candidate_k=20):
     if method == "bm25_only":
-        hits = search_bm25(query, k=k)
-        get_chunk = _get_chunk_bm25
-    else:  # dense_only
-        hits = search_dense(query, k=k)
-        get_chunk = _get_chunk_dense
-
-    return [{**get_chunk(doc_id), "score": score} for doc_id, score in hits]
-
-
-def _print_results(label: str, results: list[dict]) -> None:
-    print(f"\n[{label}]")
-    for i, r in enumerate(results, 1):
-        preview = r["full_text"][:80].replace("\n", " ")
-        print(f"{i}. [{r['score']:6.3f}] {r['doc_id']}  ({r['section_heading']})  {preview}")
+        return search_bm25(query, k=k)
+    elif method == "dense_only":
+        return search_dense(query, k=k)
+    elif method == "hybrid_no_rerank":
+        return search_hybrid(query, k=k, retriever_k=retriever_k)
+    elif method == "full":
+        return search_full(query, k=k, retriever_k=retriever_k, candidate_k=candidate_k)
+    else:
+        # Unknown method: return a marker string instead of raising
+        return f"invalid method: {method}"
 
 
 if __name__ == "__main__":
-    # Windows console defaults to cp1252, which can't print some characters
-    # (e.g. en-space U+2002) left over in the PDF-extracted statutory text.
-    sys.stdout.reconfigure(encoding="utf-8")
 
-    parser = argparse.ArgumentParser(description="B5 retrieval configuration controller")
-    parser.add_argument("query", help="plain-language legal question")
-    parser.add_argument("-k", type=int, default=5, help="top-k chunks to retrieve")
-    parser.add_argument(
-        "--method",
-        choices=METHODS + ("both",),
-        default="bm25_only",
-        help="'both' is a dev-only side-by-side view, not one of the 4 proposal configs",
-    )
-    args = parser.parse_args()
+    print(f"\nQuery: {QUERY}")
+    print(f"Method: {METHOD}\n")
+    start = time.perf_counter()
+    results = retrieve(QUERY, k=TOP_K, method=METHOD, retriever_k=RETRIEVER_K, candidate_k=CANDIDATE_K)
+    elapsed = time.perf_counter() - start
 
-    print(f"Query: {args.query}")
-    if args.method == "both":
-        _print_results("bm25_only", retrieve(args.query, args.k, "bm25_only"))
-        _print_results("dense_only", retrieve(args.query, args.k, "dense_only"))
+    if isinstance(results, str):
+        print(results)
     else:
-        _print_results(args.method, retrieve(args.query, args.k, args.method))
+        for doc_id, score in results:
+            print(f"{score:.4f}", doc_id, get_chunk(doc_id)["section_heading"])
+
+    print(f"\nTime taken: {elapsed:.3f}s")
