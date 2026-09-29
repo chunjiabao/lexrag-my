@@ -1,11 +1,8 @@
+# This .gitignore file specifies intentionally untracked files that Git should ignore.
+
 venv/
 __pycache__/
 *.pyc
 .env
-
-# Generated indexes (Stage 0 output) - reproducible from dataset/chunks_validated/
-# via scripts/b1_bm25_index.py and scripts/b2_dense_index.py; not source data.
 dataset/indexes/
-
-# HuggingFace model cache, if it ever lands inside the repo instead of ~/.cache
 .cache/

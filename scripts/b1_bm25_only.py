@@ -37,17 +37,17 @@ def build_index(force=False):
 
     return retriever, corpus
 
-_retriever, _corpus = build_index()
+retriever, corpus = build_index()
 
 
-def search_bm25(query, k=10):
+def search_bm25(query, k):
     # Search the BM25 index for the top k results matching the query.
-    scores = _retriever.get_scores(tokenize(query))
+    scores = retriever.get_scores(tokenize(query))
     top_k = scores.argsort()[::-1][:k]
     # Return a list of tuples containing the doc_id and score for the top k results.
-    return [(_corpus[i]["doc_id"], float(scores[i])) for i in top_k]
+    return [(corpus[i]["doc_id"], float(scores[i])) for i in top_k]
 
 
 def get_chunk(doc_id):
     # Retrieve a chunk from the corpus by its doc_id.
-    return next(c for c in _corpus if c["doc_id"] == doc_id)
+    return next(c for c in corpus if c["doc_id"] == doc_id)

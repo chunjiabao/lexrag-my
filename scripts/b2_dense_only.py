@@ -12,12 +12,12 @@ MODEL_NAME = "BAAI/bge-small-en-v1.5"
 # BGE's query special instruction for retrieval
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 
-# Load the embedding model and create persistent ChromaDB 
-_model = SentenceTransformer(MODEL_NAME)
-_client = chromadb.PersistentClient(path=str(INDEX_DIR))
+# Load the embedding model and create persistent ChromaDB
+model = SentenceTransformer(MODEL_NAME)
+client = chromadb.PersistentClient(path=str(INDEX_DIR))
 
 def build_index():
-    collection = _client.get_or_create_collection(
+    collection = client.get_or_create_collection(
         name=COLLECTION_NAME, metadata={"hnsw:space": "cosine"}
     )
 
@@ -37,7 +37,7 @@ def build_index():
         } for c in corpus
     ]
 
-    embeddings = _model.encode(documents, normalize_embeddings=True).tolist()
+    embeddings = model.encode(documents, normalize_embeddings=True).tolist()
 
     # Add the data to the collection in batches 
     batch_size = 256
@@ -48,17 +48,17 @@ def build_index():
     return collection, corpus
 
 
-_collection, _corpus = build_index()
+collection, corpus = build_index()
 
 # Create a dictionary for fast lookup
-_corpus_by_id = {c["doc_id"]: c for c in _corpus}
+corpus_by_id = {c["doc_id"]: c for c in corpus}
 
-# Dense retrieval 
-def search_dense(query, k=10):
-    query_embedding = _model.encode(
+# Dense retrieval
+def search_dense(query, k):
+    query_embedding = model.encode(
         [QUERY_PREFIX + query], normalize_embeddings=True
     ).tolist()
-    results = _collection.query(query_embeddings=query_embedding, n_results=k)
+    results = collection.query(query_embeddings=query_embedding, n_results=k)
 
     # Convert distance to similarity score (1 - distance)
     return [
@@ -68,4 +68,4 @@ def search_dense(query, k=10):
 
 
 def get_chunk(doc_id):
-    return _corpus_by_id[doc_id]
+    return corpus_by_id[doc_id]

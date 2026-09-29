@@ -356,3 +356,74 @@ All three Acts now have zero duplicate section numbers, corrected headings/text,
 ### Next step
 - Commit the current uncommitted changes
 - Decide B3/B4 approach and begin implementation
+
+---
+
+## 27 Sept 2026
+
+### Catch-up: B3, B4, B5 built since 12 Sept (not logged at the time)
+
+**B3 — Hybrid fusion (RRF): Done ✅**
+- Script: `scripts/b3_hybrid_no_rerank.py`
+- `fuse(ranked_lists, k)` combines ranked lists by rank position only (ignores each retriever's own score scale), accumulating `1 / (RRF_K + rank)` per doc across lists, `RRF_K = 60`
+- `search_hybrid(query, k, retriever_k)` runs B1 + B2 at `retriever_k` depth each, fuses via RRF, returns top `k`
+
+**B4 — Cross-encoder reranker: Done ✅**
+- Script: `scripts/b4_full.py`
+- Model: `BAAI/bge-reranker-base` (same BGE family as B2's embedder)
+- `rerank(query, candidate_ids, k)` scores each candidate with the cross-encoder and re-sorts
+- `search_full(query, k, retriever_k, candidate_k)` gets `candidate_k` fused candidates from B3, reranks, returns top `k`
+
+**B5 — Retrieval controller: rebuilt Done ✅**
+- Script: `scripts/b5_retrieval_controller.py` — single `retrieve(query, k, method, retriever_k, candidate_k)` entry point switching between all four proposal configs (Table 3.5): `bm25_only`, `dense_only`, `hybrid_no_rerank`, `full`
+- All four methods wired end-to-end now that B3/B4 exist (previous version only had `bm25_only`/`dense_only` wired, per the 6 Sept entry)
+- Style pass applied to match B1/B2 (house style: no default args on `retrieve()`/`fuse()`/`search_hybrid()`/`rerank()`/`search_full()` — every caller passes args explicitly; no type hints/docstrings/argparse)
+- Removed the earlier "return marker string instead of raising" fallback for an unknown `method` value, in favour of consistent explicit-argument style
+- `Output` file regenerated with all four methods' results against the demo query ("Can I get any refund for receiving a defective item?"), each block now labelled with its method name and wall-clock time taken (bm25_only 0.001s, dense_only 0.150s, hybrid_no_rerank 0.057s, full 7.931s)
+
+**Known issue caught during this catch-up review:** `b5_retrieval_controller.py`'s `METHOD` constant briefly held a typo (`"fulls"` instead of `"full"`) in the working tree; already corrected before this entry — flagged here since dropping the default-args made it fail loudly (crash) instead of silently returning a marker string, which is the intended tradeoff of the style change but worth remembering if `METHOD` is hand-edited again.
+
+**M2 status (Retrieval pipeline completion, Week 7):** all four retrieval methods now exist, callable through one `retrieve()` interface, individually confirmed to run and return top-k ranked chunks. Not formally marked complete yet — pending a decision on what additional confirmation this milestone requires before signing off.
+
+### Not yet done
+- Commit the reorganization: B3/B4 additions, B5 rebuild/restyle, `Output` regeneration, `.gitignore` cleanup — all currently uncommitted
+- Formal M2 sign-off decision
+- Sub-chunking decision for the 36 chunks exceeding BGE's 512-token limit (open since 12 Sept)
+- Test-set construction (Phase D) — proposal's R4 risk mitigation calls for this to run in parallel with Phase B, not after; not yet started as of this entry
+
+### Next step
+- Commit current uncommitted changes
+- Decide M2 sign-off and scope M3 (generation + citation verification integration, Phase C)
+
+---
+
+## 27 Sept 2026 (continued)
+
+### M3 started — C1/C2 (generation) built and tested end-to-end ✅
+
+**Decisions locked in before implementation:** structured output forced via Anthropic tool-use (`tool_choice` mandating a single tool call) rather than prompted free-text JSON; model is `claude-haiku-4-5-20251001` for both generation and (later) the C4 judge, chosen over Sonnet for the R3 cost constraint; API key set up via a gitignored `.env` (`ANTHROPIC_API_KEY`), loaded with `python-dotenv`.
+
+**C1 — Prompt and constraint design: Done ✅**
+- Script: `scripts/c1_prompt_design.py`
+- RACE-framework system prompts (Role, Action, Context, Expectation) — `SYSTEM_PROMPT` for initial generation, `SYSTEM_PROMPT_STRICT` for regeneration after a failed citation check (Table 3.3), differing only in how strictly the Action clause restricts the model to explicit section text
+- `build_user_message(query, chunks)` assembles the Context block from retrieved chunk dicts (`doc_id`, `act_name`, `section_number`, `section_heading`, `full_text`) plus the question — pure string-building, no API calls, so it's independently testable
+
+**C2 — Structured output and citation generation: Done ✅**
+- Script: `scripts/c2_generate.py`
+- `record_answer` tool schema forces `answer` (string), `claims` (list of `{claim_text, cited_doc_id}`), `insufficient_info` (bool) — `tool_choice` set to force this specific tool, so the model cannot reply with plain text
+- `_valid()` is the schema checker required by Section 3.5.2 on top of the API-level schema enforcement — catches wrong types even though structural conformance is already guaranteed by tool-use
+- On schema failure: one retry with a stricter follow-up instruction, then the proposal's exact fallback string ("Unable to generate a verified response.") rather than passing a malformed result downstream
+- `generate(query, chunks, strict=False)` is the public entry point; `strict=True` swaps in `SYSTEM_PROMPT_STRICT` for use by C5's retry logic (not yet built)
+- **Tested end-to-end:** ran the demo query ("Can I get any refund for receiving a defective item?") through B5's `full` retrieval method into `generate()` — got back a grounded, multi-claim answer citing `Act599#42`, `Act599#46`, `Act599#64`; no schema-retry path triggered, first tool call was already valid
+
+**API key troubleshooting:** first key pasted into `.env` was an organization-level key not scoped to a workspace — Anthropic's API rejected requests with `anthropic-workspace-id` missing. Fixed by generating a workspace-scoped key instead; no code changes needed.
+
+### Not yet done
+- C3 — Existence check (rule-based), C4 — Support check (LLM-as-judge), C5 — Failure handling / single-retry wiring (not started)
+- Test set (D1/D2) still not started — needed before C3–C5 can be evaluated against anything beyond ad hoc manual queries
+- All of the above, plus `.env`/`requirements.txt`/`c1_prompt_design.py`/`c2_generate.py`, are uncommitted
+
+### Next step
+- Build C3 (existence check) and C4 (support check) against real generated claims like the ones C2 just produced
+- Then C5 (single retry + status assignment: verified / verified_after_retry / insufficient_info)
+- Test set construction (D1/D2) still pending — separate track, not yet started
