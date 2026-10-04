@@ -3,7 +3,7 @@
 import json
 import os
 
-CHUNKS_DIR = "dataset/chunks_validated"
+CHUNKS_DIR = os.path.join("dataset", "chunks_validated")
 
 ACTS = [
     {"code": "Act265", "file": "Act265_chunks.json"},
@@ -32,4 +32,3 @@ if __name__ == "__main__":
     print(f"Loaded {len(corpus)} chunks across {len(ACTS)} Acts")
     deleted = sum(1 for c in corpus if c["is_deleted"])
     print(f"  is_deleted: {deleted}")
-    print(f"  sample doc_id: {corpus[0]['doc_id']}")

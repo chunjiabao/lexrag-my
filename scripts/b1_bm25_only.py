@@ -5,7 +5,7 @@ from rank_bm25 import BM25Okapi
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 from a5_load_chunks import load_all_chunks
 
-INDEX_DIR = Path("dataset/indexes/bm25")
+INDEX_DIR = Path("dataset") / "indexes" / "bm25"
 INDEX_PATH = INDEX_DIR / "bm25_index.pkl"
 
 TOKEN_PATTERN = re.compile(r"[a-z0-9]+")

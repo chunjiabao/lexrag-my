@@ -1,3 +1,7 @@
 git add .
 git commit -m "DESCRIBE WHAT CHANGE HERE"
 git push
+
+cd C:\Users\chunj\Documents\lexrag-my
+.\venv\Scripts\Activate
+streamlit run app.py

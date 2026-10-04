@@ -16,7 +16,7 @@ def rerank(query, candidate_ids, k):
     return reranked[:k]
 
 
-def search_full(query, k, retriever_k, candidate_k):
-    candidates = search_hybrid(query, k=candidate_k, retriever_k=retriever_k)
+def search_full(query, k, retriever_k, candidate_k, rrf_k):
+    candidates = search_hybrid(query, k=candidate_k, retriever_k=retriever_k, rrf_k=rrf_k)
     candidate_ids = [doc_id for doc_id, score in candidates]
     return rerank(query, candidate_ids, k=k)

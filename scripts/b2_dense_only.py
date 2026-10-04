@@ -3,7 +3,7 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 from a5_load_chunks import load_all_chunks
 
-INDEX_DIR = Path("dataset/indexes/chroma")
+INDEX_DIR = Path("dataset") / "indexes" / "chroma"
 
 # Chroma collection name for the statutory sections
 COLLECTION_NAME = "statutes"

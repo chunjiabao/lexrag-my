@@ -7,27 +7,39 @@ DOCUMENTS = [
     {
         "input": "Act265_EmploymentAct1955_clean.txt",
         "output": "Act265_chunks.json",
+        "act_id": "Act265",
         "act_name": "Employment Act 1955",
     },
     {
         "input": "Act599_ConsumerProtectionAct1999_clean.txt",
         "output": "Act599_chunks.json",
+        "act_id": "Act599",
         "act_name": "Consumer Protection Act 1999",
     },
     {
         "input": "Act709_PersonalDataProtectionAct2010_clean.txt",
         "output": "Act709_chunks.json",
+        "act_id": "Act709",
         "act_name": "Personal Data Protection Act 2010",
     },
 ]
 
-INPUT_DIR = "dataset/extracted_text"
-OUTPUT_DIR = "dataset/chunks"
+INPUT_DIR = os.path.join("dataset", "extracted_text")
+OUTPUT_DIR = os.path.join("dataset", "chunks")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 SECTION_PATTERN = re.compile(r"^(\d+[a-zA-Z]{0,2})\.\s+(.*)$")
 PART_HEADER_PATTERN = re.compile(r"^Part\s+[IVXLCDM]+[A-Z]?\s*$", re.IGNORECASE)
+
+# Match "section 18", "subsection 81d(4)", "sections 6, 7 and 12", "sections 10 to 16"
+SEC_NUM = r"\d+[a-zA-Z]{0,2}(?:\([^)]*\))*"
+REFERENCE_PATTERN = re.compile(
+    rf"\b(?:sub)?sections?\s+({SEC_NUM}(?:\s*(?:,|and|or|to)\s*{SEC_NUM})*)",
+    re.IGNORECASE,
+)
+# Match references to sections of other Acts, e.g. "section 18 of the Employment Act 1955"
+OTHER_ACT_PATTERN = re.compile(r"^\s+of\s+(?!this\s+Act)", re.IGNORECASE)
 
 # Identify uppercase Part titles such as "PRELIMINARY"
 def is_part_title_line(line):
@@ -47,7 +59,33 @@ def looks_like_title(line):
         return False
     return True
 
-def chunk_act(text, act_name):
+# Extract the sections of the same Act that a section refers to
+def extract_references(full_text, own_section, act_id, section_numbers):
+    references = []
+    for match in REFERENCE_PATTERN.finditer(full_text):
+        # Skip references to sections of other Acts, e.g. "section 18 of the Employment Act 1955 (other Acts)"
+        if OTHER_ACT_PATTERN.match(full_text[match.end():]):
+            continue
+
+        group = match.group(1)
+        nums = [re.sub(r"\(.*", "", n).lower() for n in re.findall(SEC_NUM, group)]
+
+        # Expand ranges such as "sections 10 to 16"
+        targets = []
+        parts = re.split(r"\s*(,|and|or|to)\s*", group)
+        seps = parts[1::2]
+        for idx, num in enumerate(nums):
+            if idx > 0 and seps[idx - 1] == "to" and num.isdigit() and nums[idx - 1].isdigit():
+                targets.extend(str(n) for n in range(int(nums[idx - 1]) + 1, int(num)))
+            targets.append(num)
+
+        for num in targets:
+            doc_id = f"{act_id}#{num}"
+            if num in section_numbers and num != own_section and doc_id not in references:
+                references.append(doc_id)
+    return references
+
+def chunk_act(text, act_name, act_id):
     lines = text.split("\n")
 
     chunks = []
@@ -61,10 +99,12 @@ def chunk_act(text, act_name):
             full_text = "\n".join(current_lines).strip()
 
             chunks.append({
+                "doc_id": f"{act_id}#{current_section_num}",
                 "act_name": act_name,
                 "section_number": current_section_num,
                 "section_heading": current_section_heading,
                 "full_text": full_text,
+                "references": [],
                 "is_deleted": bool(re.match(
                     r"^\(Deleted|^\(Omitted", full_text, re.IGNORECASE
                 )),
@@ -103,27 +143,30 @@ def chunk_act(text, act_name):
         i += 1
 
     flush()
+
+    # After all chunks are created, extract references for each chunk 
+    section_numbers = {c["section_number"] for c in chunks}
+    for c in chunks:
+        c["references"] = extract_references(
+            c["full_text"], c["section_number"], act_id, section_numbers
+        )
     return chunks
 
 
-def main():
-    for doc in DOCUMENTS:
-        input_path = os.path.join(INPUT_DIR, doc["input"])
-        output_path = os.path.join(OUTPUT_DIR, doc["output"])
+for doc in DOCUMENTS:
+    input_path = os.path.join(INPUT_DIR, doc["input"])
+    output_path = os.path.join(OUTPUT_DIR, doc["output"])
 
-        with open(input_path, encoding="utf-8") as f:
-            text = f.read()
+    with open(input_path, encoding="utf-8") as f:
+        text = f.read()
 
-        # Chunk the act text into sections and headings
-        chunks = chunk_act(text, doc["act_name"])
+    # Chunk the act text into sections and headings
+    chunks = chunk_act(text, doc["act_name"], doc["act_id"])
 
-        # Save the chunks to a JSON file
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(chunks, f, indent=2, ensure_ascii=False)
+    # Save the chunks to a JSON file
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(chunks, f, indent=2, ensure_ascii=False)
 
-        print(f"[{doc['input']}] -> {output_path}")
-        print(f"  Total chunks: {len(chunks)}")
-        print()
-
-if __name__ == "__main__":
-    main()
+    print(f"[{doc['input']}]")
+    print(f"  Total chunks: {len(chunks)}")
+    print()

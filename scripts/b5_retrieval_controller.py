@@ -1,38 +1,35 @@
-import time
 from b1_bm25_only import search_bm25, get_chunk
 from b2_dense_only import search_dense
 from b3_hybrid_no_rerank import search_hybrid
 from b4_full import search_full
 
-QUERY = "What is annual leave entitlement and how do I file a divorce?"
-METHOD = "bm25_only"        # bm25_only | dense_only | hybrid_no_rerank | full
-TOP_K = 5               # how many results to return to the user
-RETRIEVER_K = 20        # hybrid_no_rerank, full: how deep BM25/dense each search before fusion
-CANDIDATE_K = 20        # full only: how many fused results go into the reranker
 
-
-def retrieve(query, k, method, retriever_k, candidate_k):
+def retrieve(query, method, config):
+    k = config["top_k"]
     if method == "bm25_only":
         return search_bm25(query, k=k)
     elif method == "dense_only":
         return search_dense(query, k=k)
     elif method == "hybrid_no_rerank":
-        return search_hybrid(query, k=k, retriever_k=retriever_k)
+        return search_hybrid(query, k=k, retriever_k=config["retriever_k"], rrf_k=config["rrf_k"])
     elif method == "full":
-        return search_full(query, k=k, retriever_k=retriever_k, candidate_k=candidate_k)
+        return search_full(query, k=k, retriever_k=config["retriever_k"], candidate_k=config["candidate_k"],
+                           rrf_k=config["rrf_k"])
     else:
         return f"Invalid method: {method}"
 
 
-if __name__ == "__main__":
+def expand(results, max_expansion):
+    # Expand the top-k results by following cross-references in the corpus
+    top_ids = [doc_id for doc_id, score in results]
+    expanded = []
+    for doc_id in top_ids:
+        for ref_id in get_chunk(doc_id)["references"]:
+            if len(expanded) == max_expansion:
+                return expanded
+            # Skip sections already in the top-k or already added
+            if ref_id in top_ids or ref_id in [e[0] for e in expanded]:
+                continue
+            expanded.append((ref_id, doc_id))
+    return expanded
 
-    print(f"\nQuery: {QUERY}")
-    print(f"Method: {METHOD}\n")
-    start = time.perf_counter()
-    results = retrieve(QUERY, k=TOP_K, method=METHOD, retriever_k=RETRIEVER_K, candidate_k=CANDIDATE_K)
-    elapsed = time.perf_counter() - start
-
-    for doc_id, score in results:
-        print(f"{score:.4f}", doc_id, get_chunk(doc_id)["section_heading"])
-
-    print(f"\nTime taken: {elapsed:.3f}s")
