@@ -35,8 +35,6 @@ DOCUMENTS = [
 
 INPUT_DIR = os.path.join("dataset", "acts")
 OUTPUT_DIR = os.path.join("dataset", "extracted_text")
-
-# Create output directory if it doesn't exist
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 

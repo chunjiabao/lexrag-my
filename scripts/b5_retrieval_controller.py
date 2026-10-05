@@ -16,7 +16,8 @@ def retrieve(query, method, config):
         return search_full(query, k=k, retriever_k=config["retriever_k"], candidate_k=config["candidate_k"],
                            rrf_k=config["rrf_k"])
     else:
-        return f"Invalid method: {method}"
+        print(f"Invalid method: {method}")
+        return []
 
 
 def expand(results, max_expansion):

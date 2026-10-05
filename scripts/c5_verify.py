@@ -1,6 +1,7 @@
 from b1_bm25_only import get_chunk
 from b5_retrieval_controller import retrieve, expand
-from c2_generate import client, generate, reset_usage, record_usage
+from c0_token_usage import reset_usage, record_usage
+from c2_generate import client, generate
 from c3_provenance_check import check_provenance
 from c4_quote_match import check_quote, locate_quote
 
@@ -66,8 +67,7 @@ def verify(sentences, retrieved_ids, expanded_ids, config):
         row["provenance"] = check_provenance(sentence, retrieved_ids, expanded_ids)
         if row["provenance"] in ["retrieved", "expanded"]:
             chunk = get_chunk(sentence["cited_doc_id"])
-            row["quote_match"] = check_quote(sentence["quote"], chunk["full_text"],
-                                             config["min_quote_words"], config["fuzzy_threshold"])
+            row["quote_match"] = check_quote(sentence["quote"], chunk["full_text"], config["fuzzy_threshold"])
             if row["quote_match"] == "pass":
                 row["support"], row["reason"] = check_support(sentence, chunk, config)
         row["passed"] = row["support"] == "supported"
@@ -84,10 +84,8 @@ def build_feedback(checks):
             continue
         # Quote the failed sentence, since the stricter prompt does not see the previous answer
         sentence = f'Sentence {i} ("{row["sentence"]["text"]}")'
-        if row["provenance"] == "not_retrieved":
+        if row["provenance"] == "not_provided":
             feedback.append(f"{sentence} cited {doc_id}, which was not among the provided sections.")
-        elif row["provenance"] == "nonexistent":
-            feedback.append(f"{sentence} cited {doc_id}, which does not exist.")
         elif row["quote_match"] == "fail":
             feedback.append(f"{sentence}: the quote was not found in {doc_id}.")
         else:
@@ -123,12 +121,12 @@ def answer_query(query, method, config, on_phase=None):
             phase("Regenerating the answer with the stricter prompt")
         else:
             phase("Generating the answer")
-        output = generate(query, context, config, strict=strict, feedback=feedback)
+        output = generate(query, context, config, feedback=feedback)
         attempt = {"strict": strict, "status": output["status"], "sentences": output["sentences"],
                    "not_covered": output["not_covered"], "checks": []}
         result["attempts"].append(attempt)
 
-        # Only uncovered topics, or no valid output after two tries: verification is skipped
+        # Only uncovered topics, or the answer was cut off: verification is skipped
         if output["status"] == "insufficient_info":
             return {**result, "status": "insufficient_info", "sentences": [], "not_covered": output["not_covered"]}
 

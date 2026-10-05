@@ -1,6 +1,5 @@
 from rapidfuzz import fuzz
 
-# Unify curly quotation marks and dashes so they match their plain forms
 CHAR_MAP = str.maketrans({
     "‘": "'", "’": "'", "‚": "'", "‛": "'",
     "“": '"', "”": '"', "„": '"',
@@ -25,24 +24,22 @@ def normalise(text):
 
 
 def locate_quote(quote, section_text):
-    # Return the match score and the start and end of the matched passage in the original section text
+    # [0] is the normalised quote, [1] is the position list 
     q = normalise(quote)[0].strip()
     text, positions = normalise(section_text)
-
+    
+    # find() method returns -1 if the value is not found
     start = text.find(q)
     if start != -1:
         score, end = 100.0, start + len(q)
     else:
-        # Not an exact match: find the most similar passage, tolerating PDF extraction differences
         alignment = fuzz.partial_ratio_alignment(q, text)
         score, start, end = alignment.score, alignment.dest_start, alignment.dest_end
+    # -1 + 1 to avoids an index error when the quote is at the end of the section text
     return score, positions[start], positions[end - 1] + 1
 
 
-def check_quote(quote, section_text, min_quote_words, fuzzy_threshold):
-    # Quotes that are too short cannot pass as evidence
-    if len(quote.split()) < min_quote_words:
-        return "fail"
+def check_quote(quote, section_text, fuzzy_threshold):  
     score, start, end = locate_quote(quote, section_text)
     if score >= fuzzy_threshold:
         return "pass"

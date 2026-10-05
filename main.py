@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 QUERY = "What is annual leave entitlement and how do I file a divorce?"
-METHOD = "full"     # bm25_only | dense_only | hybrid_no_rerank | full (full is the proposed system)
+METHOD = "hybrid_no_rerank"     # bm25_only | dense_only | hybrid_no_rerank | full (full is the proposed system)
 
 CONFIG = {
     # Retrieval
@@ -17,12 +17,13 @@ CONFIG = {
     "rrf_k": 60,                # hybrid_no_rerank, full: rank fusion constant; higher flattens the gap between ranks
 
     # Generation
-    "model": "claude-haiku-4-5-20251001",   # used for both generation and the judge; must be a key in c2 PRICES
+    "model": "claude-haiku-4-5-20251001",   # Claude Haiku 4.5, used for both generation and the judge
+    "input_price": 1.00,                    # USD per million input tokens (Haiku 4.5)
+    "output_price": 5.00,                   # USD per million output tokens (Haiku 4.5)
     "generation_max_tokens": 4096,          # output limit; a cut-off answer fails the schema check
     "generation_temperature": 0,            # 0 gives the same answer for the same input
 
     # Verification
-    "min_quote_words": 5,       # quotes shorter than this are rejected (the stricter prompt also says five)
     "fuzzy_threshold": 90,      # minimum similarity (0-100) for a quote that is not an exact match
     "judge_max_tokens": 512,
     "judge_temperature": 0,
@@ -32,7 +33,7 @@ CONFIG = {
 if __name__ == "__main__":
     sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
     from b1_bm25_only import get_chunk
-    from c2_generate import usage_cost
+    from c0_token_usage import usage_cost
     from c5_verify import answer_query, format_answer
 
     result = answer_query(QUERY, METHOD, CONFIG)
@@ -49,7 +50,7 @@ if __name__ == "__main__":
     usage = result["usage"]
     print(f"\nStatus: {result['status']}")
     print(f"Tokens: {usage['input_tokens']:,} input / {usage['output_tokens']:,} output "
-          f"(${usage_cost(usage, CONFIG['model']):.4f})\n")
+          f"(${usage_cost(usage, CONFIG):.4f})\n")
     print(format_answer(result))
 
     # Source panel: each cited section with its quoted passage

@@ -38,7 +38,7 @@ load_time = load_pipeline()
 
 from b1_bm25_only import get_chunk
 from c4_quote_match import locate_quote
-from c2_generate import PRICES, usage_cost
+from c0_token_usage import usage_cost
 from c5_verify import answer_query, format_answer
 
 
@@ -80,13 +80,10 @@ def settings_form():
                                 help="hybrid_no_rerank and full only.")
 
         st.markdown("**Generation**")
-        model = st.selectbox("Model (generation and judge)", list(PRICES), index=list(PRICES).index(s["model"]))
         generation_max_tokens = st.number_input("Max tokens", 256, 16000, s["generation_max_tokens"], step=256)
         generation_temperature = st.slider("Temperature", 0.0, 1.0, float(s["generation_temperature"]), 0.1)
 
         st.markdown("**Verification**")
-        min_quote_words = st.number_input("MIN_QUOTE_WORDS: shortest accepted quote", 1, 30, s["min_quote_words"],
-                                          help="The stricter prompt's text still says 'at least five words'.")
         fuzzy_threshold = st.slider("FUZZY_THRESHOLD: quote match similarity", 0, 100, s["fuzzy_threshold"])
         judge_max_tokens = st.number_input("Judge max tokens", 128, 4096, s["judge_max_tokens"], step=128)
         judge_temperature = st.slider("Judge temperature", 0.0, 1.0, float(s["judge_temperature"]), 0.1)
@@ -94,10 +91,11 @@ def settings_form():
         saved = st.form_submit_button("Save", type="primary")
 
     if saved:
+        # The model and its prices are fixed, so they are kept from the current settings
         st.session_state.settings = {
-            "top_k": top_k, "retriever_k": retriever_k, "candidate_k": candidate_k, "max_expansion": max_expansion,
-            "rrf_k": rrf_k, "model": model, "generation_max_tokens": generation_max_tokens,
-            "generation_temperature": generation_temperature, "min_quote_words": min_quote_words,
+            **s, "top_k": top_k, "retriever_k": retriever_k, "candidate_k": candidate_k, "max_expansion": max_expansion,
+            "rrf_k": rrf_k, "generation_max_tokens": generation_max_tokens,
+            "generation_temperature": generation_temperature,
             "fuzzy_threshold": fuzzy_threshold, "judge_max_tokens": judge_max_tokens,
             "judge_temperature": judge_temperature,
         }
@@ -123,7 +121,7 @@ def developer_panel(result, timings, settings):
         rows = []
         for label, counts in [("Generation", usage["generation"]), ("Judge", usage["judge"]), ("Total", usage)]:
             rows.append({"Calls": label, "Input": counts["input_tokens"], "Output": counts["output_tokens"],
-                         "Cost (USD)": round(usage_cost(counts, settings["model"]), 5)})
+                         "Cost (USD)": round(usage_cost(counts, settings), 5)})
         st.dataframe(rows, hide_index=True)
 
         st.markdown(f"**Retrieved ({result['method']})**")
@@ -207,7 +205,7 @@ if query:
         st.markdown(format_answer(result))
         tokens = result["usage"]
         st.caption(f"Status: {result['status']} · Tokens: {tokens['input_tokens']:,} input / "
-                   f"{tokens['output_tokens']:,} output · Cost: ${usage_cost(tokens, settings["model"]):.4f}")
+                   f"{tokens['output_tokens']:,} output · Cost: ${usage_cost(tokens, settings):.4f}")
 
         # Source panel: each cited section once, with every quoted passage from it highlighted
         if result["sentences"]:

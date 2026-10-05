@@ -26,7 +26,6 @@ DOCUMENTS = [
 
 INPUT_DIR = os.path.join("dataset", "extracted_text")
 OUTPUT_DIR = os.path.join("dataset", "chunks")
-
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 SECTION_PATTERN = re.compile(r"^(\d+[a-zA-Z]{0,2})\.\s+(.*)$")
@@ -38,7 +37,7 @@ REFERENCE_PATTERN = re.compile(
     rf"\b(?:sub)?sections?\s+({SEC_NUM}(?:\s*(?:,|and|or|to)\s*{SEC_NUM})*)",
     re.IGNORECASE,
 )
-# Match references to sections of other Acts, e.g. "section 18 of the Employment Act 1955"
+# Match "section 18 of the Employment Act 1955 (other Acts)"
 OTHER_ACT_PATTERN = re.compile(r"^\s+of\s+(?!this\s+Act)", re.IGNORECASE)
 
 # Identify uppercase Part titles such as "PRELIMINARY"

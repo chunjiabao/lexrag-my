@@ -13,7 +13,7 @@ Expectation: Call the record_answer tool, following these rules.
 2. Each sentence cites exactly one section by its doc_id. Use as many sections as the
    question needs, but write a fact that depends on two sections as two sentences.
 3. Each sentence carries a quote: words copied exactly from the cited section that
-   support the sentence.
+   support the sentence, at least five words long.
 4. Use not_covered only for something the question explicitly asks that the sections
    do not answer, as a short topic phrase without stating any facts about it. Do not
    add related topics, follow-up issues or details the user did not ask about, even if
@@ -68,8 +68,7 @@ Expectation: Call the record_answer tool, following these rules.
 Do not write section numbers or doc_ids inside the sentence text."""
 
 
-# Build user message with query and context set (each item: chunk, doc_id of the section that referred to it or None)
-def build_user_message(query, context, feedback=None):
+def build_prompt(query, context, feedback=None):
     blocks = []
     for chunk, referred_by in context:
         label = f"[{chunk['doc_id']}] {chunk['act_name']} Section {chunk['section_number']} - {chunk['section_heading']}"
@@ -79,7 +78,9 @@ def build_user_message(query, context, feedback=None):
 
     message = "Context (statutory sections):\n\n" + "\n\n".join(blocks) + f"\n\nQuestion: {query}"
 
-    # Stricter prompt only
     if feedback:
+        system_prompt = SYSTEM_PROMPT_STRICT
         message += "\n\nFeedback on your previous answer:\n" + "\n".join(f"- {line}" for line in feedback)
-    return message
+    else:
+        system_prompt = SYSTEM_PROMPT
+    return system_prompt, message
