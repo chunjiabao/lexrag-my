@@ -28,7 +28,7 @@ def locate_quote(quote, section_text):
     q = normalise(quote)[0].strip()
     text, positions = normalise(section_text)
     
-    # find() method returns -1 if the value is not found
+    # find() method returns -1 (default) if the value is not found
     start = text.find(q)
     if start != -1:
         score, end = 100.0, start + len(q)
@@ -37,10 +37,3 @@ def locate_quote(quote, section_text):
         score, start, end = alignment.score, alignment.dest_start, alignment.dest_end
     # -1 + 1 to avoids an index error when the quote is at the end of the section text
     return score, positions[start], positions[end - 1] + 1
-
-
-def check_quote(quote, section_text, fuzzy_threshold):  
-    score, start, end = locate_quote(quote, section_text)
-    if score >= fuzzy_threshold:
-        return "pass"
-    return "fail"

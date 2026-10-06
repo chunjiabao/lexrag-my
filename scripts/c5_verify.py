@@ -3,7 +3,7 @@ from b5_retrieval_controller import retrieve, expand
 from c0_token_usage import reset_usage, record_usage
 from c2_generate import client, generate
 from c3_provenance_check import check_provenance
-from c4_quote_match import check_quote, locate_quote
+from c4_quote_match import locate_quote
 
 INSUFFICIENT_ANSWER = "Insufficient information in the provided Acts."
 
@@ -36,13 +36,10 @@ VERDICT_TOOL = {
 }
 
 
-def check_support(sentence, chunk, config):
-    # Mark the quoted passage inside the full section text
+def check_support(sentence, chunk, start, end, config):
     text = chunk["full_text"]
-    score, start, end = locate_quote(sentence["quote"], text)
     marked = text[:start] + "<quote>" + text[start:end] + "</quote>" + text[end:]
 
-    # The judge sees only the cited section and one sentence, not the question or other sentences
     user_message = f"Section [{chunk['doc_id']}]:\n{marked}\n\nSentence: {sentence['text']}"
     response = client.messages.create(
         model=config["model"],
@@ -54,35 +51,41 @@ def check_support(sentence, chunk, config):
         messages=[{"role": "user", "content": user_message}],
     )
     record_usage(response, "judge")
-    # tool_choice forces the record_verdict call, so the response always contains it
     verdict = next(block.input for block in response.content if block.type == "tool_use")
     return verdict["verdict"], verdict["reason"]
 
-
+# Run the 3 checks 
 def verify(sentences, retrieved_ids, expanded_ids, config):
-    # Run the three checks in order on every sentence; a sentence stops at its first failed check
     checks = []
     for sentence in sentences:
         row = {"sentence": sentence, "provenance": "", "quote_match": "skipped", "support": "skipped", "reason": ""}
+        # Provenance check 
         row["provenance"] = check_provenance(sentence, retrieved_ids, expanded_ids)
+
+        # Quote match 
         if row["provenance"] in ["retrieved", "expanded"]:
             chunk = get_chunk(sentence["cited_doc_id"])
-            row["quote_match"] = check_quote(sentence["quote"], chunk["full_text"], config["fuzzy_threshold"])
-            if row["quote_match"] == "pass":
-                row["support"], row["reason"] = check_support(sentence, chunk, config)
+            score, start, end = locate_quote(sentence["quote"], chunk["full_text"])
+           
+            if score >= config["fuzzy_threshold"]:
+                row["quote_match"] = "pass"
+
+                # Support check
+                row["support"], row["reason"] = check_support(sentence, chunk, start, end, config)
+            else:
+                row["quote_match"] = "fail"
         row["passed"] = row["support"] == "supported"
         checks.append(row)
     return checks
 
 
 def build_feedback(checks):
-    # Name each failed sentence and the check it failed, for the stricter prompt
     feedback = []
-    for i, row in enumerate(checks, start=1):
+    for i, row in enumerate(checks, start=1): # Start 1  because the user sees sentences sentence from 1, not 0
         doc_id = row["sentence"]["cited_doc_id"]
         if row["passed"]:
             continue
-        # Quote the failed sentence, since the stricter prompt does not see the previous answer
+
         sentence = f'Sentence {i} ("{row["sentence"]["text"]}")'
         if row["provenance"] == "not_provided":
             feedback.append(f"{sentence} cited {doc_id}, which was not among the provided sections.")
@@ -92,17 +95,22 @@ def build_feedback(checks):
             feedback.append(f"{sentence} was not supported by {doc_id}: {row['reason']}")
     return feedback
 
-
+# Orchestrates the retrieval, expansion, generation, and verification of an answer to a query.
 def answer_query(query, method, config, on_phase=None):
-    # on_phase (optional) is called with the name of each phase as it starts, e.g. for a progress display
+    # on_phase : Used by app.py for illustration phase
+    # on_phase: Optional
     def phase(name):
         if on_phase:
             on_phase(name)
 
-    phase(f"Retrieving sections ({method})")
+    # Retrieve relevant sections
+    phase(f"Retrieving sections ({method})")  # on_phase: Optional
     results = retrieve(query, method, config)
-    phase("Expanding cross-references")
+
+    #Expanding cross-references
+    phase("Expanding cross-references")  # on_phase: Optional
     expanded = expand(results, max_expansion=config["max_expansion"])
+
     retrieved_ids = [doc_id for doc_id, score in results]
     expanded_ids = [doc_id for doc_id, referred_by in expanded]
 
@@ -117,21 +125,24 @@ def answer_query(query, method, config, on_phase=None):
     # First attempt: initial prompt. Single retry: stricter prompt with feedback, only reached if a sentence failed
     feedback = None
     for strict in [False, True]:
+        # on_phase: Optional
         if strict:
             phase("Regenerating the answer with the stricter prompt")
         else:
             phase("Generating the answer")
+
         output = generate(query, context, config, feedback=feedback)
         attempt = {"strict": strict, "status": output["status"], "sentences": output["sentences"],
                    "not_covered": output["not_covered"], "checks": []}
         result["attempts"].append(attempt)
 
-        # Only uncovered topics, or the answer was cut off: verification is skipped
         if output["status"] == "insufficient_info":
             return {**result, "status": "insufficient_info", "sentences": [], "not_covered": output["not_covered"]}
 
-        phase(f"Verifying {len(output['sentences'])} sentences")
+        phase(f"Verifying {len(output['sentences'])} sentences")  # on_phase: Optional
+
         attempt["checks"] = verify(output["sentences"], retrieved_ids, expanded_ids, config)
+        # If all sentences passed, we are done. If not, we will retry with a stricter prompt and feedback.
         if all(row["passed"] for row in attempt["checks"]):
             if strict:
                 status = "verified_after_retry"
@@ -149,7 +160,6 @@ def format_answer(result):
     if result["status"] == "insufficient_info":
         return INSUFFICIENT_ANSWER
 
-    # Sentences without a heading are plain paragraphs; each heading starts a new bulleted group
     lines = []
     current_heading = None
     for i, s in enumerate(result["sentences"], start=1):
@@ -158,14 +168,21 @@ def format_answer(result):
             lines += [f"{s['text']} [{i}]", ""]
             continue
         if heading != current_heading:
+            # Add a blank line before a new heading, unless it's the first one
+            # Does the list already contain something? and Is the last item non-empty?
             if lines and lines[-1]:
                 lines.append("")
             lines.append(f"**{heading}**")
             current_heading = heading
+
+        # Add the sentence with its label if present, and the sentence number in brackets
         if label:
             lines.append(f"- **{label}:** {s['text']} [{i}]")
+        # If no label, just add the sentence with its number in brackets
         else:
             lines.append(f"- {s['text']} [{i}]")
+    
+    # Remove any trailing empty lines from the list before joining       
     while lines and not lines[-1]:
         lines.pop()
 

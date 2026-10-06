@@ -50,4 +50,14 @@ def search_bm25(query, k):
 
 def get_chunk(doc_id):
     # Retrieve a chunk from the corpus by its doc_id.
+    # Example: get_chunk("Act265#60e") returns
+    # {
+    #     "doc_id": "Act265#60e",
+    #     "act_name": "Employment Act 1955",
+    #     "section_number": "60e",
+    #     "section_heading": "Annual leave",
+    #     "full_text": "(1) An employee shall be entitled to paid annual leave of ...",
+    #     "references": [],
+    #     "is_deleted": False,
+    # }
     return next(c for c in corpus if c["doc_id"] == doc_id)
