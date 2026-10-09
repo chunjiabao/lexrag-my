@@ -1,6 +1,6 @@
 # Run one question through the full pipeline and print the answer, sources and check results.
 # Run from the project root with: python main.py
-# CONFIG is also the default settings for app.py.
+# CONFIG is also the default settings for app_user.py and app_dev.py.
 
 import sys
 from pathlib import Path

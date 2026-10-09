@@ -97,7 +97,7 @@ def build_feedback(checks):
 
 # Orchestrates the retrieval, expansion, generation, and verification of an answer to a query.
 def answer_query(query, method, config, on_phase=None):
-    # on_phase : Used by app.py for illustration phase
+    # on_phase : Used by app_user.py for illustration phase
     # on_phase: Optional
     def phase(name):
         if on_phase:

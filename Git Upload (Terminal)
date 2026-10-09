@@ -1,7 +1,11 @@
 git add .
-git commit -m "DESCRIBE WHAT CHANGE HERE"
+git commit -m "Validated till c5"
 git push
 
 cd C:\Users\chunj\Documents\lexrag-my
 .\venv\Scripts\Activate
-streamlit run app.py
+streamlit run app_user.py
+
+cd C:\Users\chunj\Documents\lexrag-my
+.\venv\Scripts\Activate
+streamlit run app_dev.py
