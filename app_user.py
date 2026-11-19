@@ -90,7 +90,8 @@ def run(controls=None, answer=None, answer_footer=None, after_answer=None):
     else:
         method, settings = METHOD, DEFAULTS
 
-    query = st.chat_input("e.g. How much annual leave do I get after three years?")
+    # The key lets app_dev.py's example buttons put a question into the box
+    query = st.chat_input("e.g. How much annual leave do I get after three years?", key="query")
 
     # One question at a time: no conversation history is kept
     if query:

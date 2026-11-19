@@ -3,10 +3,12 @@
 # Run from the project root with: streamlit run app_dev.py
 
 import json
+import threading
 import time
 from contextlib import contextmanager
 
 import streamlit as st
+from streamlit.runtime.scriptrunner import add_script_run_ctx, get_script_run_ctx
 
 from app_user import DEFAULTS, METHOD, load_pipeline, run
 
@@ -16,6 +18,52 @@ GENERATION_FAULTS = ["None", "Cut off", "No sentences"]
 CHECK_FAULTS = ["None", "Provenance", "Quote match", "Support"]
 FAULT_ATTEMPTS = ["First attempt only", "Retry only", "Both attempts"]
 FAULT_SENTENCES = ["All sentences", "Sentence 1 only"]
+
+# Example questions from the test set, grouped by question type (results/d1-d4, default settings).
+# In-scope ones were verified on the first attempt with the full method, every sentence passed every check, they
+# cite exactly their gold sections (faithfulness 1.0), and the answer has a heading with labelled points;
+# out-of-scope ones were refused by all four methods
+EXAMPLES = {
+    "Exact term": [
+        "What is the monetary limit on the jurisdiction of the Tribunal for Consumer Claims, and can the parties "
+        "agree to let it hear a larger claim?",
+        "On what grounds can the Commissioner revoke a data user's registration, and how long does the data user "
+        "have to surrender the certificate of registration after revocation?",
+        "Under section 12(2) of the Employment Act 1955, what is the minimum notice period for an employee who has "
+        "been employed for three years if the contract has no written notice provision, and under section 13(1) can "
+        "either party end the contract without serving that notice?",
+    ],
+    "Paraphrase": [
+        "Can I insist that a shop gives me a receipt for what I bought?",
+        "Can I tell a company to stop using personal data that I previously agreed to give them?",
+    ],
+    "Distractor": [
+        "Is a shop allowed to advertise a product at a special price when it does not actually intend to sell it "
+        "at that price?",
+        "If a company refuses my request to correct my personal data, on what grounds can it refuse, and does it "
+        "have to tell me why?",
+    ],
+    "Out of scope": [
+        "What is the minimum monthly wage an employer in Malaysia must pay?",
+        "What is the sales tax rate on a laptop I buy in a shop?",
+    ],
+}
+
+
+def fill_query(question):
+    # Puts the question in the chat box; it runs only when the user presses Enter
+    st.session_state.query = question
+
+
+def example_questions():
+    # One collapsed dropdown per question type, so the sidebar stays short
+    st.markdown("**Example questions**")
+    for group, questions in EXAMPLES.items():
+        with st.expander(group):
+            for i, question in enumerate(questions):
+                st.button(question, key=f"example_{group}_{i}", on_click=fill_query, args=(question,),
+                          width="stretch")
+    st.divider()
 
 
 def controls():
@@ -135,22 +183,46 @@ def answer_with_progress(query, method, settings):
     with st.status("Starting...", expanded=True) as status:
         start = time.perf_counter()
         current = {"name": None, "start": start}
+        # Finished phases collect in `done`; `live` under it shows the running phase and its timer
+        done = st.container()
+        live = st.empty()
+        stop = threading.Event()
+
+        def tick():
+            # The pipeline blocks the script thread during API calls, so a second thread refreshes the timer.
+            # It only rewrites the line inside the box: status.update() would collapse the box on every tick
+            while not stop.wait(0.2):
+                name, phase_start = current["name"], current["start"]
+                if name:
+                    now = time.perf_counter()
+                    live.write(f"⏳ {name}: {now - phase_start:.1f}s (total {now - start:.1f}s)")
 
         def on_phase(name):
             now = time.perf_counter()
             if current["name"]:
-                st.write(f"✓ {current['name']}: {now - current['start']:.2f}s")
+                done.write(f"✓ {current['name']}: {now - current['start']:.2f}s")
                 timings.append((current["name"], now - current["start"]))
             current["name"], current["start"] = name, now
             if name:
-                status.update(label=f"{name}...")
+                live.write(f"⏳ {name}: 0.0s (total {now - start:.1f}s)")
+                # update() without expanded collapses the box, so keep it open while running
+                status.update(label=f"{name}...", expanded=True)
 
-        faults = st.session_state.faults
-        with faults_injected(faults):
-            result = answer_query(query, method, settings, on_phase=on_phase)
-        result["faults"] = describe_faults(faults)
+        ticker = threading.Thread(target=tick, daemon=True)
+        add_script_run_ctx(ticker, get_script_run_ctx())
+        ticker.start()
+        try:
+            faults = st.session_state.faults
+            with faults_injected(faults):
+                result = answer_query(query, method, settings, on_phase=on_phase)
+            result["faults"] = describe_faults(faults)
+        finally:
+            # Stop the timer before the last update, so it cannot overwrite the final state
+            stop.set()
+            ticker.join()
         # Close the last phase
         on_phase(None)
+        live.empty()
         status.update(label=f"Done in {time.perf_counter() - start:.1f}s", state="complete", expanded=False)
     return result, timings
 
@@ -206,11 +278,29 @@ def settings_form():
 
 
 def developer_panel(result, timings, settings):
+    # A drawer pinned to the top right of the window, like a second sidebar: a "Developer" tab that opens into
+    # the stats when clicked. Opening and closing happen in the browser, so the answer is not rerun.
+    # Streamlit's expander marks its body inert while closed, which the CSS uses to widen the drawer when open
+    background = "#262730" if st.context.theme.type == "dark" else "#f0f2f6"
+    st.html(f"""<style>
+        .st-key-dev_panel {{
+            position: fixed; top: 4rem; right: 1rem; z-index: 999990;
+            width: 12rem; max-height: calc(100vh - 11rem); overflow-y: auto;
+            background-color: {background}; border-radius: 0.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+        }}
+        .st-key-dev_panel:has([data-testid="stExpanderDetails"]:not([inert])) {{
+            width: min(36rem, 45vw);
+        }}
+    </style>""")
+    with st.container(key="dev_panel"), st.expander("Developer", icon=":material/monitoring:"):
+        developer_stats(result, timings, settings)
+
+
+def developer_stats(result, timings, settings):
     from b1_bm25_only import get_chunk
     from c0_token_usage import usage_cost
 
-    st.divider()
-    st.subheader("Developer")
     if result["faults"]:
         st.warning("Fault injection active: " + "; ".join(result["faults"]))
     stats_tab, json_tab = st.tabs(["Process stats", "JSON"])
@@ -261,6 +351,7 @@ def developer_panel(result, timings, settings):
 # User shows exactly the app_user.py page; Developer adds the developer features to it
 with st.sidebar:
     mode = st.radio("Mode", ["User", "Developer"], horizontal=True)
+    example_questions()
 
 if mode == "Developer":
     run(controls=controls, answer=answer_with_progress, answer_footer=status_line, after_answer=developer_panel)
