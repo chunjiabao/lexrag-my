@@ -41,6 +41,10 @@ ANSWER_TOOL = {
 }
 
 
+SCHEMA_REMINDER = ("\n\nYour previous response was cut off or did not follow the record_answer schema. "
+                   "Call record_answer once, and keep the answer short enough to finish.")
+
+
 def check_schema(response):
     if response.stop_reason == "max_tokens":
         return None
@@ -52,21 +56,26 @@ def check_schema(response):
 def generate(query, context, config, feedback=None):
     system_prompt, user_message = build_prompt(query, context, feedback)
 
-    response = client.messages.create(
-        model=config["model"],
-        max_tokens=config["generation_max_tokens"],
-        system=system_prompt,
-        tools=[ANSWER_TOOL],
-        tool_choice={"type": "tool", "name": "record_answer"},
-        messages=[{"role": "user", "content": user_message}],
-        extra_body={"temperature": config["generation_temperature"]},
-    )
-    record_usage(response, "generation")
+    # Schema check: if it fails, send the request once more with a reminder to follow the schema
+    for reminder in [False, True]:
+        if reminder:
+            user_message += SCHEMA_REMINDER
+        response = client.messages.create(
+            model=config["model"],
+            max_tokens=config["generation_max_tokens"],
+            system=system_prompt,
+            tools=[ANSWER_TOOL],
+            tool_choice={"type": "tool", "name": "record_answer"},
+            messages=[{"role": "user", "content": user_message}],
+            extra_body={"temperature": config["generation_temperature"]},
+        )
+        record_usage(response, "generation")
+        result = check_schema(response)
+        if result is not None:
+            break
 
-   
-    result = check_schema(response)
     if result is None:
-        return {"status": "insufficient_info", "sentences": [], "not_covered": []}
+        return {"status": "generation_error", "sentences": [], "not_covered": []}
 
     if not result["sentences"]:
         return {"status": "insufficient_info", "sentences": [], "not_covered": result["not_covered"]}

@@ -1,0 +1,1632 @@
+﻿triple_id,source,method,question_id,cited_doc_id,sentence,quote,change_type,original_sentence,changed_words,section_text,label,second_label,notes
+T01,sampled,dense_only,Q08,Act265#25a,Your employer cannot unreasonably refuse your request once the Director General has approved it.,The request of the employee to the mode of payment of wages under subsection (1) shall not be unreasonably withheld by the employer upon obtaining the approval under subsection (2),,,,"(1)  Notwithstanding subsection 25(1), an employer may, upon 
+a written request of the employee, and subject to subsection (2), 
+make payment of his employee’s wages—
+
+(a)	 in legal tender; or
+
+(b)	 by cheque made payable to or to the order of the employee.
+	 (2)	 The employer shall, upon the written request of his employee 
+under subsection (1), obtain approval from the Director General 
+for the payment of wages to be paid in legal tender or by cheque.
+	 (2a)	 The Director General may impose any condition as he 
+may deem fit on the approval granted under subsection (2).
+	 (3)	 The request by the employee under subsection (1) may be 
+withdrawn by the employee at any time, by notice in writing, to 
+the employer.
+	 (4)	 The notice referred to in subsection (3) shall take effect 
+at, but not before, the end of the period of four weeks beginning 
+with the day on which the notice is given.
+	 (5)	 The request of the employee to the mode of payment 
+of wages under subsection (1) shall not be unreasonably 
+withheld by the employer upon obtaining the approval under 
+subsection (2).
+	 (6)	 Any dispute arising out of the request by the employee 
+under subsection (1) shall be referred to the Director General 
+whose decision on the matter shall be final.
+	 (7)	 Section 69 shall not apply in respect of any dispute under 
+subsection (6).",supported,,
+T02,sampled,bm25_only,Q39,Act709#45,"The Personal Data Protection Act does not apply to personal data processed by an individual only for the purposes of that individual's personal, family or household affairs, including recreational purposes.","personal data processed by an individual only for the purposes of that individual's personal, family or household affairs, including recreational purposes",,,,"(1)	 There shall be exempted from the provisions of this Act 
+personal data processed by an individual only for the purposes of 
+that individual’s personal, family or household affairs, including 
+recreational purposes.
+
+(2)	 Subject to section 46, personal data—
+
+(a)	 processed for—
+
+(i)	 the prevention or detection of crime or for the 
+purpose of investigations;
+
+(ii)	 the apprehension or prosecution of offenders; or
+
+(iii)	 the assessment or collection of any tax or duty 
+or any other imposition of a similar nature,
+
+	 shall be exempted from the General Principle, Notice 
+and Choice Principle, Disclosure Principle and 
+Access Principle and other related provisions of this 
+Act;
+
+(b)	 processed in relation to information of the physical or 
+mental health of a data subject shall be exempted from 
+the Access Principle and other related provisions of this 
+Act of which the application of the provisions to the 
+data subject would be likely to cause serious harm to 
+the physical or mental health of the data subject or any 
+other individual;
+
+(c)	 processed for preparing statistics or carrying out research 
+shall be exempted from the General Principle, Notice 
+and Choice Principle, Disclosure Principle and Access 
+Principle and other related provisions of this Act, provided 
+that such personal data is not processed for any other 
+purpose and that the resulting statistics or the results 
+of the research are not made available in a form which 
+identifies the data subject;
+
+(d)	 that is necessary for the purpose of or in connection with 
+any order or judgement of a court shall be exempted 
+from the General Principle, Notice and Choice Principle, 
+Disclosure Principle and Access Principle and other 
+related provisions of this Act;
+
+(e)	 processed for the purpose of discharging regulatory 
+functions shall be exempted from the General Principle, 
+Notice and Choice Principle, Disclosure Principle and 
+Access Principle and other related provisions of this Act 
+if the application of those provisions to the personal 
+data would be likely to prejudice the proper discharge 
+of those functions; or
+
+(f)	 processed only for journalistic, literary or artistic purposes 
+shall be exempted from the General Principle, Notice 
+and Choice Principle, Disclosure Principle, Retention 
+Principle, Data Integrity Principle and Access Principle 
+and other related provisions of this Act, provided that—
+
+(i)	 the processing is undertaken with a view to the 
+publication by any person of the journalistic, 
+literary or artistic material;
+
+(ii)	 the data user reasonably believes that, taking into 
+account the special importance of public interest 
+in freedom of expression, the publication would 
+be in the public interest; and
+
+(iii)	 the data user reasonably believes that in all the 
+circumstances, compliance with the provision 
+in respect of which the exemption is claimed 
+is incompatible with the journalistic, literary or 
+artistic purposes.",supported,,
+T03,sampled,dense_only,Q08,Act265#25a,"You can withdraw your request at any time by giving written notice to your employer, but the withdrawal takes effect only after four weeks from the date you give the notice.","The request by the employee under subsection (1) may be withdrawn by the employee at any time, by notice in writing, to the employer. The notice referred to in subsection (3) shall take effect at, but not before, the end of the period of four weeks beginning with the day on which the notice is given",,,,"(1)  Notwithstanding subsection 25(1), an employer may, upon 
+a written request of the employee, and subject to subsection (2), 
+make payment of his employee’s wages—
+
+(a)	 in legal tender; or
+
+(b)	 by cheque made payable to or to the order of the employee.
+	 (2)	 The employer shall, upon the written request of his employee 
+under subsection (1), obtain approval from the Director General 
+for the payment of wages to be paid in legal tender or by cheque.
+	 (2a)	 The Director General may impose any condition as he 
+may deem fit on the approval granted under subsection (2).
+	 (3)	 The request by the employee under subsection (1) may be 
+withdrawn by the employee at any time, by notice in writing, to 
+the employer.
+	 (4)	 The notice referred to in subsection (3) shall take effect 
+at, but not before, the end of the period of four weeks beginning 
+with the day on which the notice is given.
+	 (5)	 The request of the employee to the mode of payment 
+of wages under subsection (1) shall not be unreasonably 
+withheld by the employer upon obtaining the approval under 
+subsection (2).
+	 (6)	 Any dispute arising out of the request by the employee 
+under subsection (1) shall be referred to the Director General 
+whose decision on the matter shall be final.
+	 (7)	 Section 69 shall not apply in respect of any dispute under 
+subsection (6).",supported,,
+T04,altered,bm25_only,Q06,Act265#41a,"Your employer can fire you because you are pregnant, except on specific grounds.","Where a female employee is pregnant or is suffering from an illness arising out of her pregnancy, it shall be an offence for her employer to terminate her services or give her notice of termination of service, except on the grounds of",negation,"Your employer cannot fire you because you are pregnant, except on specific grounds.",cannot -> can,"(1)  Where a female employee is pregnant or is suffering 
+from an illness arising out of her pregnancy, it shall be an offence 
+for her employer to terminate her services or give her notice of 
+termination of service, except on the grounds of—
+
+(a)	 wilful breach of a condition of the contract of service 
+under subsection 13(2);
+
+(b)	 misconduct under subsection 14(1); or
+
+(c)	 closure of the employer’s business.
+	 (2)	 Where the service of a female employee under subsection (1) 
+is terminated, the burden of proving that such termination is not 
+on the ground of her pregnancy or on the ground of illness arising 
+out of her pregnancy, shall rest on the employer.",not_supported,,"The section makes it an ""Offence"" to terminate a pregnant employee except on specific grounds but the sentence says the employer can fire her."
+T05,altered,hybrid_no_rerank,Q35,Act709#43,"You can stop a company from sending you marketing messages by giving written notice to the company requiring it to cease or not begin processing your personal data for direct marketing purposes, unless the company is dissatisfied with the notice.","A data subject may, at any time by notice in writing to a data user, require the data user at the end of such period as is reasonable in the circumstances to cease or not to begin processing his personal data for purposes of direct marketing.",condition,You can stop a company from sending you marketing messages by giving written notice to the company requiring it to cease or not begin processing your personal data for direct marketing purposes.,"purposes. -> purposes, unless the company is dissatisfied with the notice.","(1)	 A data subject may, at any time by notice in writing to 
+a data user, require the data user at the end of such period as is 
+reasonable in the circumstances to cease or not to begin processing 
+his personal data for purposes of direct marketing.
+
+(2)	 Where the data subject is dissatisfied with the failure of the 
+data user to comply with the notice, whether in whole or in part, 
+under subsection (1), the data subject may submit an application 
+to the Commissioner to require the data user to comply with the 
+notice.
+	 (3)	 Where the Commissioner is satisfied that the application 
+of the data subject under subsection (2) is justified or justified to 
+any extent, the Commissioner may require the data user to take 
+such steps for complying with the notice.
+	 (4)	 A data user who fails to comply with the requirement of 
+the Commissioner under subsection (3) commits an offence and 
+shall, on conviction, be liable to a fine not exceeding two hundred 
+thousand ringgit or to imprisonment for a term not exceeding two 
+years or to both.
+	 (5)	 For the purposes of this section, “direct marketing” means 
+the communication by whatever means of any advertising or 
+marketing material which is directed to particular individuals.",not_supported,,"""unless the company is dissatisfied with the notice"" is an invented exception"
+T06,sampled,full,Q36,Act709#130,"Yes, it is an offence to sell personal data that was collected without the consent of the data user.",A person who sells personal data commits an offence if he has collected the personal data in contravention of subsection (1).,,,,"(1)	 A person shall not knowingly or recklessly, without 
+the consent of the data user—
+
+(a)	 collect or disclose personal data that is held by the data 
+user; or
+
+(b)	 procure the disclosure to another person of personal data 
+that is held by the data user.
+	 (2)	 Subsection (1) shall not apply to a person who shows—
+
+(a)	 that the collecting or disclosing of personal data or 
+procuring the disclosure of personal data—
+
+(i)	 was necessary for the purpose of preventing 
+or detecting a crime or for the purpose of 
+investigations; or
+
+(ii)	 was required or authorized by or under any law 
+or by the order of a court;
+
+(b)	 that he acted in the reasonable belief that he had in law 
+the right to collect or disclose the personal data or to 
+procure the disclosure of the personal data to the other 
+person;
+
+(c)	 that he acted in the reasonable belief that he would have 
+had the consent of the data user if the data user had 
+known of the collecting or disclosing of personal data 
+or procuring the disclosure of personal data and the 
+circumstances of it; or
+
+(d)	 that the collecting or disclosing of personal data or procuring 
+the disclosure of personal data was justified as being 
+in the public interest in circumstances as determined by 
+the Minister.
+
+(3)	 A person who collects or discloses personal data or procures 
+the disclosure of personal data in contravention of subsection (1) 
+commits an offence.
+	 (4)	 A person who sells personal data commits an offence 
+if he has collected the personal data in contravention of 
+subsection (1).
+	 (5)	 A person who offers to sell personal data commits an 
+offence if—
+
+(a)	 he has collected the personal data in contravention of 
+subsection (1); or
+
+(b)	 he subsequently collects the personal data in contravention 
+of subsection (1).
+	 (6)	 For the purposes of subsection (5), an advertisement 
+indicating that personal data is or may be for sale is an offer to 
+sell the personal data.
+	 (7)	 A person who commits an offence under this section shall, 
+upon conviction, be liable to a fine not exceeding five hundred 
+thousand ringgit or to imprisonment for a term not exceeding 
+three years or to both.",supported,,
+T07,sampled,full,Q43,Act599#32,"Where goods are supplied to a consumer, there is an implied guarantee that the goods are of acceptable quality.",Where goods are supplied to a consumer there shall be implied a guarantee that the goods are of acceptable quality.,,,,"(1)	 Where goods are supplied to a consumer there shall be 
+implied a guarantee that the goods are of acceptable quality. 
+	 (2)	 For the purposes of subsection (1), goods shall be deemed 
+to be of acceptable quality—
+
+(a)	 if they are—
+
+(i)	 fit for all the purposes for which goods of the 
+type in question are commonly supplied;
+
+(ii)	 acceptable in appearance and finish;
+
+(iii)	 free from minor defects;
+
+(iv)	 safe; and
+
+(v)	 durable; and
+
+(b)	 a reasonable consumer fully acquainted with the state and 
+condition of the goods, including any hidden defects, 
+would regard the goods as acceptable having regard to—
+
+(i)	 the nature of the goods;
+
+(ii)	 the price;
+
+(iii)	 any statements made about the goods on any 
+packaging or label on the goods;
+
+(iv)	 any representation made about the goods by the 
+supplier or the manufacturer; and
+
+(v)	 all other relevant circumstances of the supply of 
+the goods.
+
+(3)	 Where any defects in the goods have been specifically 
+drawn to the consumer’s attention before he agrees to the supply, 
+then, the goods shall not be deemed to have failed to comply 
+with the implied guarantee as to acceptable quality by reason 
+only of those defects. 
+	 (4)	 Where goods are displayed for sale or hire, the defects 
+that are to be treated as having been specifically drawn to the 
+consumer’s attention for the purposes of subsection (3) shall be 
+defects disclosed on a written notice displayed with the goods. 
+	 (5)	 Goods shall not be deemed to have failed to comply with 
+the implied guarantee as to acceptable quality if—
+
+(a)	 the goods have been used in a manner or to an extent 
+which is inconsistent with the manner or extent of use 
+that a reasonable consumer would expect to obtain from 
+the goods; and
+
+(b)	 the goods would have complied with the implied guarantee 
+as to acceptable quality if they had not been used in 
+that manner or to that extent.
+	 (6)	 A reference in subsections (3) and (4) to a defect is a 
+reference to any failure of the goods to comply with the implied 
+guarantee as to acceptable quality.",supported,,
+T08,altered,dense_only,Q16,Act599#15,"A supplier may describe goods as limited only if their edition, printing, minting, crafting or production is restricted to a pre-determined maximum quantity.","No person shall, in supplying or offering to supply goods for sale to consumers, describe the goods as limited unless their edition, printing, minting, crafting or production is restricted to—(a) a pre-determined maximum quantity; or (b) the actual quantity ordered or subscribed to within a specified and reasonably short period of time.",condition,"A supplier may describe goods as limited only if their edition, printing, minting, crafting or production is restricted to either a pre-determined maximum quantity or the actual quantity ordered or subscribed to within a specified and reasonably short period of time.",removed: either | quantity or the actual quantity ordered or subscribed to within a specified and reasonably short period of time. -> quantity.,"(1)	 No person shall, in supplying or offering to supply goods 
+for sale to consumers, describe the goods as limited unless their 
+edition, printing, minting, crafting or production is restricted to—
+
+(a)	 a pre-determined maximum quantity; or
+
+(b)	 the actual quantity ordered or subscribed to within a 
+specified and reasonably short period of time.
+
+(2)	 A claim that goods are limited shall state clearly—
+
+(a)	 the maximum quantity of goods which are offered for 
+sale; and
+
+(b)	 the specific time period or dates for which the goods are 
+offered for sale.
+	 (3)	 The statements required under subsection (2) shall be 
+conspicuously placed near the claim.",not_supported,,"Missing the alternative ""the actual quantity ordered or subscribed to within a 
+specified and reasonably short period of time"""
+T09,altered,full,Q44,Act709#40,A healthcare professional may also process sensitive personal data without explicit consent if the processing is necessary to protect the vital interests of the employee or another person in circumstances where consent cannot be given or reasonably obtained.,"the processing is necessary in order to protect the vital interests of the data subject or another person, in a case where consent cannot be given by or on behalf of the data subject; or the data user cannot reasonably be expected to obtain the consent of the data subject",party,An employer may also process sensitive personal data without explicit consent if the processing is necessary to protect the vital interests of the employee or another person in circumstances where consent cannot be given or reasonably obtained.,An employer -> A healthcare professional,"(1)	 Subject to subsection (2) and section 5, a data user shall 
+not process any sensitive personal data of a data subject except 
+in accordance with the following conditions:
+
+(a)	 the data subject has given his explicit consent to the 
+processing of the personal data;
+
+(b)	 the processing is necessary—
+
+(i)	 for the purposes of exercising or performing 
+any right or obligation which is conferred or 
+imposed by law on the data user in connection 
+with employment;
+
+(ii)	 in order to protect the vital interests of the data 
+subject or another person, in a case where—
+
+(A)	 consent cannot be given by or on behalf 
+of the data subject; or
+
+(B)	
+the data user cannot reasonably be 
+expected to obtain the consent of the 
+data subject;
+
+(iii)	 in order to protect the vital interests of another 
+person, in a case where consent by or on 
+behalf of the data subject has been unreasonably 
+withheld;
+
+(iv)	 for medical purposes and is undertaken by—
+
+(A)	 a healthcare professional; or
+
+(B)	
+a person who in the circumstances owes a 
+duty of confidentiality which is equivalent 
+to that which would arise if that person 
+were a healthcare professional;
+
+(v)	 for the purpose of, or in connection with, any 
+legal proceedings;
+
+(vi)	 for the purpose of obtaining legal advice;
+
+(vii)	 for the purposes of establishing, exercising or 
+defending legal rights;
+
+(viii)	 for the administration of justice;
+
+(ix)	 for the exercise of any functions conferred on 
+any person by or under any written law; or
+
+(x)	 for any other purposes as the Minister thinks fit; 
+or
+
+(c)	 the information contained in the personal data has been 
+made public as a result of steps deliberately taken by 
+the data subject.
+	 (2)	 The Minister may by order published in the Gazette 
+exclude the application of subparagraph (1)(b)(i), (viii) or (ix) 
+in such cases as may be specified in the order, or provide that, 
+in such cases as may be specified in the order, the condition 
+in subparagraph (1)(b)(i), (viii) or (ix) is not to be regarded as 
+satisfied unless such further conditions as may be specified in 
+the order are also satisfied.
+
+(3)	 A person who contravenes subsection (1) commits an 
+offence and shall, on conviction, be liable to a fine not exceeding 
+two hundred thousand ringgit or to imprisonment for a term not 
+exceeding two years or to both.
+	 (4)	 For the purposes of this section—
+	 “medical purposes” includes the purposes of preventive medicine, 
+medical diagnosis, medical research, rehabilitation and the provision 
+of care and treatment and the management of healthcare services;
+	 “healthcare services” has the meaning assigned to it in the 
+Private Healthcare Facilities and Services Act 1998 [Act 586];
+	 “healthcare professional” means a medical practitioner, dental 
+practitioner, pharmacist, clinical psychologist, nurse, midwife, 
+medical assistant, physiotherapist, occupational therapist and other 
+allied healthcare professionals and any other person involved in 
+the giving of medical, health, dental, pharmaceutical and any other 
+healthcare services under the jurisdiction of the Ministry of Health.",not_supported,,"section text mentioned ""employee"" in general, not a haelthcare professional"
+T10,altered,hybrid_no_rerank,Q32,Act709#18,"However, the Commissioner must revoke the registration unless the Commissioner is satisfied that, after giving the data user an opportunity to make any written representation, the registration should be revoked.","the Commissioner shall not revoke the registration of a data user unless the Commissioner is satisfied that, after giving the data user an opportunity of making any representation in writing he may wish to make, the registration should be revoked.",negation,"However, the Commissioner must not revoke the registration unless the Commissioner is satisfied that, after giving the data user an opportunity to make any written representation, the registration should be revoked.",removed: not,"(1)	 The Commissioner may revoke the registration of a data 
+user if the Commissioner is satisfied that—
+
+(a)	 the data user has failed to comply with any of the 
+provisions of this Act;
+
+(b)	 the data user has failed to comply with any conditions or 
+restrictions imposed upon the issuance of the certificate 
+of registration;
+
+(c)	 the issuance of the certificate of registration was induced 
+by a false representation of fact by the data user; or
+
+(d)	 the data user has ceased to carry on the processing of 
+personal data.
+	 (2)	 Notwithstanding subsection (1), the Commissioner shall not 
+revoke the registration of a data user unless the Commissioner 
+is satisfied that, after giving the data user an opportunity of 
+making any representation in writing he may wish to make, the 
+registration should be revoked.
+	 (3)	 Where the registration of the data user is revoked, the 
+Commissioner shall issue a notice of revocation of registration to 
+the data user, and the certificate of registration issued in respect 
+of such registration shall have no effect upon service of the notice 
+of revocation of registration.
+
+(4)	 A data user whose registration has been revoked under this 
+section and who continues to process personal data thereafter 
+commits an offence and shall, on conviction, be liable to a fine 
+not exceeding five hundred thousand ringgit or to imprisonment 
+for a term not exceeding three years or to both.",not_supported,,Section say SHALL NOT revoke the registration but the sentence written as MUST revoke
+T11,sampled,bm25_only,Q17,Act599#44,A failure to comply with a guarantee is of substantial character when it meets one of four criteria set out in the Act.,a failure to comply with a guarantee shall be of a substantial character where,,,,"For the purposes of paragraph 41(1)(b), a failure to comply 
+with a guarantee shall be of a substantial character where—
+
+(a)	 the goods would not have been acquired by a reasonable 
+consumer fully acquainted with the nature and extent of 
+the failure;
+
+(b)	 the goods depart in one or more significant respects 
+from the description by which they were supplied or, 
+where they were supplied by reference to a sample or 
+demonstration model, from the sample or demonstration 
+model;
+
+(c)	 the goods are—
+
+(i)	 substantially unfit for a purpose for which goods 
+of the type in question are commonly supplied; 
+or
+
+(ii)	 where subsection 33(1) applies, unfit for a 
+particular purpose made known to the supplier 
+or represented by the supplier to be a purpose 
+for which the goods would be fit,
+
+	 and the goods cannot easily and within a reasonable time 
+be remedied to make them fit for such purpose; or
+
+(d)	 the goods are not of acceptable quality within the meaning 
+of section 32 because they are unsafe.",supported,,
+T12,altered,full,Q11,Act265#24,"If interest is charged on the advance, the deduction can only be made if you request it in writing and the Director General gives prior written permission and the amount does not exceed fifty per centum of your monthly wages.",deductions in respect of repayments of advances of wages made to an employee under section 22 where interest is levied on the advances and deductions in respect of the payments of the interest so levied,condition,"If interest is charged on the advance, the deduction can only be made if you request it in writing and the Director General gives prior written permission.",permission. -> permission and the amount does not exceed fifty per centum of your monthly wages.,"(1)	 No deductions shall be made by an employer from 
+the wages of an employee otherwise than in accordance with 
+this Act.
+
+(2)	 It shall be lawful for an employer to make the following 
+deductions:
+
+(a)	 deductions to the extent of any overpayment of wages 
+made during the immediately preceding three months 
+from the month in which deductions are to be made, 
+by the employer to the employee by the employer’s 
+mistake;
+
+(b)	 deductions for the indemnity due to the employer by the 
+employee under subsection 13(1);
+
+(c)	 deductions for the recovery of advances of wages made 
+under section 22 provided no interest is charged on the 
+advances; and
+
+(d)	 deductions authorized by any other written law.
+	 (3)	 The following deductions shall only be made at the request 
+in writing of the employee:
+
+(a)	 deductions in respect of the payments to a registered 
+trade union or co-operative thrift and loan society of 
+any sum of money due to the trade union or society by 
+the employee on account of entrance fees, subscriptions, 
+instalments and interest on loans, or other dues; and
+
+(b)	 deductions in respect of payments for any shares of the 
+employer’s business offered for sale by the employer 
+and purchased by the employee.
+	 (4)	 The following deductions shall not be made except at the 
+request in writing of the employee and with the prior permission 
+in writing of the Director General:
+
+(a)	 deductions in respect of payments into any superannuation 
+scheme, provident fund, employer’s welfare scheme 
+or insurance scheme established for the benefit of the 
+employee;
+
+(b)	 deductions in respect of repayments of advances of wages 
+made to an employee under section 22 where interest 
+is levied on the advances and deductions in respect of 
+the payments of the interest so levied;
+
+(c)	 deductions in respect of payments to a third party on 
+behalf of the employee;
+
+(d)	 deductions in respect of payments for the purchase by 
+the employee of any goods of the employer’s business 
+offered for sale by the employer; and
+
+(e)	 deductions in respect of the rental for accommodation 
+and the cost of services, food and meals provided by the 
+employer to the employee at the employee’s request or 
+under the terms of the employee’s contract of service.
+	 (5)	 The Director General shall not permit any deduction for 
+payments under paragraph (4)(e) unless he is satisfied that the 
+provision of the accommodation, services, food or meals is for 
+the benefit of the employee.
+	 (6)	 Where an employee obtains foodstuff, provisions or other 
+goods on credit from a shop the business of which is carried on by 
+a co-operative society registered under the Co-operative Societies 
+Act 1993 [Act 502], it shall be lawful for his employer, at the 
+request in writing of the employee and with the agreement of the 
+manager of the co-operative shop, to make deductions from the 
+wages of the employee of an amount not exceeding the amount 
+of the credit and to pay the amount so deducted to the manager 
+in satisfaction of the employee’s debt.
+	 (7)	 Notwithstanding subsections (2), (3), (4) and (6) the Director 
+General, on an application by an employer or a specified class or 
+classes of employers, may permit any deduction for a specified 
+purpose from the wages of an employee or a specified class or 
+classes of employees subject to such conditions as he may deem 
+fit to impose.
+	 (8)	 The total of any amounts deducted under this section from 
+the wages of an employee in respect of any one month shall not 
+exceed fifty per centum of the wages earned by that employee 
+in that month.
+	 (9)	 The limitation in subsection (8) shall not apply to—
+
+(a)	 deductions from the indemnity payable by an employer 
+to an employee under subsection 13(1);
+
+(b)	 deductions from the final payment of the wages of an 
+employee for any amount due to the employer and 
+remaining unpaid by the employee on the termination 
+of the employee’s contract of service; and
+
+(c)	 deductions for the repayment of a housing loan which, 
+subject to the prior permission in writing of the Director 
+General, may exceed the fifty per centum limit by an 
+additional amount of not more than twenty-five per 
+centum of the wages earned.",not_supported,,""" and the amount does not exceed fifty per centum of your monthly wages"" is not part of section text"
+T13,sampled,hybrid_no_rerank,Q11,Act265#24,"Your employer can deduct an unpaid salary advance from your wages, but only if no interest is charged on the advance.",deductions for the recovery of advances of wages made under section 22 provided no interest is charged on the advances,,,,"(1)	 No deductions shall be made by an employer from 
+the wages of an employee otherwise than in accordance with 
+this Act.
+
+(2)	 It shall be lawful for an employer to make the following 
+deductions:
+
+(a)	 deductions to the extent of any overpayment of wages 
+made during the immediately preceding three months 
+from the month in which deductions are to be made, 
+by the employer to the employee by the employer’s 
+mistake;
+
+(b)	 deductions for the indemnity due to the employer by the 
+employee under subsection 13(1);
+
+(c)	 deductions for the recovery of advances of wages made 
+under section 22 provided no interest is charged on the 
+advances; and
+
+(d)	 deductions authorized by any other written law.
+	 (3)	 The following deductions shall only be made at the request 
+in writing of the employee:
+
+(a)	 deductions in respect of the payments to a registered 
+trade union or co-operative thrift and loan society of 
+any sum of money due to the trade union or society by 
+the employee on account of entrance fees, subscriptions, 
+instalments and interest on loans, or other dues; and
+
+(b)	 deductions in respect of payments for any shares of the 
+employer’s business offered for sale by the employer 
+and purchased by the employee.
+	 (4)	 The following deductions shall not be made except at the 
+request in writing of the employee and with the prior permission 
+in writing of the Director General:
+
+(a)	 deductions in respect of payments into any superannuation 
+scheme, provident fund, employer’s welfare scheme 
+or insurance scheme established for the benefit of the 
+employee;
+
+(b)	 deductions in respect of repayments of advances of wages 
+made to an employee under section 22 where interest 
+is levied on the advances and deductions in respect of 
+the payments of the interest so levied;
+
+(c)	 deductions in respect of payments to a third party on 
+behalf of the employee;
+
+(d)	 deductions in respect of payments for the purchase by 
+the employee of any goods of the employer’s business 
+offered for sale by the employer; and
+
+(e)	 deductions in respect of the rental for accommodation 
+and the cost of services, food and meals provided by the 
+employer to the employee at the employee’s request or 
+under the terms of the employee’s contract of service.
+	 (5)	 The Director General shall not permit any deduction for 
+payments under paragraph (4)(e) unless he is satisfied that the 
+provision of the accommodation, services, food or meals is for 
+the benefit of the employee.
+	 (6)	 Where an employee obtains foodstuff, provisions or other 
+goods on credit from a shop the business of which is carried on by 
+a co-operative society registered under the Co-operative Societies 
+Act 1993 [Act 502], it shall be lawful for his employer, at the 
+request in writing of the employee and with the agreement of the 
+manager of the co-operative shop, to make deductions from the 
+wages of the employee of an amount not exceeding the amount 
+of the credit and to pay the amount so deducted to the manager 
+in satisfaction of the employee’s debt.
+	 (7)	 Notwithstanding subsections (2), (3), (4) and (6) the Director 
+General, on an application by an employer or a specified class or 
+classes of employers, may permit any deduction for a specified 
+purpose from the wages of an employee or a specified class or 
+classes of employees subject to such conditions as he may deem 
+fit to impose.
+	 (8)	 The total of any amounts deducted under this section from 
+the wages of an employee in respect of any one month shall not 
+exceed fifty per centum of the wages earned by that employee 
+in that month.
+	 (9)	 The limitation in subsection (8) shall not apply to—
+
+(a)	 deductions from the indemnity payable by an employer 
+to an employee under subsection 13(1);
+
+(b)	 deductions from the final payment of the wages of an 
+employee for any amount due to the employer and 
+remaining unpaid by the employee on the termination 
+of the employee’s contract of service; and
+
+(c)	 deductions for the repayment of a housing loan which, 
+subject to the prior permission in writing of the Director 
+General, may exceed the fifty per centum limit by an 
+additional amount of not more than twenty-five per 
+centum of the wages earned.",supported,,
+T14,sampled,full,Q01,Act265#60fa,Paternity leave is restricted to five confinements irrespective of the number of spouses.,The paternity leave under subsection (1) shall be restricted to five confinements irrespective of the number of spouses,,,,"(1)  Subject to subsection (3), a married male employee 
+shall be entitled to a paid paternity leave at his ordinary rate of 
+pay for a period of seven consecutive days in respect of each 
+confinement.
+	 (2)	 The paternity leave under subsection (1) shall be restricted 
+to five confinements irrespective of the number of spouses.
+
+(3)	 A married male employee shall be entitled to paternity 
+leave from his employer if—
+
+(a)	 he has been employed by the same employer at least 
+twelve months immediately before the commencement 
+of such paternity leave; and
+
+(b)	 he has notified his employer of the pregnancy of his 
+spouse at least thirty days from the expected confinement 
+or as early as possible after the birth.",supported,,
+T15,sampled,dense_only,Q03,Act265#60d,"Under section 60d, every employee is entitled to paid holidays on eleven gazetted public holidays in any calendar year, five of which must be specific mandatory holidays.","Every employee shall be entitled to a paid holiday at his ordinary rate of pay on the following days in any one calendar year: (a) on eleven of the gazetted public holidays, five of which shall be",,,,"(1)  Every employee shall be entitled to a paid holiday at his 
+ordinary rate of pay on the following days in any one calendar 
+year:
+
+(a)	 on eleven of the gazetted public holidays, five of which 
+shall be—
+
+(i)	 the National Day;
+
+(ii)	 the Birthday of the Yang di-Pertuan Agong;
+
+(iii)	 the Birthday of the Ruler or the Yang di-Pertua 
+Negeri, as the case may be, of the State in which 
+the employee wholly or mainly works under his 
+contract of service, or the Federal Territory Day, 
+if the employee wholly or mainly works in the 
+Federal Territory;
+
+(iv)	 the Workers’ Day; and
+
+(v)	 Malaysia Day; and
+
+(b)	 on any day appointed as a public holiday for that 
+particular year under section 8 of the Holidays Act 1951 
+[Act 369]:
+
+	 Provided that if any of the public holidays referred 
+to in paragraphs (a) and (b) falls on—
+
+(i)	 a rest day; or
+
+(ii)	 any other public holiday referred to in paragraphs 
+(a) and (b),
+the working day following immediately the rest day or the other 
+public holiday shall be a paid holiday in substitution of the first 
+mentioned public holiday.
+
+(1a)	 The employer shall exhibit conspicuously at the place 
+of employment before the commencement of each calendar 
+year a notice specifying the remaining six gazetted public 
+holidays provided for in paragraph (1)(a) in respect of which 
+his employees shall be entitled to paid holidays under 
+paragraph (1)(a):
+	 Provided that by agreement between the employer and an 
+employee any other day or days may be substituted for one or 
+more of the remaining six gazetted public holidays provided for 
+in paragraph (1)(a):
+	 And provided further that the employer may grant the employee 
+any other day as a paid public holiday in substitution for any of 
+the public holidays referred to in paragraph (1)(b).
+	 (1b)	 Where any of the public holidays or any other day 
+substituted therefor as provided in subsection (1) or (1a) falls 
+within the period during which an employee is on sick leave or 
+annual leave to which the employee is entitled under this Act, 
+or falls during the period of temporary disablement under the 
+Workmen’s Compensation Act 1952, or under the Employees 
+Social Security Act 1969, the employer shall grant another day 
+as a paid holiday in substitution for such public holiday or the 
+day substituted therefor.
+	 (2)	 Any employee who absents himself from work on the 
+working day immediately preceding or immediately succeeding 
+a public holiday or two or more consecutive public holidays or 
+any day or days substituted therefore under this section without 
+the prior consent of his employer shall not be entitled to any 
+holiday pay for such holiday or consecutive holidays unless he 
+has a reasonable excuse for such absence.
+	 (2a)	 An employee on a monthly rate of pay shall be deemed 
+to have received his holiday pay if he receives from his employer 
+his monthly wages, without abatement (other than as provided 
+under subsection (2)) in respect of the holiday, for the month in 
+which the holiday falls.
+
+(3)	 (a)	 Notwithstanding subsections (1), (1a) and (1b), any 
+employee may be required by his employer to work on any paid 
+holiday to which he is entitled under the said subsections and in 
+such event he shall, in addition to the holiday pay he is entitled 
+to for that day—
+
+(i)	 in the case of an employee employed on a monthly, 
+weekly, daily, hourly, or other similar rate of pay, 
+be paid two days’ wages at the ordinary rate of 
+pay; or
+
+(ii)	 in the case of an employee employed on piece rates, 
+be paid twice the ordinary rate per piece,
+regardless that the period of work done on that day is less than 
+the normal hours of work.
+	 (aa)	 For any overtime work carried out by an employee referred 
+to in subparagraph (a)(i) in excess of the normal hours of work 
+on a paid public holiday, the employee shall be paid at a rate 
+which is not less than three times his hourly rate of pay.
+	 (aaa)	 For any overtime work carried out by an employee 
+referred to in subparagraph (a)(ii) in excess of the normal hours 
+of work on any paid holiday, the employee shall be paid not less 
+than three times the ordinary rate per piece.
+	 (b)	 An employee who works on a holiday shall be entitled to 
+a travelling allowance for that day if payable to him under the 
+terms of his agreement with his employer but such employee shall 
+not be entitled under this subsection to receive an increased rate 
+of any housing allowance or food allowance.
+	 (4)	 For the purposes of this section if any such holiday falls 
+on a half working day, the ordinary rate of pay payable shall be 
+that of a full working day.",supported,,
+T16,sampled,hybrid_no_rerank,Q38,Act709#8,"A company cannot share your personal data for a purpose other than the purpose it was collected for or a directly related purpose, unless one of several specific circumstances applies.","no personal data shall, without the consent of the data subject, be disclosed for any purpose other than the purpose for which the personal data was to be disclosed at the time of collection of the personal data; or a purpose directly related to the purpose",,,,"Subject to section 39, no personal data shall, without the 
+consent of the data subject, be disclosed—
+
+(a)	 for any purpose other than—
+
+(i)	 the purpose for which the personal data was to 
+be disclosed at the time of collection of the 
+personal data; or
+
+(ii)	 a purpose directly related to the purpose referred 
+to in subparagraph (i); or
+
+(b)	 to any party other than a third party of the class of third 
+parties as specified in paragraph 7(1)(e).",supported,,"Kept as supported (round 1 label). The sentence is a fair paraphrase: section 8 opens with ""Subject to section 39"", which signals that exceptions exist. The judge's not_supported verdict is also defensible under the strict single-section rule, because the exceptions themselves are listed in section 39, which the sentence does not cite. Counted as a false positive: it causes a retry or refusal, not a wrong answer shown to the user."
+T17,altered,hybrid_no_rerank,Q38,Act709#39,"The data subject can disclose your personal data for a different purpose if the disclosure is justified as being in the public interest, as determined by the Minister.",the disclosure was justified as being in the public interest in circumstances as determined by the Minister,party,"The company can disclose your personal data for a different purpose if the disclosure is justified as being in the public interest, as determined by the Minister.",company -> data subject,"Notwithstanding section 8, personal data of a data subject 
+may be disclosed by a data user for any purpose other than the 
+purpose for which the personal data was to be disclosed at the 
+time of its collection or any other purpose directly related to that 
+purpose, only under the following circumstances:
+
+(a)	 the data subject has given his consent to the disclosure;
+
+(b)	 the disclosure—
+
+(i)	 is necessary for the purpose of preventing or detecting 
+a crime, or for the purpose of investigations; or
+
+(ii)	 was required or authorized by or under any law 
+or by the order of a court;
+
+(c)	 the data user acted in the reasonable belief that he had in 
+law the right to disclose the personal data to the other 
+person;
+
+(d)	 the data user acted in the reasonable belief that he would 
+have had the consent of the data subject if the data 
+subject had known of the disclosing of the personal data 
+and the circumstances of such disclosure; or
+
+(e)	 the disclosure was justified as being in the public interest 
+in circumstances as determined by the Minister.",not_supported,,The data USER but not the data subject may be disclose under the specified public interest exception
+T18,altered,bm25_only,Q07,Act265#37,The eligible period means a period of paternity leave of not less than ninety-eight consecutive days.,eligible period means a period of maternity leave of not less than ninety-eight consecutive days,party,The eligible period means a period of maternity leave of not less than ninety-eight consecutive days.,maternity -> paternity,"(1)  (a)  Every female employee shall be entitled—
+
+(i)	 to maternity leave for an eligible period in respect of 
+each confinement; and
+
+(ii)	 subject to this Part, to receive from her employer a 
+maternity allowance to be calculated or prescribed as 
+provided in subsection (2) in respect of the eligible 
+period.
+
+(aa)	 Where a female employee is entitled to maternity leave 
+under subparagraph (a)(i), whether or not she is entitled to 
+receive maternity allowance from her employer for the eligible 
+period under paragraph (c), or whether or not she has fulfilled 
+the conditions set out in paragraph (2)(a), she may, with the 
+consent of her employer, commence work at any time during the 
+eligible period if she has been certified fit to resume work by a 
+registered medical practitioner.
+
+(b)	 Subject to section 40, maternity leave shall not commence 
+earlier than a period of thirty days immediately preceding the 
+confinement of a female employee or later than the day immediately 
+following her confinement:
+	 Provided that where a medical officer or the registered medical 
+practitioner appointed by the employer certifies that the female 
+employee as a result of her advanced state of pregnancy is 
+unable to perform her duties satisfactorily, the employee may be 
+required to commence her maternity leave at any time during a 
+period of fourteen days preceding the date of her confinement as 
+determined in advance by the medical officer or the registered 
+medical practitioner appointed by the employer.
+	 (bb)	 Where a female employee abstains from work to commence 
+her maternity leave on a date earlier than the period of thirty 
+days immediately preceding her confinement, such abstention shall 
+not be treated as maternity leave and she shall not be entitled 
+to any maternity allowance in respect of the days during which 
+she abstains from work in excess of the period of thirty days 
+immediately preceding her confinement.
+
+(c)	 Notwithstanding subparagraph (a)(ii), a female employee 
+shall not be entitled to any maternity allowance if at the time of 
+her confinement she has five or more surviving children.
+
+(d)	 For the purposes of this Part—
+
+(i)	 “children” means all natural children, irrespective of age; 
+and
+
+(ii)	 “eligible period” means a period of maternity leave of 
+not less than *ninety-eight consecutive days.
+
+(2)  (a)  A female employee shall be entitled to receive maternity 
+allowance for the eligible period from her employer if—
+
+(i)	 she has been employed by the employer for a period 
+of, or periods amounting in the aggregate to, not less 
+than ninety days during the nine months immediately 
+before her confinement; and
+
+(ii)	 she has been employed by the employer at any time in 
+the four months immediately before her confinement;
+
+(b)	 A female employee who is eligible for maternity allowance 
+under paragraph (1)(a) shall be entitled to receive from the employer 
+for each day of the eligible period a maternity allowance at her 
+ordinary rate of pay for one day, or at the rate prescribed by the 
+Minister under paragraph 102(2)(c), whichever is the greater.
+
+(c)	 A female employee employed on a monthly rate of pay 
+shall be deemed to have received her maternity allowance if she 
+continues to receive her monthly wages during her abstention from 
+work during the eligible period without abatement in respect of 
+the abstention.
+
+(d)	 Where a female employee claims maternity allowance under 
+this section from more than one employer, she shall not be entitled 
+to receive a maternity allowance of an amount exceeding in the 
+aggregate the amount which she would be entitled to receive if 
+her claim was made against one employer only.
+	 (3)	 Where there are more employers than one from whom the 
+female employee would be entitled to claim maternity allowance 
+in accordance with subsection (2) the employer who pays the 
+maternity allowance shall be entitled to recover from such other 
+employer, as a civil debt, a contribution which shall bear the 
+same proportion to the amount of the maternity allowance paid 
+to the female employee as the number of days on which she 
+worked for such other employer during the period of nine months 
+immediately preceding her confinement bears to the total number 
+of days on which she worked during the said period:
+	 Provided that if the female employee has failed to comply with 
+subsection 40(1) or (2), the employer who pays the maternity 
+allowance shall not thereby be prevented from recovering 
+contribution calculated in accordance with this subsection.
+
+(4)	 Any employer who terminates the service of a female 
+employee during the period in which she is entitled to maternity 
+leave commits an offence:
+	 Provided that for the purpose of this section, such termination 
+shall not include termination on the ground of closure of the 
+employer’s business.
+
+*NOTE—Previously “ten”—see subparagraph 9(b)(iii) of the Employment (Amendment) Act 2022 
+[Act A1651].
+*NOTE—Previously “sixty”—see paragraph 12(b) of the Employment (Amendment) Act 2022 
+[Act A1651].",not_supported,,It is definition of MATERNITY rather than PATERNITY
+T19,sampled,bm25_only,Q04,Act265#21,This payment must be made not later than the day on which the contract of service is terminated.,shall be paid by the employer to the employee not later than the day on which such contract of service is so terminated,,,,"(1)	 Where an employer terminates the contract of service of 
+an employee without notice in accordance with subsection 13(1) 
+or (2) and paragraph 14(1)(a)—
+
+(a)	 the wages, less any deductions which the employer is 
+entitled to make under section 24, earned by such employee 
+up to and including the day immediately preceding the 
+day on which the termination of the contract of service 
+takes effect; and
+
+(b)	 in addition, where the employer terminates the contract 
+of service under subsection 13(1), the indemnity payable 
+to the employee under that subsection,
+shall be paid by the employer to the employee not later than the 
+day on which such contract of service is so terminated.
+	 (2)	 Where an employee terminates his contract of service with 
+an employer without notice in accordance with subsection 13(1) 
+or (2) or subsection 14(3), the wages, less any deductions which 
+the employer is entitled to make under section 24, earned by such 
+employee up to and including the day immediately preceding the 
+day on which the termination of the contract of service takes 
+effect shall be paid by the employer to the employee not later 
+than the third day after the day on which the contract of service 
+is so terminated.",supported,,"Kept as supported (round 1 label). The sentence correctly states the payment deadline in the cited subsection. The judge's not_supported verdict is also defensible, because that deadline applies only when the employer ends the contract without notice, and the sentence does not mention this condition. Counted as a false positive: it causes a retry or refusal, not a wrong answer shown to the user."
+T20,altered,hybrid_no_rerank,Q16,Act599#15,The statements about the maximum quantity and time period must be conspicuously placed near the claim that goods are limited to three locations.,The statements required under subsection (2) shall be conspicuously placed near the claim.,number,The statements about the maximum quantity and time period must be conspicuously placed near the claim that goods are limited.,limited. -> limited to three locations.,"(1)	 No person shall, in supplying or offering to supply goods 
+for sale to consumers, describe the goods as limited unless their 
+edition, printing, minting, crafting or production is restricted to—
+
+(a)	 a pre-determined maximum quantity; or
+
+(b)	 the actual quantity ordered or subscribed to within a 
+specified and reasonably short period of time.
+
+(2)	 A claim that goods are limited shall state clearly—
+
+(a)	 the maximum quantity of goods which are offered for 
+sale; and
+
+(b)	 the specific time period or dates for which the goods are 
+offered for sale.
+	 (3)	 The statements required under subsection (2) shall be 
+conspicuously placed near the claim.",not_supported,,"""limited to three locations"" is not in the section"
+T21,altered,full,Q08,Act265#25a,Your withdrawal notice takes effect at the end of three weeks from when you give the notice.,"The notice referred to in subsection (3) shall take effect at, but not before, the end of the period of four weeks beginning with the day on which the notice is given.",number,Your withdrawal notice takes effect at the end of four weeks from when you give the notice.,four -> three,"(1)  Notwithstanding subsection 25(1), an employer may, upon 
+a written request of the employee, and subject to subsection (2), 
+make payment of his employee’s wages—
+
+(a)	 in legal tender; or
+
+(b)	 by cheque made payable to or to the order of the employee.
+	 (2)	 The employer shall, upon the written request of his employee 
+under subsection (1), obtain approval from the Director General 
+for the payment of wages to be paid in legal tender or by cheque.
+	 (2a)	 The Director General may impose any condition as he 
+may deem fit on the approval granted under subsection (2).
+	 (3)	 The request by the employee under subsection (1) may be 
+withdrawn by the employee at any time, by notice in writing, to 
+the employer.
+	 (4)	 The notice referred to in subsection (3) shall take effect 
+at, but not before, the end of the period of four weeks beginning 
+with the day on which the notice is given.
+	 (5)	 The request of the employee to the mode of payment 
+of wages under subsection (1) shall not be unreasonably 
+withheld by the employer upon obtaining the approval under 
+subsection (2).
+	 (6)	 Any dispute arising out of the request by the employee 
+under subsection (1) shall be referred to the Director General 
+whose decision on the matter shall be final.
+	 (7)	 Section 69 shall not apply in respect of any dispute under 
+subsection (6).",not_supported,,Notice takes effect after FOUR weeks rather than three
+T22,altered,dense_only,Q38,Act709#39,The company can disclose your personal data for two new purposes if the disclosure is justified as being in the public interest as determined by the Minister.,the disclosure was justified as being in the public interest in circumstances as determined by the Minister,number,The company can disclose your personal data for a new purpose if the disclosure is justified as being in the public interest as determined by the Minister.,a -> two | purpose -> purposes,"Notwithstanding section 8, personal data of a data subject 
+may be disclosed by a data user for any purpose other than the 
+purpose for which the personal data was to be disclosed at the 
+time of its collection or any other purpose directly related to that 
+purpose, only under the following circumstances:
+
+(a)	 the data subject has given his consent to the disclosure;
+
+(b)	 the disclosure—
+
+(i)	 is necessary for the purpose of preventing or detecting 
+a crime, or for the purpose of investigations; or
+
+(ii)	 was required or authorized by or under any law 
+or by the order of a court;
+
+(c)	 the data user acted in the reasonable belief that he had in 
+law the right to disclose the personal data to the other 
+person;
+
+(d)	 the data user acted in the reasonable belief that he would 
+have had the consent of the data subject if the data 
+subject had known of the disclosing of the personal data 
+and the circumstances of such disclosure; or
+
+(e)	 the disclosure was justified as being in the public interest 
+in circumstances as determined by the Minister.",not_supported,,""" two new purposes"" is not stated as part of section text"
+T23,sampled,dense_only,Q44,Act265#41a,"Under section 41A of the Employment Act 1955, an employer cannot terminate a pregnant female employee or give her notice of termination except on specific grounds.","Where a female employee is pregnant or is suffering from an illness arising out of her pregnancy, it shall be an offence for her employer to terminate her services or give her notice of termination of service, except on the grounds of",,,,"(1)  Where a female employee is pregnant or is suffering 
+from an illness arising out of her pregnancy, it shall be an offence 
+for her employer to terminate her services or give her notice of 
+termination of service, except on the grounds of—
+
+(a)	 wilful breach of a condition of the contract of service 
+under subsection 13(2);
+
+(b)	 misconduct under subsection 14(1); or
+
+(c)	 closure of the employer’s business.
+	 (2)	 Where the service of a female employee under subsection (1) 
+is terminated, the burden of proving that such termination is not 
+on the ground of her pregnancy or on the ground of illness arising 
+out of her pregnancy, shall rest on the employer.",supported,,
+T24,altered,dense_only,Q02,Act265#12,"Under section 12(2), the minimum notice period depends on the employee's length of service, and is determined by a written provision in the contract or, if such provision exists, by statutory minimums.","The length of such notice shall be the same for both employer and employee and shall be determined by a provision made in writing for such notice in the terms of the contract of service, or, in the absence of such provision in writing, shall not be less than",condition,"Under section 12(2), the minimum notice period depends on the employee's length of service, and is determined by a written provision in the contract or, if no such provision exists, by statutory minimums.",removed: no,"(1)	 Either party to a contract of service may at any time 
+give to the other party notice of his intention to terminate such 
+contract of service.
+
+(2)	 The length of such notice shall be the same for both 
+employer and employee and shall be determined by a provision 
+made in writing for such notice in the terms of the contract of 
+service, or, in the absence of such provision in writing, shall not 
+be less than—
+
+(a)	 four weeks’ notice if the employee has been so employed 
+for less than two years on the date on which the notice 
+is given;
+
+(b)	 six weeks’ notice if he has been so employed for two 
+years or more but less than five years on such date;
+
+(c)	 eight weeks’ notice if he has been so employed for five 
+years or more on such date:
+	 Provided that this section shall not be taken to prevent either 
+party from waiving his right to a notice under this subsection.
+	 (3)	 Notwithstanding anything contained in subsection (2), 
+where the termination of service of the employee is attributable 
+wholly or mainly to the fact that—
+
+(a)	 the employer has ceased, or intends to cease to carry on 
+the business for the purposes of which the employee 
+was employed;
+
+(b)	 the employer has ceased or intends to cease to carry on 
+the business in the place at which the employee was 
+contracted to work;
+
+(c)	 the requirements of that business for the employee to carry 
+out work of a particular kind have ceased or diminished 
+or are expected to cease or diminish;
+
+(d)	 the requirements of that business for the employee to carry 
+out work of a particular kind in the place at which he 
+was contracted to work have ceased or diminished or 
+are expected to cease or diminish;
+
+(e)	 the employee has refused to accept his transfer to any 
+other place of employment, unless his contract of service 
+requires him to accept such transfer; or
+
+(f)	 a change has occurred in the ownership of the business 
+for the purpose of which an employee is employed or 
+of a part of such business, regardless of whether the 
+change occurs by virtue of a sale or other disposition 
+or by operation of law,
+the employee shall be entitled to, and the employer shall give 
+to the employee, notice of termination of service, and the 
+length of such notice shall be not less than that provided under 
+paragraph (2)(a), (b) or (c), as the case may be, regardless of 
+anything to the contrary contained in the contract of service.
+	 (4)	 Such notice shall be written and may be given at any time, 
+and the day on which the notice is given shall be included in the 
+period of the notice.
+
+*NOTE—The Children and Young Persons (Employment) Act 1966 [Act 40 of 1966] has since 
+been revised as the Children and Young Persons (Employment) Act 1966 [Act 350].",not_supported,,"Statutory minimum periods apply in the absence of a written contract provision, not ""if such provision exists"""
+T25,sampled,hybrid_no_rerank,Q32,Act709#19,"After the Commissioner issues a notice of revocation of registration, the data user must surrender the certificate of registration to the Commissioner within seven days from the date of service of the notice.","Where the certificate of registration is revoked in pursuance of section 18, the holder of the certificate shall, within seven days from the date of service of the notice of revocation of registration, surrender the certificate to the Commissioner.",,,,"(1)	 Where the certificate of registration is revoked in pursuance 
+of section 18, the holder of the certificate shall, within seven days 
+from the date of service of the notice of revocation of registration, 
+surrender the certificate to the Commissioner.
+	 (2)	 A person who fails to comply with subsection (1) commits an 
+offence and shall, on conviction, be liable to a fine not exceeding 
+two hundred thousand ringgit or to imprisonment for a term not 
+exceeding two years or to both.",supported,,
+T26,altered,bm25_only,Q47,Act265#12,"An employee who has worked for an employer for five years must give notice of termination of service, with the length of notice determined by the contract or by statutory minimum periods.","Either party to a contract of service may at any time give to the other party notice of his intention to terminate such contract of service. The length of such notice shall be the same for both employer and employee and shall be determined by a provision made in writing for such notice in the terms of the contract of service, or, in the absence of such provision in writing, shall not be less than",number,"An employee who has worked for an employer for three years must give notice of termination of service, with the length of notice determined by the contract or by statutory minimum periods.",three -> five,"(1)	 Either party to a contract of service may at any time 
+give to the other party notice of his intention to terminate such 
+contract of service.
+
+(2)	 The length of such notice shall be the same for both 
+employer and employee and shall be determined by a provision 
+made in writing for such notice in the terms of the contract of 
+service, or, in the absence of such provision in writing, shall not 
+be less than—
+
+(a)	 four weeks’ notice if the employee has been so employed 
+for less than two years on the date on which the notice 
+is given;
+
+(b)	 six weeks’ notice if he has been so employed for two 
+years or more but less than five years on such date;
+
+(c)	 eight weeks’ notice if he has been so employed for five 
+years or more on such date:
+	 Provided that this section shall not be taken to prevent either 
+party from waiving his right to a notice under this subsection.
+	 (3)	 Notwithstanding anything contained in subsection (2), 
+where the termination of service of the employee is attributable 
+wholly or mainly to the fact that—
+
+(a)	 the employer has ceased, or intends to cease to carry on 
+the business for the purposes of which the employee 
+was employed;
+
+(b)	 the employer has ceased or intends to cease to carry on 
+the business in the place at which the employee was 
+contracted to work;
+
+(c)	 the requirements of that business for the employee to carry 
+out work of a particular kind have ceased or diminished 
+or are expected to cease or diminish;
+
+(d)	 the requirements of that business for the employee to carry 
+out work of a particular kind in the place at which he 
+was contracted to work have ceased or diminished or 
+are expected to cease or diminish;
+
+(e)	 the employee has refused to accept his transfer to any 
+other place of employment, unless his contract of service 
+requires him to accept such transfer; or
+
+(f)	 a change has occurred in the ownership of the business 
+for the purpose of which an employee is employed or 
+of a part of such business, regardless of whether the 
+change occurs by virtue of a sale or other disposition 
+or by operation of law,
+the employee shall be entitled to, and the employer shall give 
+to the employee, notice of termination of service, and the 
+length of such notice shall be not less than that provided under 
+paragraph (2)(a), (b) or (c), as the case may be, regardless of 
+anything to the contrary contained in the contract of service.
+	 (4)	 Such notice shall be written and may be given at any time, 
+and the day on which the notice is given shall be included in the 
+period of the notice.
+
+*NOTE—The Children and Young Persons (Employment) Act 1966 [Act 40 of 1966] has since 
+been revised as the Children and Young Persons (Employment) Act 1966 [Act 350].",supported,,
+T27,sampled,full,Q28,Act599#24g,The Tribunal can declare an unfair term unenforceable or void when it concludes that the term is substantively unfair.,"where a court or the Tribunal comes to the conclusion, having regard to sections 24c and 24d that a contract or a term of a contract is either procedurally or substantively unfair or both, the court or the Tribunal may declare the contract or the term of the contract as unenforceable or void",,,,"(1)  In this Part, where a court or the Tribunal comes to the 
+conclusion, having regard to sections 24c and 24d that a contract 
+or a term of a contract is either procedurally or substantively 
+unfair or both, the court or the Tribunal may declare the contract 
+or the term of the contract as unenforceable or void and the court 
+may grant judgment, and the Tribunal may make an award as 
+provided for under section 112 of this Act.
+	 (2)	 A court or the Tribunal may determine if any of the terms 
+of the contract which are either procedurally or substantially 
+unfair, or both, are severable, and whether and to what extent 
+and in what manner, the remaining terms of the contract can be 
+enforced or given effect to.",supported,,
+T28,sampled,full,Q16,Act599#15,"When describing goods as limited, the supplier must clearly state the maximum quantity of goods offered for sale and the specific time period or dates for which the goods are offered for sale.",A claim that goods are limited shall state clearly—(a) the maximum quantity of goods which are offered for sale; and (b) the specific time period or dates for which the goods are offered for sale.,,,,"(1)	 No person shall, in supplying or offering to supply goods 
+for sale to consumers, describe the goods as limited unless their 
+edition, printing, minting, crafting or production is restricted to—
+
+(a)	 a pre-determined maximum quantity; or
+
+(b)	 the actual quantity ordered or subscribed to within a 
+specified and reasonably short period of time.
+
+(2)	 A claim that goods are limited shall state clearly—
+
+(a)	 the maximum quantity of goods which are offered for 
+sale; and
+
+(b)	 the specific time period or dates for which the goods are 
+offered for sale.
+	 (3)	 The statements required under subsection (2) shall be 
+conspicuously placed near the claim.",supported,,
+T29,sampled,dense_only,Q03,Act265#60d,The five mandatory public holidays are the National Day.,five of which shall be— (i) the National Day,,,,"(1)  Every employee shall be entitled to a paid holiday at his 
+ordinary rate of pay on the following days in any one calendar 
+year:
+
+(a)	 on eleven of the gazetted public holidays, five of which 
+shall be—
+
+(i)	 the National Day;
+
+(ii)	 the Birthday of the Yang di-Pertuan Agong;
+
+(iii)	 the Birthday of the Ruler or the Yang di-Pertua 
+Negeri, as the case may be, of the State in which 
+the employee wholly or mainly works under his 
+contract of service, or the Federal Territory Day, 
+if the employee wholly or mainly works in the 
+Federal Territory;
+
+(iv)	 the Workers’ Day; and
+
+(v)	 Malaysia Day; and
+
+(b)	 on any day appointed as a public holiday for that 
+particular year under section 8 of the Holidays Act 1951 
+[Act 369]:
+
+	 Provided that if any of the public holidays referred 
+to in paragraphs (a) and (b) falls on—
+
+(i)	 a rest day; or
+
+(ii)	 any other public holiday referred to in paragraphs 
+(a) and (b),
+the working day following immediately the rest day or the other 
+public holiday shall be a paid holiday in substitution of the first 
+mentioned public holiday.
+
+(1a)	 The employer shall exhibit conspicuously at the place 
+of employment before the commencement of each calendar 
+year a notice specifying the remaining six gazetted public 
+holidays provided for in paragraph (1)(a) in respect of which 
+his employees shall be entitled to paid holidays under 
+paragraph (1)(a):
+	 Provided that by agreement between the employer and an 
+employee any other day or days may be substituted for one or 
+more of the remaining six gazetted public holidays provided for 
+in paragraph (1)(a):
+	 And provided further that the employer may grant the employee 
+any other day as a paid public holiday in substitution for any of 
+the public holidays referred to in paragraph (1)(b).
+	 (1b)	 Where any of the public holidays or any other day 
+substituted therefor as provided in subsection (1) or (1a) falls 
+within the period during which an employee is on sick leave or 
+annual leave to which the employee is entitled under this Act, 
+or falls during the period of temporary disablement under the 
+Workmen’s Compensation Act 1952, or under the Employees 
+Social Security Act 1969, the employer shall grant another day 
+as a paid holiday in substitution for such public holiday or the 
+day substituted therefor.
+	 (2)	 Any employee who absents himself from work on the 
+working day immediately preceding or immediately succeeding 
+a public holiday or two or more consecutive public holidays or 
+any day or days substituted therefore under this section without 
+the prior consent of his employer shall not be entitled to any 
+holiday pay for such holiday or consecutive holidays unless he 
+has a reasonable excuse for such absence.
+	 (2a)	 An employee on a monthly rate of pay shall be deemed 
+to have received his holiday pay if he receives from his employer 
+his monthly wages, without abatement (other than as provided 
+under subsection (2)) in respect of the holiday, for the month in 
+which the holiday falls.
+
+(3)	 (a)	 Notwithstanding subsections (1), (1a) and (1b), any 
+employee may be required by his employer to work on any paid 
+holiday to which he is entitled under the said subsections and in 
+such event he shall, in addition to the holiday pay he is entitled 
+to for that day—
+
+(i)	 in the case of an employee employed on a monthly, 
+weekly, daily, hourly, or other similar rate of pay, 
+be paid two days’ wages at the ordinary rate of 
+pay; or
+
+(ii)	 in the case of an employee employed on piece rates, 
+be paid twice the ordinary rate per piece,
+regardless that the period of work done on that day is less than 
+the normal hours of work.
+	 (aa)	 For any overtime work carried out by an employee referred 
+to in subparagraph (a)(i) in excess of the normal hours of work 
+on a paid public holiday, the employee shall be paid at a rate 
+which is not less than three times his hourly rate of pay.
+	 (aaa)	 For any overtime work carried out by an employee 
+referred to in subparagraph (a)(ii) in excess of the normal hours 
+of work on any paid holiday, the employee shall be paid not less 
+than three times the ordinary rate per piece.
+	 (b)	 An employee who works on a holiday shall be entitled to 
+a travelling allowance for that day if payable to him under the 
+terms of his agreement with his employer but such employee shall 
+not be entitled under this subsection to receive an increased rate 
+of any housing allowance or food allowance.
+	 (4)	 For the purposes of this section if any such holiday falls 
+on a half working day, the ordinary rate of pay payable shall be 
+that of a full working day.",not_supported,,"The five mandatory holidays are National Day, Agong's Birthday, Ruler or YDP Negeri's Birthday or FT Day, Workers' Day and Malaysia Day, not just National Day"
+T30,sampled,bm25_only,Q43,Act599#32,"A reasonable consumer fully acquainted with the state and condition of the goods would regard them as acceptable having regard to the nature of the goods, the price, any statements made about them on packaging or labels, any representation made by the supplier or manufacturer, and all other relevant circumstances of the supply.","a reasonable consumer fully acquainted with the state and condition of the goods, including any hidden defects, would regard the goods as acceptable having regard to the nature of the goods; the price; any statements made about the goods on any packaging or label on the goods; any representation made about the goods by the supplier or the manufacturer; and all other relevant circumstances of the supply of the goods.",,,,"(1)	 Where goods are supplied to a consumer there shall be 
+implied a guarantee that the goods are of acceptable quality. 
+	 (2)	 For the purposes of subsection (1), goods shall be deemed 
+to be of acceptable quality—
+
+(a)	 if they are—
+
+(i)	 fit for all the purposes for which goods of the 
+type in question are commonly supplied;
+
+(ii)	 acceptable in appearance and finish;
+
+(iii)	 free from minor defects;
+
+(iv)	 safe; and
+
+(v)	 durable; and
+
+(b)	 a reasonable consumer fully acquainted with the state and 
+condition of the goods, including any hidden defects, 
+would regard the goods as acceptable having regard to—
+
+(i)	 the nature of the goods;
+
+(ii)	 the price;
+
+(iii)	 any statements made about the goods on any 
+packaging or label on the goods;
+
+(iv)	 any representation made about the goods by the 
+supplier or the manufacturer; and
+
+(v)	 all other relevant circumstances of the supply of 
+the goods.
+
+(3)	 Where any defects in the goods have been specifically 
+drawn to the consumer’s attention before he agrees to the supply, 
+then, the goods shall not be deemed to have failed to comply 
+with the implied guarantee as to acceptable quality by reason 
+only of those defects. 
+	 (4)	 Where goods are displayed for sale or hire, the defects 
+that are to be treated as having been specifically drawn to the 
+consumer’s attention for the purposes of subsection (3) shall be 
+defects disclosed on a written notice displayed with the goods. 
+	 (5)	 Goods shall not be deemed to have failed to comply with 
+the implied guarantee as to acceptable quality if—
+
+(a)	 the goods have been used in a manner or to an extent 
+which is inconsistent with the manner or extent of use 
+that a reasonable consumer would expect to obtain from 
+the goods; and
+
+(b)	 the goods would have complied with the implied guarantee 
+as to acceptable quality if they had not been used in 
+that manner or to that extent.
+	 (6)	 A reference in subsections (3) and (4) to a defect is a 
+reference to any failure of the goods to comply with the implied 
+guarantee as to acceptable quality.",supported,,
+T31,altered,dense_only,Q34,Act709#38,A company that continues to process your personal data after receiving your withdrawal notice does not commit an offence and can be fined up to one hundred thousand ringgit or imprisoned for up to one year or both.,"A data user who contravenes subsection (2) commits an offence and shall, on conviction, be liable to a fine not exceeding one hundred thousand ringgit or to imprisonment for a term not exceeding one year or to both.",negation,A company that continues to process your personal data after receiving your withdrawal notice commits an offence and can be fined up to one hundred thousand ringgit or imprisoned for up to one year or both.,commits -> does not commit,"(1)	 A data subject may by notice in writing withdraw his 
+consent to the processing of personal data in respect of which 
+he is the data subject.
+	 (2)	 The data user shall, upon receiving the notice under 
+subsection (1), cease the processing of the personal data.
+	 (3)	 The failure of the data subject to exercise the right conferred 
+by subsection (1) does not affect any other rights conferred on 
+him by this Part.
+	 (4)	 A data user who contravenes subsection (2) commits an 
+offence and shall, on conviction, be liable to a fine not exceeding 
+one hundred thousand ringgit or to imprisonment for a term not 
+exceeding one year or to both.",not_supported,,"DOES commits an offence, not DOES NOT commit"
+T32,altered,hybrid_no_rerank,Q42,Act709#36,"The data subject can refuse if it is not satisfied that the personal data is actually inaccurate, incomplete, misleading or not up-to-date.","the data user is not satisfied that the personal data to which the data correction request relates is inaccurate, incomplete, misleading or not up-to-date",party,"The company can refuse if it is not satisfied that the personal data is actually inaccurate, incomplete, misleading or not up-to-date.",company -> data subject,"(1)	 A data user may refuse to comply with a data correction 
+request under section 34 if—
+
+(a)	 the data user is not supplied with such information as he 
+may reasonably require—
+
+(i)	 in order to satisfy himself as to the identity of 
+the requestor; or
+
+(ii)	 where the requestor claims to be a relevant person, 
+in order to satisfy himself—
+
+(A)	 as to the identity of the data subject in 
+relation to whom the requestor claims 
+to be the relevant person; and
+
+(B)	
+that the requestor is the relevant person 
+in relation to the data subject;
+
+(b)	 the data user is not supplied with such information as 
+he may reasonably require to ascertain in what way the 
+personal data to which the data correction request relates 
+is inaccurate, incomplete, misleading or not up-to-date;
+
+(c)	 the data user is not satisfied that the personal data to 
+which the data correction request relates is inaccurate, 
+incomplete, misleading or not up-to-date;
+
+(d)	 the data user is not satisfied that the correction which is 
+the subject of the data correction request is accurate, 
+complete, not misleading or up-to-date; or
+
+(e)	 subject to subsection (2), any other data user controls 
+the processing of the personal data to which the data 
+correction request relates in such a way as to prohibit 
+the first-mentioned data user from complying, whether 
+in whole or in part, with the data correction request.
+	 (2)	 Paragraph (1)(e) shall not operate so as to excuse the data 
+user from complying with subsection 35(1) in relation to the data 
+correction request to any extent that the data user can comply with 
+that subsection without contravening the prohibition concerned.",not_supported,,DATA USER rather than DATA SUBJECT
+T33,sampled,bm25_only,Q01,Act265#60fa,An employee must notify his employer of his spouse's pregnancy at least thirty days before the expected confinement or as early as possible after the birth.,he has notified his employer of the pregnancy of his spouse at least thirty days from the expected confinement or as early as possible after the birth,,,,"(1)  Subject to subsection (3), a married male employee 
+shall be entitled to a paid paternity leave at his ordinary rate of 
+pay for a period of seven consecutive days in respect of each 
+confinement.
+	 (2)	 The paternity leave under subsection (1) shall be restricted 
+to five confinements irrespective of the number of spouses.
+
+(3)	 A married male employee shall be entitled to paternity 
+leave from his employer if—
+
+(a)	 he has been employed by the same employer at least 
+twelve months immediately before the commencement 
+of such paternity leave; and
+
+(b)	 he has notified his employer of the pregnancy of his 
+spouse at least thirty days from the expected confinement 
+or as early as possible after the birth.",supported,,
+T34,altered,dense_only,Q16,Act599#15,These required statements must be conspicuously placed near the claim that the goods are limited by the supplier.,The statements required under subsection (2) shall be conspicuously placed near the claim.,party,These required statements must be conspicuously placed near the claim that the goods are limited.,limited. -> limited by the supplier.,"(1)	 No person shall, in supplying or offering to supply goods 
+for sale to consumers, describe the goods as limited unless their 
+edition, printing, minting, crafting or production is restricted to—
+
+(a)	 a pre-determined maximum quantity; or
+
+(b)	 the actual quantity ordered or subscribed to within a 
+specified and reasonably short period of time.
+
+(2)	 A claim that goods are limited shall state clearly—
+
+(a)	 the maximum quantity of goods which are offered for 
+sale; and
+
+(b)	 the specific time period or dates for which the goods are 
+offered for sale.
+	 (3)	 The statements required under subsection (2) shall be 
+conspicuously placed near the claim.",supported,,
+T35,altered,full,Q17,Act599#44,A failure is of substantial character if the goods do not depart in one or more significant respects from the description by which they were supplied or from any sample or demonstration model.,"the goods depart in one or more significant respects from the description by which they were supplied or, where they were supplied by reference to a sample or demonstration model, from the sample or demonstration model",negation,A failure is of substantial character if the goods depart in one or more significant respects from the description by which they were supplied or from any sample or demonstration model.,added: do not,"For the purposes of paragraph 41(1)(b), a failure to comply 
+with a guarantee shall be of a substantial character where—
+
+(a)	 the goods would not have been acquired by a reasonable 
+consumer fully acquainted with the nature and extent of 
+the failure;
+
+(b)	 the goods depart in one or more significant respects 
+from the description by which they were supplied or, 
+where they were supplied by reference to a sample or 
+demonstration model, from the sample or demonstration 
+model;
+
+(c)	 the goods are—
+
+(i)	 substantially unfit for a purpose for which goods 
+of the type in question are commonly supplied; 
+or
+
+(ii)	 where subsection 33(1) applies, unfit for a 
+particular purpose made known to the supplier 
+or represented by the supplier to be a purpose 
+for which the goods would be fit,
+
+	 and the goods cannot easily and within a reasonable time 
+be remedied to make them fit for such purpose; or
+
+(d)	 the goods are not of acceptable quality within the meaning 
+of section 32 because they are unsafe.",not_supported,,Goods DO DEPART rather than DO NOT DEPART
+T36,sampled,hybrid_no_rerank,Q41,Act709#6,A company may process your personal data without your consent if the processing is necessary for the performance of a contract to which you are a party.,a data user may process personal data about a data subject if the processing is necessary for the performance of a contract to which the data subject is a party,,,,"(1)	 A data user shall not—
+
+(a)	 in the case of personal data other than sensitive personal 
+data, process personal data about a data subject unless 
+the data subject has given his consent to the processing 
+of the personal data; or
+
+(b)	 in the case of sensitive personal data, process sensitive 
+personal data about a data subject except in accordance 
+with the provisions of section 40.
+	 (2)	 Notwithstanding paragraph (1)(a), a data user may process 
+personal data about a data subject if the processing is necessary—
+
+(a)	 for the performance of a contract to which the data subject 
+is a party;
+
+(b)	 for the taking of steps at the request of the data subject 
+with a view to entering into a contract;
+
+(c)	 for compliance with any legal obligation to which the data 
+user is the subject, other than an obligation imposed by 
+a contract;
+
+(d)	 in order to protect the vital interests of the data subject;
+
+(e)	 for the administration of justice; or
+
+(f)	 for the exercise of any functions conferred on any person 
+by or under any law.
+	 (3)	 Personal data shall not be processed unless—
+
+(a)	 the personal data is processed for a lawful purpose directly 
+related to an activity of the data user;
+
+(b)	 the processing of the personal data is necessary for or 
+directly related to that purpose; and
+
+(c)	 the personal data is adequate but not excessive in relation 
+to that purpose.",supported,,
+T37,altered,full,Q20,Act599#6,"A seller can contract out of the Consumer Protection Act, as the Act's provisions apply regardless of what any agreement says.",The provisions of this Act shall have effect notwithstanding anything to the contrary in any agreement.,negation,"A seller cannot contract out of the Consumer Protection Act, as the Act's provisions apply regardless of what any agreement says.",cannot -> can,"(1)	 The provisions of this Act shall have effect notwithstanding 
+anything to the contrary in any agreement.
+	 (2)	 Every supplier and every manufacturer who purports to 
+contract out of any provision of this Act commits an offence.
+	 (3)	 Nothing in subsection (1) shall prevent a consumer who 
+has a claim under this Act from agreeing to settle or compromise 
+that claim.",not_supported,,"Based on section text, a seller CANNOT contract out"
+T38,sampled,hybrid_no_rerank,Q39,Act709#45,"The PDPA does not apply to personal data processed by an individual only for the purposes of that individual's personal, family or household affairs, including recreational purposes.","personal data processed by an individual only for the purposes of that individual's personal, family or household affairs, including recreational purposes",,,,"(1)	 There shall be exempted from the provisions of this Act 
+personal data processed by an individual only for the purposes of 
+that individual’s personal, family or household affairs, including 
+recreational purposes.
+
+(2)	 Subject to section 46, personal data—
+
+(a)	 processed for—
+
+(i)	 the prevention or detection of crime or for the 
+purpose of investigations;
+
+(ii)	 the apprehension or prosecution of offenders; or
+
+(iii)	 the assessment or collection of any tax or duty 
+or any other imposition of a similar nature,
+
+	 shall be exempted from the General Principle, Notice 
+and Choice Principle, Disclosure Principle and 
+Access Principle and other related provisions of this 
+Act;
+
+(b)	 processed in relation to information of the physical or 
+mental health of a data subject shall be exempted from 
+the Access Principle and other related provisions of this 
+Act of which the application of the provisions to the 
+data subject would be likely to cause serious harm to 
+the physical or mental health of the data subject or any 
+other individual;
+
+(c)	 processed for preparing statistics or carrying out research 
+shall be exempted from the General Principle, Notice 
+and Choice Principle, Disclosure Principle and Access 
+Principle and other related provisions of this Act, provided 
+that such personal data is not processed for any other 
+purpose and that the resulting statistics or the results 
+of the research are not made available in a form which 
+identifies the data subject;
+
+(d)	 that is necessary for the purpose of or in connection with 
+any order or judgement of a court shall be exempted 
+from the General Principle, Notice and Choice Principle, 
+Disclosure Principle and Access Principle and other 
+related provisions of this Act;
+
+(e)	 processed for the purpose of discharging regulatory 
+functions shall be exempted from the General Principle, 
+Notice and Choice Principle, Disclosure Principle and 
+Access Principle and other related provisions of this Act 
+if the application of those provisions to the personal 
+data would be likely to prejudice the proper discharge 
+of those functions; or
+
+(f)	 processed only for journalistic, literary or artistic purposes 
+shall be exempted from the General Principle, Notice 
+and Choice Principle, Disclosure Principle, Retention 
+Principle, Data Integrity Principle and Access Principle 
+and other related provisions of this Act, provided that—
+
+(i)	 the processing is undertaken with a view to the 
+publication by any person of the journalistic, 
+literary or artistic material;
+
+(ii)	 the data user reasonably believes that, taking into 
+account the special importance of public interest 
+in freedom of expression, the publication would 
+be in the public interest; and
+
+(iii)	 the data user reasonably believes that in all the 
+circumstances, compliance with the provision 
+in respect of which the exemption is claimed 
+is incompatible with the journalistic, literary or 
+artistic purposes.",supported,,
+T39,altered,bm25_only,Q17,Act599#44,"A failure is substantial if the goods are substantially unfit for a purpose for which goods of that type are commonly supplied, or unfit for a particular purpose made known to or represented by the supplier, and cannot easily and within two weeks be remedied to make them fit.","the goods are substantially unfit for a purpose for which goods of the type in question are commonly supplied; or where subsection 33(1) applies, unfit for a particular purpose made known to the supplier or represented by the supplier to be a purpose for which the goods would be fit, and the goods cannot easily and within a reasonable time be remedied to make them fit for such purpose",number,"A failure is substantial if the goods are substantially unfit for a purpose for which goods of that type are commonly supplied, or unfit for a particular purpose made known to or represented by the supplier, and cannot easily and within a reasonable time be remedied to make them fit.",a reasonable time -> two weeks,"For the purposes of paragraph 41(1)(b), a failure to comply 
+with a guarantee shall be of a substantial character where—
+
+(a)	 the goods would not have been acquired by a reasonable 
+consumer fully acquainted with the nature and extent of 
+the failure;
+
+(b)	 the goods depart in one or more significant respects 
+from the description by which they were supplied or, 
+where they were supplied by reference to a sample or 
+demonstration model, from the sample or demonstration 
+model;
+
+(c)	 the goods are—
+
+(i)	 substantially unfit for a purpose for which goods 
+of the type in question are commonly supplied; 
+or
+
+(ii)	 where subsection 33(1) applies, unfit for a 
+particular purpose made known to the supplier 
+or represented by the supplier to be a purpose 
+for which the goods would be fit,
+
+	 and the goods cannot easily and within a reasonable time 
+be remedied to make them fit for such purpose; or
+
+(d)	 the goods are not of acceptable quality within the meaning 
+of section 32 because they are unsafe.",not_supported,,"Section says cannot be remedied ""easily and within a reasonable time"", not ""within two weeks"""
+T40,altered,bm25_only,Q15,Act599#14,"Under section 14 of the Consumer Protection Act 1999, the print describing a condition of a free offer must be at least half as large as the print used for the expression 'free' or 'free offer', unless the condition is imposed by a retailer.","ensure that the print of the description of the condition is at least half as large as the print used for the expression ""free"" or ""free offer""",condition,"Under section 14 of the Consumer Protection Act 1999, the print describing a condition of a free offer must be at least half as large as the print used for the expression 'free' or 'free offer'.","offer'. -> offer', unless the condition is imposed by a retailer.","(1)	 No person shall offer any gift, prize or other free item—
+
+(a)	 with the intention of not providing it; or
+
+(b)	 with the intention of not providing it as offered.
+
+(2)	 No person shall in offering any gift, prize or other free 
+item with the purchase of any goods or services, whether or not 
+contingent on the purchase of other goods or services—
+
+(a)	 charge more than the regular price for the goods or 
+services to be purchased; or
+
+(b)	 reduce the quantity or quality of the goods or services 
+to be purchased.
+	 (3)	 A person who offers a gift, prize or other free item may 
+impose any reasonable condition on the offer.
+	 (4)	 Where a person imposes a condition on the offer, he shall—
+
+(a)	 describe the condition clearly;
+
+(b)	 ensure that the description of the condition is conspicuously 
+placed near the expression “free” or “free offer”, as the 
+case may be; and
+
+(c)	 ensure that the print of the description of the condition is 
+at least half as large as the print used for the expression 
+“free” or “free offer”.
+	 (5)	 For the purposes of this section—
+	 “free” or “free offer” includes any expression of similar meaning;
+	 “regular price” means the price at which similar goods or 
+services are regularly sold on the market.",not_supported,,"""unless the condition is imposed by a retailer"" is extra explanation that is not in section text"

@@ -43,8 +43,9 @@ def fault_form():
         return faults
 
     faults["generation"] = st.selectbox("Generation fault", GENERATION_FAULTS,
-                                        help="Cut off: as if max_tokens was hit. No sentences: the question is not "
-                                             "covered. Either one ends the run as insufficient_info, with no retry.")
+                                        help="Cut off: as if max_tokens was hit on the request and on its schema "
+                                             "resend, ending as generation_error. No sentences: the question is not "
+                                             "covered, ending as insufficient_info. Neither one is retried.")
     faults["check"] = st.selectbox("Check fault", CHECK_FAULTS, help="The check fails, so the later checks are skipped.")
     if faults["generation"] != "None" or faults["check"] != "None":
         faults["attempts"] = st.selectbox("Apply to attempt", FAULT_ATTEMPTS)
@@ -92,9 +93,10 @@ def faults_injected(faults):
     def generate(query, context, config, feedback=None):
         state["attempt"] += 1
         state["sentence"] = 0
-        if faults["generation"] != "None" and attempt_applies():
-            not_covered = [query] if faults["generation"] == "No sentences" else []
-            return {"status": "insufficient_info", "sentences": [], "not_covered": not_covered}
+        if faults["generation"] == "Cut off" and attempt_applies():
+            return {"status": "generation_error", "sentences": [], "not_covered": []}
+        if faults["generation"] == "No sentences" and attempt_applies():
+            return {"status": "insufficient_info", "sentences": [], "not_covered": [query]}
         return real["generate"](query, context, config, feedback=feedback)
 
     def check_provenance(sentence, retrieved_ids, expanded_ids):

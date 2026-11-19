@@ -1,0 +1,562 @@
+{
+  "T01": [
+    {
+      "verdict": "supported",
+      "reason": "Subsection (5) directly states that the employer's request shall not be unreasonably withheld upon obtaining Director General approval, which matches the sentence's meaning."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Subsection (5) states the employer shall not unreasonably withhold the request upon obtaining Director General approval, which directly supports the sentence."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Subsection (5) states the employer shall not unreasonably withhold the request upon obtaining Director General approval, which directly supports the sentence."
+    }
+  ],
+  "T02": [
+    {
+      "verdict": "supported",
+      "reason": "Section 45(1) exempts personal data processed by an individual for personal, family, household or recreational purposes from the Act's provisions, which means the Act does not apply to such data."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 45(1) explicitly exempts from the Act personal data processed by an individual only for personal, family, household or recreational purposes, which matches the sentence's statement."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 45(1) exempts personal data processed by an individual for personal, family, household or recreational purposes from the Act's provisions, which means the Act does not apply to such data."
+    }
+  ],
+  "T03": [
+    {
+      "verdict": "supported",
+      "reason": "The quoted section states the request may be withdrawn at any time by written notice, and the notice takes effect at the end of four weeks from when given, which matches the sentence's meaning."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The quoted section states the request may be withdrawn at any time by written notice, and the notice takes effect at the end of four weeks from when given, which matches the sentence's meaning."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The quoted passage directly supports both elements: withdrawal is permitted \"at any time, by notice in writing\" (subsection 3) and the notice takes effect \"at, but not before, the end of the period of four weeks beginning with the day on which the notice is given\" (subsection 4)."
+    }
+  ],
+  "T04": [
+    {
+      "verdict": "not_supported",
+      "reason": "The section states it is an offence to terminate a pregnant employee except on specific grounds, not that the employer can fire her; the sentence reverses the legal prohibition."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section states it is an offence to terminate a pregnant employee except on specific grounds, not that the employer can fire her; the sentence reverses the legal prohibition."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section states it is an offence to terminate a pregnant employee except on specific grounds, not that the employer can fire her; the sentence reverses the legal prohibition."
+    }
+  ],
+  "T05": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence incorrectly states the company can ignore the notice if dissatisfied; the section actually allows the data subject to apply to the Commissioner if the company fails to comply."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence incorrectly states the condition as \"unless the company is dissatisfied\" when the section actually allows the company to be dissatisfied and then requires the data subject to submit an application to the Commissioner; the section does not make the data subject's right conditional on the company's satisfaction."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence incorrectly states the company's dissatisfaction as a condition for the data subject's right; the section actually allows the data subject to apply to the Commissioner if the data user fails to comply, not the other way around."
+    }
+  ],
+  "T06": [
+    {
+      "verdict": "supported",
+      "reason": "Section 130(4) states that a person who sells personal data commits an offence if he has collected the personal data in contravention of subsection (1), which prohibits collecting personal data without the consent of the data user."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 130(4) states that a person who sells personal data commits an offence if he has collected the personal data in contravention of subsection (1), which prohibits collecting personal data without the consent of the data user."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 130(4) states that a person who sells personal data commits an offence if he has collected the personal data in contravention of subsection (1), which prohibits collecting personal data without the consent of the data user."
+    }
+  ],
+  "T07": [
+    {
+      "verdict": "supported",
+      "reason": "The sentence directly restates the quoted provision in subsection (1) using equivalent wording (\"there is\" for \"there shall be\")."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence directly restates the quoted provision in subsection (1) using equivalent wording (\"there is\" for \"there shall be\")."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence directly restates the quoted provision in subsection (1) using equivalent wording (\"there is\" for \"there shall be\")."
+    }
+  ],
+  "T08": [
+    {
+      "verdict": "not_supported",
+      "reason": "The section allows describing goods as limited if restricted to either a pre-determined maximum quantity OR actual quantity ordered within a specified period, but the sentence states only the first condition."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence omits the alternative condition in section 15(1)(b) that allows goods to be described as limited based on actual quantity ordered/subscribed within a specified period."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section allows describing goods as limited if restricted to either a pre-determined maximum quantity OR actual quantity ordered within a specified period, but the sentence states only the first condition."
+    }
+  ],
+  "T09": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence conflates two separate conditions: processing for employment purposes (40(1)(b)(i)) and processing to protect vital interests (40(1)(b)(ii)), which are distinct and independent grounds under the section."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence conflates two separate conditions: processing for employment purposes (1)(b)(i) and processing to protect vital interests (1)(b)(ii), which have different requirements and are not combined in the section."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence conflates two separate conditions: processing for employment purposes (1)(b)(i) and processing to protect vital interests (1)(b)(ii), which are distinct and independent grounds, not combined as the sentence suggests."
+    }
+  ],
+  "T10": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence reverses the logic: the section states the Commissioner \"shall not revoke\" unless satisfied, but the sentence states the Commissioner \"must revoke\" unless satisfied, which contradicts the section."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence reverses the logic: the section states the Commissioner \"shall not revoke\" unless satisfied, but the sentence states the Commissioner \"must revoke\" unless satisfied, which contradicts the section."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence reverses the logic: the section states the Commissioner \"shall not revoke\" unless satisfied, but the sentence states the Commissioner \"must revoke\" unless satisfied, which contradicts the section."
+    }
+  ],
+  "T11": [
+    {
+      "verdict": "supported",
+      "reason": "The section lists four criteria (a, b, c, d) that define when a failure to comply with a guarantee is of substantial character, matching the sentence's description."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The section defines substantial character failure through four criteria (a-d), which the sentence accurately summarizes."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The section defines when a failure to comply with a guarantee is of substantial character by listing four criteria (a, b, c, d), which the sentence accurately summarizes."
+    }
+  ],
+  "T12": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence adds a condition about the 50% limit that the section does not impose on this type of deduction; subsection (8)'s 50% limit is subject to exceptions in subsection (9), which does not list deductions under section 4(b) as exempt."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence adds a condition about the 50% wage limit that the section does not impose on this type of deduction; subsection (8)'s 50% limit is subject to exceptions in subsection (9), which does not list interest-bearing wage advances."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence adds a condition about the 50% wage limit that the section does not impose on this type of deduction; subsection (8)'s 50% limit is subject to exceptions in subsection (9), which does not list interest-bearing wage advances."
+    }
+  ],
+  "T13": [
+    {
+      "verdict": "supported",
+      "reason": "Section 24(2)(c) explicitly permits deductions for recovery of advances of wages under section 22 provided no interest is charged on the advances."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 24(2)(c) explicitly permits deductions for recovery of advances of wages under section 22 provided no interest is charged on the advances."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 24(2)(c) explicitly permits deductions for recovery of advances of wages under section 22 provided no interest is charged on the advances."
+    }
+  ],
+  "T14": [
+    {
+      "verdict": "supported",
+      "reason": "The sentence directly matches the quoted text in subsection (2) which explicitly states the paternity leave restriction."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence directly quotes subsection (2) which explicitly states that paternity leave is restricted to five confinements irrespective of the number of spouses."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence directly quotes subsection (2) which explicitly states that paternity leave is restricted to five confinements irrespective of the number of spouses."
+    }
+  ],
+  "T15": [
+    {
+      "verdict": "supported",
+      "reason": "Section 60d(1)(a) explicitly states employees are entitled to paid holidays on eleven gazetted public holidays, five of which are the specific mandatory holidays listed (National Day, Yang di-Pertuan Agong's Birthday, Ruler's Birthday/Federal Territory Day, Workers' Day, and Malaysia Day)."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 60d(1)(a) explicitly states employees are entitled to paid holidays on eleven gazetted public holidays, five of which are the specific mandatory holidays listed (National Day, Yang di-Pertuan Agong's Birthday, Ruler's Birthday/Federal Territory Day, Workers' Day, and Malaysia Day)."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 60d(1)(a) explicitly states employees are entitled to paid holidays on eleven gazetted public holidays, five of which are the specific mandatory holidays listed (National Day, Yang di-Pertuan Agong's Birthday, Ruler's Birthday/Federal Territory Day, Workers' Day, and Malaysia Day)."
+    }
+  ],
+  "T16": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence adds a condition (\"unless one of several specific circumstances applies\") that is not stated in the section; the section only mentions \"subject to section 39\" without detailing what those circumstances are."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence adds a condition (\"unless one of several specific circumstances applies\") that is not stated in the section; the section only mentions \"subject to section 39\" without detailing what those circumstances are."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence adds a condition (\"unless one of several specific circumstances applies\") that is not stated in the section; the section only mentions \"subject to section 39\" without detailing what those circumstances are."
+    }
+  ],
+  "T17": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence incorrectly states \"data subject can disclose\" when the section specifies it is the \"data user\" who may disclose personal data."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence incorrectly states \"data subject can disclose\" when the section specifies it is the \"data user\" who may disclose personal data."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence incorrectly states \"data subject can disclose\" when the section specifies it is the \"data user\" who may disclose personal data."
+    }
+  ],
+  "T18": [
+    {
+      "verdict": "not_supported",
+      "reason": "The section defines \"eligible period\" as maternity leave, not paternity leave."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section defines \"eligible period\" as maternity leave, not paternity leave."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section defines \"eligible period\" as maternity leave, not paternity leave."
+    }
+  ],
+  "T19": [
+    {
+      "verdict": "not_supported",
+      "reason": "The quoted passage applies only when the employer terminates without notice under specific subsections; it does not apply when the employee terminates (subsection 2), which requires payment within three days instead."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The quoted passage applies only when the employer terminates without notice under specific subsections; it does not apply when the employee terminates (subsection 2), which requires payment within three days instead."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The quoted passage applies only when the employer terminates without notice under specific subsections; it does not apply when the employee terminates (subsection 2), which requires payment within three days instead."
+    }
+  ],
+  "T20": [
+    {
+      "verdict": "not_supported",
+      "reason": "The section requires statements to be conspicuously placed near the claim, but does not specify \"three locations\" as a requirement."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section requires statements to be conspicuously placed near the claim, but does not specify \"three locations\" as a requirement."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section requires statements to be conspicuously placed near the claim, but does not specify \"three locations\" as a requirement."
+    }
+  ],
+  "T21": [
+    {
+      "verdict": "not_supported",
+      "reason": "The section states the notice takes effect at the end of four weeks, not three weeks."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section states the notice takes effect at the end of four weeks, not three weeks."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section states the notice takes effect at the end of four weeks, not three weeks."
+    }
+  ],
+  "T22": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence specifies \"two new purposes\" but the section does not limit disclosure to only two purposes or specify that they must be \"new\"—it permits disclosure for \"any purpose other than\" the original purpose."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence specifies \"two new purposes\" but the section does not limit disclosure to only two purposes or specify that they must be \"new\"—it permits disclosure for \"any purpose other than\" the original purpose."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence specifies \"two new purposes\" but the section does not limit disclosure to only two purposes or specify that they must be \"new\"—it permits disclosure for \"any purpose other than\" the original purpose."
+    }
+  ],
+  "T23": [
+    {
+      "verdict": "supported",
+      "reason": "The section explicitly states it is an offence for an employer to terminate or give notice of termination to a pregnant female employee except on the three specified grounds listed in (a), (b), and (c)."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The section explicitly states it is an offence for an employer to terminate or give notice of termination to a pregnant female employee except on the three specified grounds listed in (a), (b), and (c)."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The section explicitly states it is an offence for an employer to terminate or give notice of termination to a pregnant female employee except on the three specified grounds listed in (a), (b), and (c)."
+    }
+  ],
+  "T24": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section by stating the statutory minimums apply \"if such provision exists,\" when the section states they apply \"in the absence of such provision in writing.\""
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section by stating statutory minimums apply \"if such provision exists,\" when the section states they apply \"in the absence of such provision in writing.\""
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section by stating the statutory minimums apply \"if such provision exists,\" when the section states they apply \"in the absence of such provision in writing.\""
+    }
+  ],
+  "T25": [
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately reflects the requirement in section 19(1) that the certificate holder must surrender the certificate within seven days from the date of service of the notice of revocation."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately reflects the requirement in section 19(1) that the certificate holder must surrender the certificate within seven days from the date of service of the notice of revocation."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately reflects the requirement in section 19(1) that the certificate holder must surrender the certificate within seven days from the date of service of the notice of revocation."
+    }
+  ],
+  "T26": [
+    {
+      "verdict": "supported",
+      "reason": "Section 12(1) establishes that either party may give notice to terminate a contract of service, and section 12(2) specifies that notice length is determined by written contract provision or statutory minimums, with section 12(2)(c) setting eight weeks' notice for employees employed five years or more."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 12(1) establishes that either party may give notice to terminate a contract of service, and section 12(2) specifies that notice length is determined by written contract provision or statutory minimums, with section 12(2)(c) setting eight weeks' notice for employees employed five years or more."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 12(1) establishes that either party may give notice to terminate a contract of service, and section 12(2) specifies that notice length is determined by written contract provision or statutory minimums, with section 12(2)(c) setting eight weeks' notice for employees employed five years or more."
+    }
+  ],
+  "T27": [
+    {
+      "verdict": "supported",
+      "reason": "Section 24g(1) explicitly states the Tribunal may declare a term unenforceable or void when it concludes the term is substantively unfair (or procedurally unfair or both)."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 24g(1) explicitly states the Tribunal may declare a term unenforceable or void when it concludes the term is substantively unfair (or procedurally unfair or both)."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 24g(1) explicitly states the Tribunal may declare a term unenforceable or void when it concludes the term is substantively unfair (or procedurally unfair or both)."
+    }
+  ],
+  "T28": [
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately reflects subsection (2) which requires that a claim that goods are limited shall state clearly both the maximum quantity and the specific time period or dates."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately reflects subsection (2) which requires that a claim that goods are limited shall state clearly both the maximum quantity and the specific time period or dates."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately reflects subsection (2) which requires that a claim that goods are limited shall state clearly both the maximum quantity and the specific time period or dates."
+    }
+  ],
+  "T29": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence is incomplete; the section specifies five mandatory holidays including National Day plus four others (Yang di-Pertuan Agong's Birthday, Ruler's Birthday, Workers' Day, and Malaysia Day)."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence is incomplete; the section specifies five mandatory holidays including National Day plus four others (Yang di-Pertuan Agong's Birthday, Ruler's Birthday, Workers' Day, and Malaysia Day)."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence is incomplete; the section specifies five mandatory holidays including National Day plus four others (Yang di-Pertuan Agong's Birthday, Ruler's Birthday, Workers' Day, and Malaysia Day)."
+    }
+  ],
+  "T30": [
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately restates the quoted passage from section 32(2)(b), which sets out the test for acceptable quality based on what a reasonable consumer would regard as acceptable considering the specified factors."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately restates the quoted passage from section 32(2)(b), which sets out the test for acceptable quality based on what a reasonable consumer would regard as acceptable considering the specified factors."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately restates the quoted passage from section 32(2)(b), which sets out the test for acceptable quality based on what a reasonable consumer would regard as acceptable considering the specified factors."
+    }
+  ],
+  "T31": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section by stating the company \"does not commit an offence\" when subsection (4) explicitly states that a data user who contravenes subsection (2) (i.e., continues processing after receiving withdrawal notice) commits an offence."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section by stating the company \"does not commit an offence\" when subsection (4) explicitly states that a data user who contravenes subsection (2) (i.e., continues processing after receiving withdrawal notice) commits an offence."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section by stating the company \"does not commit an offence\" when subsection (4) explicitly states that a data user who contravenes subsection (2) (i.e., continues processing after receiving withdrawal notice) commits an offence."
+    }
+  ],
+  "T32": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence incorrectly identifies the actor as \"data subject\" when the section clearly states it is the \"data user\" who may refuse."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section states a data user (not data subject) may refuse if not satisfied the data is inaccurate, incomplete, misleading or not up-to-date."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section states a data user (not data subject) may refuse if not satisfied the data is inaccurate, incomplete, misleading or not up-to-date."
+    }
+  ],
+  "T33": [
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately reflects the notification requirement stated in section 60fa(3)(b), using plainer wording without adding, omitting, or contradicting any conditions."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately reflects the notification requirement stated in section 60fa(3)(b), using plainer wording (\"before\" instead of \"from\") without adding conditions or exceptions."
+    },
+    {
+      "verdict": "supported",
+      "reason": "The sentence accurately reflects the notification requirement stated in section 60fa(3)(b), using plainer wording (\"before\" instead of \"from\") but conveying the same meaning and conditions."
+    }
+  ],
+  "T34": [
+    {
+      "verdict": "supported",
+      "reason": "Section 15(3) directly states that statements required under subsection (2) must be conspicuously placed near the claim, which aligns with the sentence's requirement."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 15(3) directly states that statements required under subsection (2) shall be conspicuously placed near the claim, which matches the sentence's requirement."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 15(3) directly states that statements required under subsection (2) shall be conspicuously placed near the claim, which aligns with the sentence's requirement."
+    }
+  ],
+  "T35": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section by using \"do not depart\" instead of \"depart\"; the section requires departure from description/sample as a basis for substantial failure, not the absence of departure."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section by using \"do not depart\" instead of \"depart\"; the section requires departure from description/sample as a basis for substantial failure, not the absence of departure."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section by using \"do not depart\" instead of \"depart\"; the section requires departure from description/sample as a basis for substantial failure, not the absence of departure."
+    }
+  ],
+  "T36": [
+    {
+      "verdict": "supported",
+      "reason": "Section 6(2)(a) explicitly permits processing personal data without consent when necessary for contract performance, which matches the sentence's statement."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 6(2)(a) explicitly permits processing personal data without consent when necessary for contract performance, which matches the sentence's statement."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 6(2)(a) explicitly permits processing personal data without consent when necessary for contract performance, which matches the sentence's statement."
+    }
+  ],
+  "T37": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section: subsection (2) makes it an offence for suppliers to contract out of the Act, so they cannot do so; the quoted passage means the Act overrides agreements, not that contracting out is permitted."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section: subsection (2) makes it an offence for suppliers to contract out, and subsection (1) states the Act's provisions apply notwithstanding agreements, meaning sellers cannot contract out."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence contradicts the section: subsection (2) makes it an offence for suppliers to contract out, and subsection (1) states the Act's provisions apply notwithstanding agreements, meaning sellers cannot contract out."
+    }
+  ],
+  "T38": [
+    {
+      "verdict": "supported",
+      "reason": "Section 45(1) exempts personal data processed by an individual for personal, family, household or recreational purposes from the Act's provisions, which means the Act does not apply to such data."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 45(1) exempts personal data processed by an individual for personal, family, household or recreational purposes from the Act's provisions, which means the Act does not apply to such data."
+    },
+    {
+      "verdict": "supported",
+      "reason": "Section 45(1) explicitly exempts personal data processed by an individual for personal, family, household or recreational purposes from the Act's provisions, which means the Act does not apply to such data."
+    }
+  ],
+  "T39": [
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence adds a specific timeframe of \"two weeks\" which the section does not specify; the section only requires remedying \"within a reasonable time\"."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence adds a specific timeframe of \"two weeks\" which the section does not specify; the section only requires remedying \"within a reasonable time\"."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The sentence adds a specific timeframe of \"two weeks\" which the section does not specify; the section only requires remedying \"within a reasonable time\"."
+    }
+  ],
+  "T40": [
+    {
+      "verdict": "not_supported",
+      "reason": "The section contains no exception for conditions imposed by retailers; it applies the print size requirement to all persons who impose conditions on free offers."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section contains no exception for conditions imposed by retailers; it applies the print size requirement to all persons who impose conditions on free offers."
+    },
+    {
+      "verdict": "not_supported",
+      "reason": "The section contains no exception for conditions imposed by retailers; it applies the print size requirement to all persons who impose conditions on free offers."
+    }
+  ]
+}

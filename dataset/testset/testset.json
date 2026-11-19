@@ -1,0 +1,1981 @@
+[
+  {
+    "id": "Q01",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "exact_term",
+    "section_count": "single",
+    "question": "What does section 60FA of the Employment Act 1955 provide regarding paternity leave?",
+    "gold_doc_ids": [
+      "Act265#60FA"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#60FA",
+        "quote": "paid paternity leave at his ordinary rate of pay for a period of seven consecutive days in respect of each confinement"
+      },
+      {
+        "doc_id": "Act265#60FA",
+        "quote": "restricted to five confinements irrespective of the number of spouses"
+      },
+      {
+        "doc_id": "Act265#60FA",
+        "quote": "employed by the same employer at least twelve months immediately before the commencement of such paternity leave"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "First Schedule para 2(5): s.60FA does not apply to domestic employees (Schedules are not chunked, see gap G-09).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q02",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "exact_term",
+    "section_count": "multi_same_act",
+    "question": "Under section 12(2) of the Employment Act 1955, what is the minimum notice period for an employee who has been employed for three years if the contract has no written notice provision, and under section 13(1) can either party end the contract without serving that notice?",
+    "gold_doc_ids": [
+      "Act265#12",
+      "Act265#13"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#12",
+        "quote": "six weeks’ notice if he has been so employed for two years or more but less than five years on such date"
+      },
+      {
+        "doc_id": "Act265#12",
+        "quote": "The length of such notice shall be the same for both employer and employee"
+      },
+      {
+        "doc_id": "Act265#13",
+        "quote": "Either party to a contract of service may terminate such contract of service without notice"
+      },
+      {
+        "doc_id": "Act265#13",
+        "quote": "by paying to the other party an indemnity of a sum equal to the amount of wages which would have accrued to the employee during the term of such notice"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act265#13",
+          "to": "Act265#12"
+        }
+      ],
+      "phrases": [
+        "section 12"
+      ],
+      "caught_by_section_n_pattern": true
+    },
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": "question names both sections",
+    "distractor_reason": null,
+    "notes": "Converted from single to multi (same Act) for the 58-question design; s.13 added as second gold section.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q03",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "exact_term",
+    "section_count": "single",
+    "question": "Under section 60D of the Employment Act 1955, which five gazetted public holidays must be included in an employee's eleven paid public holidays?",
+    "gold_doc_ids": [
+      "Act265#60D"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#60D",
+        "quote": "on eleven of the gazetted public holidays, five of which shall be"
+      },
+      {
+        "doc_id": "Act265#60D",
+        "quote": "(i) the National Day; (ii) the Birthday of the Yang di-Pertuan Agong; (iii) the Birthday of the Ruler or the Yang di-Pertua Negeri, as the case may be, of the State in which the employee wholly or mainly works under his contract of service, or the Federal Territory Day, if the employee wholly or mainly works in the Federal Territory; (iv) the Workers’ Day; and (v) Malaysia Day"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "s.60D(1)(b) refers to 'section 8 of the Holidays Act 1951' - an external reference that a naive pattern would wrongly map to Act265#8 (gap G-07).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q04",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "exact_term",
+    "section_count": "multi_same_act",
+    "question": "Under section 21 of the Employment Act 1955, what must an employer pay when it terminates a contract of service without notice under subsection 13(1), and by when?",
+    "gold_doc_ids": [
+      "Act265#21",
+      "Act265#13"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#21",
+        "quote": "shall be paid by the employer to the employee not later than the day on which such contract of service is so terminated"
+      },
+      {
+        "doc_id": "Act265#13",
+        "quote": "an indemnity of a sum equal to the amount of wages which would have accrued to the employee during the term of such notice or during the unexpired term of such notice"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act265#21",
+          "to": "Act265#13"
+        }
+      ],
+      "phrases": [
+        "subsection 13(1)"
+      ],
+      "caught_by_section_n_pattern": false
+    },
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": "question names both sections",
+    "distractor_reason": null,
+    "notes": "s.21 also refers to 'section 24' (plain form), so a 'section N' pattern would expand to Act265#24 but miss Act265#13.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q05",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "I have worked for my company for six years. How many days of paid sick leave can I take in a year if I don't need to be hospitalised?",
+    "gold_doc_ids": [
+      "Act265#60F"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#60F",
+        "quote": "of twenty-two days in the aggregate in each calendar year if the employee has been employed for five years or more"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q06",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "Can my employer fire me because I am pregnant?",
+    "gold_doc_ids": [
+      "Act265#41A"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#41A",
+        "quote": "it shall be an offence for her employer to terminate her services or give her notice of termination of service"
+      },
+      {
+        "doc_id": "Act265#41A",
+        "quote": "the burden of proving that such termination is not on the ground of her pregnancy"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q07",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "How long is the maternity leave I am entitled to for each birth?",
+    "gold_doc_ids": [
+      "Act265#37"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#37",
+        "quote": "maternity leave for an eligible period in respect of each confinement"
+      },
+      {
+        "doc_id": "Act265#37",
+        "quote": "“eligible period” means a period of maternity leave of not less than *ninety-eight consecutive days"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Source PDF prints '*ninety-eight' (amendment footnote marker). Strip '*' and NOTE lines during cleaning, or exact quote match fails (gap G-11).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q08",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "Can I ask my employer to pay my salary in cash instead of into my bank account?",
+    "gold_doc_ids": [
+      "Act265#25A"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#25A",
+        "quote": "an employer may, upon a written request of the employee, and subject to subsection (2), make payment of his employee’s wages"
+      },
+      {
+        "doc_id": "Act265#25A",
+        "quote": "obtain approval from the Director General for the payment of wages to be paid in legal tender or by cheque"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "s.25A refers to subsection 25(1) (the general rule); Act265#25 is a related but not required section.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q09",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_same_act",
+    "question": "Can my employer force me to work on my rest day?",
+    "gold_doc_ids": [
+      "Act265#60",
+      "Act265#60A"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#60",
+        "quote": "no employee shall be compelled to work on a rest day unless he is engaged in work which by reason of its nature requires to be carried on continuously or continually by two or more shifts"
+      },
+      {
+        "doc_id": "Act265#60A",
+        "quote": "An employee may be required by his employer to exceed the limit of hours prescribed in subsection (1) and to work on a rest day"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act265#60",
+          "to": "Act265#60A"
+        }
+      ],
+      "phrases": [
+        "subsection 60A(2)"
+      ],
+      "caught_by_section_n_pattern": false
+    },
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": "only if pattern widened (G-06)",
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q10",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_same_act",
+    "question": "My employer is a sole proprietor and I complained to the Director General of Labour that he sexually harassed me. If the Director General decides the harassment is proven, can I quit immediately and what am I entitled to?",
+    "gold_doc_ids": [
+      "Act265#81D",
+      "Act265#81E"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#81D",
+        "quote": "is made against an employer who is a sole proprietor, the Director General shall inquire into such complaint himself"
+      },
+      {
+        "doc_id": "Act265#81E",
+        "quote": "the complainant may terminate his contract of service without notice"
+      },
+      {
+        "doc_id": "Act265#81E",
+        "quote": "wages as if the complainant has given the notice of the termination of contract of service"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act265#81E",
+          "to": "Act265#81D"
+        }
+      ],
+      "phrases": [
+        "subsection 81d(4)"
+      ],
+      "caught_by_section_n_pattern": false
+    },
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": "only if pattern widened (G-06)",
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q11",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "distractor",
+    "section_count": "single",
+    "question": "Can my employer deduct an unpaid salary advance from my wages, and is there a limit on how much can be deducted in a month?",
+    "gold_doc_ids": [
+      "Act265#24"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#24",
+        "quote": "deductions for the recovery of advances of wages made under section 22 provided no interest is charged on the advances"
+      },
+      {
+        "doc_id": "Act265#24",
+        "quote": "shall not exceed fifty per centum of the wages earned by that employee in that month"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "The phrase \"advance\" appears in section 22 and 27 as well, but only section 24 covers the deduction and monthly limit",
+    "notes": "'advance' appears in ss.22, 24 and 27; only s.24 answers both parts.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q12",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "distractor",
+    "section_count": "single",
+    "question": "Is my annual bonus counted as part of my 'wages' under the Employment Act 1955?",
+    "gold_doc_ids": [
+      "Act265#2"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#2",
+        "quote": "“wages” means basic wages and all other payments in cash payable to an employee for work done in respect of his contract of service"
+      },
+      {
+        "doc_id": "Act265#2",
+        "quote": "any annual bonus or any part of any annual bonus"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "The phrase 'wages' repetitively mentioned in the Acts, but only definition from section 2 mentioned whether the annual bonus is included",
+    "notes": "Gold is the interpretation section (very long chunk) - tests retrieval of a definitions section (gap G-08).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q13",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "distractor",
+    "section_count": "single",
+    "question": "Within how many days after the end of the wage period must my employer pay my salary?",
+    "gold_doc_ids": [
+      "Act265#19"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#19",
+        "quote": "not later than the seventh day after the last day of any wage period"
+      },
+      {
+        "doc_id": "Act265#19",
+        "quote": "shall be paid not later than the last day of the next wage period"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "ss.18, 20 and 21 also deal with wage periods and when wages are paid (incl. on termination); s.38 is a listed decoy. Only s.19 sets the 7-day rule.",
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q14",
+    "in_scope": true,
+    "acts": [
+      "Act265"
+    ],
+    "question_type": "distractor",
+    "section_count": "multi_same_act",
+    "question": "If I am dismissed for misconduct after an inquiry, will my employer still pay me for the annual leave I have not taken?",
+    "gold_doc_ids": [
+      "Act265#60E",
+      "Act265#14"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#60E",
+        "quote": "the employer shall pay the employee his ordinary rate of pay in respect of every day of such leave"
+      },
+      {
+        "doc_id": "Act265#60E",
+        "quote": "this subsection shall not apply where an employee is dismissed under paragraph 14(1)(a)"
+      },
+      {
+        "doc_id": "Act265#14",
+        "quote": "on the grounds of misconduct inconsistent with the fulfilment of the express or implied conditions of his service, after due inquiry"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act265#60E",
+          "to": "Act265#14"
+        }
+      ],
+      "phrases": [
+        "paragraph 14(1)(a)"
+      ],
+      "caught_by_section_n_pattern": false
+    },
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": "only if pattern widened (G-06)",
+    "distractor_reason": "The phrase 'pay me' may cause retrieval system to prioritize on section 21 (payment of wages when an employer terminates employment) or section 69 (related to claiming unpaid money) rather than the golden sections.",
+    "notes": "Reference is in 'paragraph 14(1)(a)' form; the 'section N' pattern described in C3 3.3.2 will not detect it (gap G-06).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q15",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "exact_term",
+    "section_count": "single",
+    "question": "Under section 14 of the Consumer Protection Act 1999, how large must the print describing a condition of a free offer be?",
+    "gold_doc_ids": [
+      "Act599#14"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#14",
+        "quote": "the print of the description of the condition is at least half as large as the print used for the expression"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q16",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "exact_term",
+    "section_count": "single",
+    "question": "When may a supplier describe goods as 'limited' under section 15 of the Consumer Protection Act 1999?",
+    "gold_doc_ids": [
+      "Act599#15"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#15",
+        "quote": "describe the goods as limited unless their edition, printing, minting, crafting or production is restricted to"
+      },
+      {
+        "doc_id": "Act599#15",
+        "quote": "the maximum quantity of goods which are offered for sale"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q17",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "exact_term",
+    "section_count": "single",
+    "question": "Under section 44 of the Consumer Protection Act 1999, when is a failure of goods to comply with a guarantee of a substantial character?",
+    "gold_doc_ids": [
+      "Act599#44"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#44",
+        "quote": "the goods would not have been acquired by a reasonable consumer fully acquainted with the nature and extent of the failure"
+      },
+      {
+        "doc_id": "Act599#44",
+        "quote": "the goods are not of acceptable quality within the meaning of section 32 because they are unsafe"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Act599#62 has the identical heading for services - a natural distractor.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q18",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "exact_term",
+    "section_count": "multi_same_act",
+    "question": "What is the monetary limit on the jurisdiction of the Tribunal for Consumer Claims, and can the parties agree to let it hear a larger claim?",
+    "gold_doc_ids": [
+      "Act599#98",
+      "Act599#100"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#98",
+        "quote": "where the total amount in respect of which an award of the Tribunal is sought does not exceed fifty thousand ringgit"
+      },
+      {
+        "doc_id": "Act599#100",
+        "quote": "the Tribunal shall have jurisdiction to hear and determine the claim if the parties have entered into an agreement in writing"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act599#98",
+          "to": "Act599#100"
+        }
+      ],
+      "phrases": [
+        "sections 99 and 100"
+      ],
+      "caught_by_section_n_pattern": true
+    },
+    "counts_toward_cross_ref_target": true,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q19",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "Can I bring a lawyer to represent me at a hearing of the Tribunal for Consumer Claims?",
+    "gold_doc_ids": [
+      "Act599#108"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#108",
+        "quote": "No party shall be represented by an advocate and solicitor at a hearing"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "s.108(3) cites 'section 37 of the Legal Profession Act 1976' - a naive pattern would wrongly link Act599#37 (gap G-07).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q20",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "The seller's terms say I give up my rights under the Consumer Protection Act. Can a seller contract out of the Act like that?",
+    "gold_doc_ids": [
+      "Act599#6"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#6",
+        "quote": "The provisions of this Act shall have effect notwithstanding anything to the contrary in any agreement"
+      },
+      {
+        "doc_id": "Act599#6",
+        "quote": "Every supplier and every manufacturer who purports to contract out of any provision of this Act commits an offence"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q21",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "An imported kettle exploded because of a defect and damaged my kitchen. Who can be held liable for the damage?",
+    "gold_doc_ids": [
+      "Act599#68"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#68",
+        "quote": "the person who has, in the course of his business, imported the product into Malaysia in order to supply it to another person"
+      },
+      {
+        "doc_id": "Act599#68",
+        "quote": "their liability shall be joint and several"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q22",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "Can I insist that a shop gives me a receipt for what I bought?",
+    "gold_doc_ids": [
+      "Act599#140"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#140",
+        "quote": "a consumer shall be supplied with a receipt for any purchase of goods or services if the consumer so requests"
+      },
+      {
+        "doc_id": "Act599#140",
+        "quote": "exempt any business or class of business from this section"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q23",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_same_act",
+    "question": "I bought a product with a defect that cannot be repaired. Can I return it and get a cash refund instead of store credit?",
+    "gold_doc_ids": [
+      "Act599#41",
+      "Act599#46"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#41",
+        "quote": "where the failure is one that cannot be remedied or is of a substantial character within the meaning of section 44"
+      },
+      {
+        "doc_id": "Act599#46",
+        "quote": "The obligation to refund cannot be satisfied by permitting the consumer to acquire other goods from the supplier"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "No cross-reference between ss.41 and 46 (s.41 refers to ss.42-45). Underlying guarantee is s.32 (acceptable quality).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q24",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_same_act",
+    "question": "A car workshop repaired my car badly and refuses to fix the problem. Can I cancel the contract and get my money back?",
+    "gold_doc_ids": [
+      "Act599#60",
+      "Act599#64"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#60",
+        "quote": "have the failure remedied elsewhere and obtain from the supplier all reasonable costs incurred in having the failure remedied"
+      },
+      {
+        "doc_id": "Act599#60",
+        "quote": "cancel the contract for the supply of the services in accordance with section 63"
+      },
+      {
+        "doc_id": "Act599#64",
+        "quote": "the consumer shall be entitled to obtain from the supplier a refund of any money paid or other consideration provided in respect of the services"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act599#64",
+          "to": "Act599#60"
+        }
+      ],
+      "phrases": [
+        "subparagraph 60(1)(b)(ii) or subsection 60(2)"
+      ],
+      "caught_by_section_n_pattern": false
+    },
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": "only if pattern widened (G-06)",
+    "distractor_reason": null,
+    "notes": "The 'repaired badly' premise is a failure of the s.53 guarantee (reasonable care and skill).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q25",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "distractor",
+    "section_count": "single",
+    "question": "Can I claim compensation for a personal injury caused by a defective product at the Tribunal for Consumer Claims?",
+    "gold_doc_ids": [
+      "Act599#99"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#99",
+        "quote": "Nothing in this section shall be deemed to authorize the Tribunal to deal with a claim arising from personal injury or death"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "Product-liability keywords pull toward Part X (s.68) and s.98.",
+    "notes": "Product-liability keywords pull toward Part X (s.68).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q26",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "distractor",
+    "section_count": "single",
+    "question": "Does the Consumer Protection Act 1999 cover the treatment I receive at a private clinic?",
+    "gold_doc_ids": [
+      "Act599#2"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#2",
+        "quote": "to healthcare services provided or to be provided by healthcare professionals or healthcare facilities"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "s.3 defines 'healthcare services' and s.19(6) excludes healthcare goods from Part III - both share the question's healthcare wording.",
+    "notes": "s.3 defines 'healthcare services' and s.19(6) excludes healthcare goods from Part III.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q27",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "distractor",
+    "section_count": "single",
+    "question": "Is a shop allowed to advertise a product at a special price when it does not actually intend to sell it at that price?",
+    "gold_doc_ids": [
+      "Act599#13"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#13",
+        "quote": "No person shall advertise for supply at a specified price goods or services which that person"
+      },
+      {
+        "doc_id": "Act599#13",
+        "quote": "does not have reasonable grounds for believing can be supplied"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "s.12 (misleading indication as to price) shares the 'price' wording, and s.16 (demanding or accepting payment without intending to supply) shares the 'does not intend to supply' idea; s.10 (false or misleading representation) is a general decoy. Only s.13 covers advertising goods at a specified price without intending, or having reasonable grounds, to supply them at that price.",
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q28",
+    "in_scope": true,
+    "acts": [
+      "Act599"
+    ],
+    "question_type": "distractor",
+    "section_count": "multi_same_act",
+    "question": "If a term in my consumer contract is oppressive, can the Tribunal for Consumer Claims declare it void?",
+    "gold_doc_ids": [
+      "Act599#24D",
+      "Act599#24G"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#24D",
+        "quote": "A contract or a term of a contract is substantively unfair if the contract or the term of the contract"
+      },
+      {
+        "doc_id": "Act599#24G",
+        "quote": "the court or the Tribunal may declare the contract or the term of the contract as unenforceable or void"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act599#24G",
+          "to": "Act599#24D"
+        }
+      ],
+      "phrases": [
+        "sections 24c and 24d"
+      ],
+      "caught_by_section_n_pattern": true
+    },
+    "counts_toward_cross_ref_target": true,
+    "cross_ref_target_note": null,
+    "distractor_reason": "s.24A defines 'unfair term', and ss.24C (procedural unfairness), 24F (power to raise unfairness) and 24H (executed contracts) sit in the same Part IIIA and repeat 'unfair' and 'court or the Tribunal' wording. The substantive test ('oppressive') is only in s.24D, and the power to declare a term void is only in s.24G.",
+    "notes": "Reference uses lower-case section letters ('24c'); doc_ids must be case-normalised (gap G-05).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q29",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "exact_term",
+    "section_count": "single",
+    "question": "Under section 7 of the Personal Data Protection Act 2010, in which languages must the notice to a data subject be given?",
+    "gold_doc_ids": [
+      "Act709#7"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#7",
+        "quote": "A notice under subsection (1) shall be in the national and English languages"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q30",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "exact_term",
+    "section_count": "single",
+    "question": "Under section 41 of the Personal Data Protection Act 2010, when does a data user not need to comply with the Notice and Choice Principle again for a subsequent collection of personal data?",
+    "gold_doc_ids": [
+      "Act709#41"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#41",
+        "quote": "not more than twelve months have elapsed between the first collection and the subsequent collection"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "PDF extraction of s.41(1)(a) is letter-spaced ('h a s c o m p l i e d ...') - must be fixed in cleaning (gap G-11).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q31",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "exact_term",
+    "section_count": "single",
+    "question": "Under section 2 of the Personal Data Protection Act 2010, when is an individual treated as 'established in Malaysia'?",
+    "gold_doc_ids": [
+      "Act709#2"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#2",
+        "quote": "an individual whose physical presence in Malaysia shall not be less than one hundred and eighty days in one calendar year"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q32",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "exact_term",
+    "section_count": "multi_same_act",
+    "question": "On what grounds can the Commissioner revoke a data user's registration, and how long does the data user have to surrender the certificate of registration after revocation?",
+    "gold_doc_ids": [
+      "Act709#18",
+      "Act709#19"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#18",
+        "quote": "the issuance of the certificate of registration was induced by a false representation of fact by the data user"
+      },
+      {
+        "doc_id": "Act709#19",
+        "quote": "within seven days from the date of service of the notice of revocation of registration, surrender the certificate to the Commissioner"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act709#19",
+          "to": "Act709#18"
+        }
+      ],
+      "phrases": [
+        "section 18"
+      ],
+      "caught_by_section_n_pattern": true
+    },
+    "counts_toward_cross_ref_target": true,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Same example as C3 Section 3.3.2.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q33",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "How long is a company allowed to keep my personal data?",
+    "gold_doc_ids": [
+      "Act709#10"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#10",
+        "quote": "shall not be kept longer than is necessary for the fulfilment of that purpose"
+      },
+      {
+        "doc_id": "Act709#10",
+        "quote": "destroyed or permanently deleted if it is no longer required"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q34",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "Can I tell a company to stop using personal data that I previously agreed to give them?",
+    "gold_doc_ids": [
+      "Act709#38"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#38",
+        "quote": "A data subject may by notice in writing withdraw his consent to the processing of personal data"
+      },
+      {
+        "doc_id": "Act709#38",
+        "quote": "upon receiving the notice under subsection (1), cease the processing of the personal data"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q35",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "How can I stop a company from sending me marketing messages using my personal data?",
+    "gold_doc_ids": [
+      "Act709#43"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#43",
+        "quote": "require the data user at the end of such period as is reasonable in the circumstances to cease or not to begin processing his personal data for purposes of direct marketing"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q36",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "single",
+    "question": "Is it an offence to sell personal data that was taken from a company without its consent?",
+    "gold_doc_ids": [
+      "Act709#130"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#130",
+        "quote": "A person who sells personal data commits an offence if he has collected the personal data in contravention of subsection (1)"
+      },
+      {
+        "doc_id": "Act709#130",
+        "quote": "liable to a fine not exceeding five hundred thousand ringgit or to imprisonment for a term not exceeding three years or to both"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Penalty as in the July 2023 reprint (see gap G-01 on the 2024 amendment).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q37",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_same_act",
+    "question": "How do I ask a company for a copy of my personal data, and how long does it have to respond?",
+    "gold_doc_ids": [
+      "Act709#30",
+      "Act709#31"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#30",
+        "quote": "upon payment of a prescribed fee, make a data access request in writing to the data user"
+      },
+      {
+        "doc_id": "Act709#31",
+        "quote": "not later than twenty-one days from the date of receipt of the data access request"
+      },
+      {
+        "doc_id": "Act709#31",
+        "quote": "comply in whole with the data access request not later than fourteen days after the expiration of the period"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act709#31",
+          "to": "Act709#30"
+        }
+      ],
+      "phrases": [
+        "section 30"
+      ],
+      "caught_by_section_n_pattern": true
+    },
+    "counts_toward_cross_ref_target": true,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q38",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_same_act",
+    "question": "Can a company share my personal data with someone else for a purpose I wasn't told about when it was collected?",
+    "gold_doc_ids": [
+      "Act709#8",
+      "Act709#39"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#8",
+        "quote": "no personal data shall, without the consent of the data subject, be disclosed"
+      },
+      {
+        "doc_id": "Act709#39",
+        "quote": "the data subject has given his consent to the disclosure"
+      },
+      {
+        "doc_id": "Act709#39",
+        "quote": "is necessary for the purpose of preventing or detecting a crime, or for the purpose of investigations"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act709#8",
+          "to": "Act709#39"
+        },
+        {
+          "from": "Act709#39",
+          "to": "Act709#8"
+        }
+      ],
+      "phrases": [
+        "Subject to section 39",
+        "Notwithstanding section 8"
+      ],
+      "caught_by_section_n_pattern": true
+    },
+    "counts_toward_cross_ref_target": true,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "s.45(2) exemptions (e.g. crime detection) may also be cited; not part of the gold set.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q39",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "distractor",
+    "section_count": "single",
+    "question": "Does the PDPA apply to personal data I keep about my friends and family for my own household affairs?",
+    "gold_doc_ids": [
+      "Act709#45"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#45",
+        "quote": "personal data processed by an individual only for the purposes of that individual’s personal, family or household affairs, including recreational purposes"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "s.2 (application) and s.3 (non-application) also decide whether the PDPA applies; the household-affairs exemption is only in s.45.",
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q40",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "distractor",
+    "section_count": "single",
+    "question": "Do the federal and state governments have to follow the PDPA when handling my personal data?",
+    "gold_doc_ids": [
+      "Act709#3"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#3",
+        "quote": "This Act shall not apply to the Federal Government and State Governments"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "s.2 (application) and s.45 (exemptions) also cover the Act's scope; only s.3 excludes the Federal and State Governments.",
+    "notes": null,
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q41",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "distractor",
+    "section_count": "multi_same_act",
+    "question": "Can a company process my personal data without my consent if it needs the data to perform a contract I signed with it, and does the same rule apply to information about my health?",
+    "gold_doc_ids": [
+      "Act709#6",
+      "Act709#40"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#6",
+        "quote": "a data user may process personal data about a data subject if the processing is necessary"
+      },
+      {
+        "doc_id": "Act709#6",
+        "quote": "for the performance of a contract to which the data subject is a party"
+      },
+      {
+        "doc_id": "Act709#6",
+        "quote": "in the case of sensitive personal data, process sensitive personal data about a data subject except in accordance with the provisions of section 40"
+      },
+      {
+        "doc_id": "Act709#40",
+        "quote": "the data subject has given his explicit consent to the processing of the personal data"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act709#6",
+          "to": "Act709#40"
+        }
+      ],
+      "phrases": [
+        "section 40"
+      ],
+      "caught_by_section_n_pattern": true
+    },
+    "counts_toward_cross_ref_target": true,
+    "cross_ref_target_note": null,
+    "distractor_reason": "Same contract-necessity wording appears in s.42(2)(b)(i) - strong distractor; s.4 (sensitive personal data definition) is related but does not answer.",
+    "notes": "Converted from single to multi (same Act). Same contract-necessity wording appears in s.42(2)(b)(i) - strong distractor. That health data is 'sensitive personal data' comes from s.4 (definition, G-08); the question names health so s.40 applies. s.40 was amended by Act A1727 (G-01).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q42",
+    "in_scope": true,
+    "acts": [
+      "Act709"
+    ],
+    "question_type": "distractor",
+    "section_count": "multi_same_act",
+    "question": "If a company refuses my request to correct my personal data, on what grounds can it refuse, and does it have to tell me why?",
+    "gold_doc_ids": [
+      "Act709#36",
+      "Act709#37"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act709#36",
+        "quote": "the data user is not satisfied that the personal data to which the data correction request relates is inaccurate"
+      },
+      {
+        "doc_id": "Act709#37",
+        "quote": "not later than twenty-one days from the date of receipt of the data correction request, by notice in writing, inform the requestor"
+      }
+    ],
+    "cross_ref": {
+      "needed": true,
+      "edges": [
+        {
+          "from": "Act709#37",
+          "to": "Act709#36"
+        }
+      ],
+      "phrases": [
+        "pursuant to section 36"
+      ],
+      "caught_by_section_n_pattern": true
+    },
+    "counts_toward_cross_ref_target": true,
+    "cross_ref_target_note": null,
+    "distractor_reason": "ss.32-33 (access requests) use almost identical wording to the gold sections - strong distractors.",
+    "notes": "ss.32-33 (access requests) use almost identical wording - strong distractors.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q43",
+    "in_scope": true,
+    "acts": [
+      "Act265",
+      "Act599"
+    ],
+    "question_type": "exact_term",
+    "section_count": "multi_different_acts",
+    "question": "Under section 24(4) of the Employment Act 1955, can an employer deduct from wages the price of goods an employee buys from the employer's business, and under section 32 of the Consumer Protection Act 1999 what guarantee applies to goods supplied to a consumer?",
+    "gold_doc_ids": [
+      "Act265#24",
+      "Act599#32"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#24",
+        "quote": "shall not be made except at the request in writing of the employee and with the prior permission in writing of the Director General"
+      },
+      {
+        "doc_id": "Act265#24",
+        "quote": "deductions in respect of payments for the purchase by the employee of any goods of the employer’s business offered for sale by the employer"
+      },
+      {
+        "doc_id": "Act599#32",
+        "quote": "Where goods are supplied to a consumer there shall be implied a guarantee that the goods are of acceptable quality"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Cross-Act: wage deduction rule (Act 265) + consumer guarantee (Act 599). The employee is a 'consumer' only if the goods are of a kind ordinarily acquired for personal use (Act599#3).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q44",
+    "in_scope": true,
+    "acts": [
+      "Act265",
+      "Act709"
+    ],
+    "question_type": "exact_term",
+    "section_count": "multi_different_acts",
+    "question": "Under section 41A of the Employment Act 1955, can an employer terminate a pregnant employee, and under section 40 of the Personal Data Protection Act 2010 may the employer process her sensitive personal data without her explicit consent?",
+    "gold_doc_ids": [
+      "Act265#41A",
+      "Act709#40"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#41A",
+        "quote": "it shall be an offence for her employer to terminate her services or give her notice of termination of service"
+      },
+      {
+        "doc_id": "Act709#40",
+        "quote": "a data user shall not process any sensitive personal data of a data subject except in accordance with the following conditions"
+      },
+      {
+        "doc_id": "Act709#40",
+        "quote": "for the purposes of exercising or performing any right or obligation which is conferred or imposed by law on the data user in connection with employment"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Cross-Act. s.40 was amended by Act A1727 (G-01).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q45",
+    "in_scope": true,
+    "acts": [
+      "Act265",
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_different_acts",
+    "question": "To get paid sick leave, does a doctor have to examine me, and is the health information on my medical certificate treated as sensitive data under the data protection law?",
+    "gold_doc_ids": [
+      "Act265#60F",
+      "Act709#4"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#60F",
+        "quote": "An employee shall, after examination at the expense of the employer"
+      },
+      {
+        "doc_id": "Act265#60F",
+        "quote": "by a registered medical practitioner duly appointed by the employer"
+      },
+      {
+        "doc_id": "Act709#4",
+        "quote": "“sensitive personal data” means any personal data consisting of information as to the physical or mental health or condition of a data subject"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Cross-Act. Gold Act709#4 is the interpretation section (long chunk, G-08).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q46",
+    "in_scope": true,
+    "acts": [
+      "Act599",
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_different_acts",
+    "question": "A shop asks for my phone number when I ask for a receipt. Must the shop give me a receipt, and does it have to tell me in writing why it is collecting my phone number?",
+    "gold_doc_ids": [
+      "Act599#140",
+      "Act709#7"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#140",
+        "quote": "a consumer shall be supplied with a receipt for any purchase of goods or services if the consumer so requests"
+      },
+      {
+        "doc_id": "Act709#7",
+        "quote": "the purposes for which the personal data is being or is to be collected and further processed"
+      },
+      {
+        "doc_id": "Act709#7",
+        "quote": "whether it is obligatory or voluntary for the data subject to supply the personal data"
+      },
+      {
+        "doc_id": "Act709#7",
+        "quote": "A notice under subsection (1) shall be in the national and English languages"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Cross-Act.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q47",
+    "in_scope": true,
+    "acts": [
+      "Act265",
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_different_acts",
+    "question": "I have worked at my company for three years and my contract says nothing about notice. How much notice must I give to resign, and how long can my employer keep my personal data after I leave?",
+    "gold_doc_ids": [
+      "Act265#12",
+      "Act709#10"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#12",
+        "quote": "six weeks’ notice if he has been so employed for two years or more but less than five years on such date"
+      },
+      {
+        "doc_id": "Act709#10",
+        "quote": "shall not be kept longer than is necessary for the fulfilment of that purpose"
+      },
+      {
+        "doc_id": "Act709#10",
+        "quote": "destroyed or permanently deleted if it is no longer required"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Cross-Act. Overlaps Q02 on s.12 by design (same section, everyday wording).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q48",
+    "in_scope": true,
+    "acts": [
+      "Act599",
+      "Act709"
+    ],
+    "question_type": "paraphrase",
+    "section_count": "multi_different_acts",
+    "question": "An online seller sent me a different model from the one described on its website, and now keeps sending me promotional messages. Is the seller bound to send goods that match the description, and how can I make it stop the marketing?",
+    "gold_doc_ids": [
+      "Act599#34",
+      "Act709#43"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#34",
+        "quote": "Where goods are supplied by description to a consumer, there shall be implied a guarantee that the goods correspond with description"
+      },
+      {
+        "doc_id": "Act709#43",
+        "quote": "require the data user at the end of such period as is reasonable in the circumstances to cease or not to begin processing his personal data for purposes of direct marketing"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Cross-Act. Remedies for the failure are in Act599#41 (not required for this question).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q49",
+    "in_scope": true,
+    "acts": [
+      "Act265",
+      "Act599"
+    ],
+    "question_type": "distractor",
+    "section_count": "multi_different_acts",
+    "question": "My employer has not paid my wages of RM8,000. Can I file a claim at the Tribunal for Consumer Claims, or who decides disputes about unpaid wages?",
+    "gold_doc_ids": [
+      "Act599#98",
+      "Act265#69"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act599#98",
+        "quote": "the Tribunal shall have jurisdiction to hear consumer claims within the ambit of this Act"
+      },
+      {
+        "doc_id": "Act599#98",
+        "quote": "for which no redress mechanism is provided for under any other law"
+      },
+      {
+        "doc_id": "Act265#69",
+        "quote": "The Director General may inquire into and decide any dispute between an employee and his employer in respect of wages"
+      },
+      {
+        "doc_id": "Act265#69",
+        "quote": "without limitation of the amount thereof"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "Cross-Act: 'claim' and 'Tribunal' pull toward CPA Part XII (ss.99-100); the wage forum is EA s.69.",
+    "notes": "Cross-Act distractor: 'claim' and 'Tribunal' pull toward CPA Part XII; the wage forum is EA s.69.",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q50",
+    "in_scope": true,
+    "acts": [
+      "Act265",
+      "Act599"
+    ],
+    "question_type": "distractor",
+    "section_count": "multi_different_acts",
+    "question": "My employment contract gives me fewer days of annual leave than the Employment Act, and my gym membership contract says I give up my rights under the Consumer Protection Act. Are these terms valid?",
+    "gold_doc_ids": [
+      "Act265#7",
+      "Act599#6"
+    ],
+    "supporting_quotes": [
+      {
+        "doc_id": "Act265#7",
+        "quote": "which is less favourable to an employee than a term or condition of service prescribed by this Act"
+      },
+      {
+        "doc_id": "Act265#7",
+        "quote": "shall be void and of no effect to that extent"
+      },
+      {
+        "doc_id": "Act599#6",
+        "quote": "The provisions of this Act shall have effect notwithstanding anything to the contrary in any agreement"
+      },
+      {
+        "doc_id": "Act599#6",
+        "quote": "Every supplier and every manufacturer who purports to contract out of any provision of this Act commits an offence"
+      }
+    ],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": "Cross-Act: 'annual leave' pulls toward EA s.60E and 'contract term' toward CPA Part IIIA (s.24D).",
+    "notes": "Cross-Act distractor: 'annual leave' pulls toward s.60E and 'contract term' toward CPA Part IIIA (unfair terms).",
+    "expected_status": [
+      "verified",
+      "verified_after_retry"
+    ]
+  },
+  {
+    "id": "Q51",
+    "in_scope": false,
+    "acts": [],
+    "related_law": "National Wages Consultative Council Act 2011 [Act 732]",
+    "question_type": "out_of_scope",
+    "section_count": "none",
+    "question": "What is the minimum monthly wage an employer in Malaysia must pay?",
+    "gold_doc_ids": [],
+    "supporting_quotes": [],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Governed by: Minimum Wages Order made under the National Wages Consultative Council Act 2011 [Act 732] (not in the corpus). Employment-adjacent.",
+    "expected_status": [
+      "insufficient_info"
+    ]
+  },
+  {
+    "id": "Q52",
+    "in_scope": false,
+    "acts": [],
+    "related_law": "Employees Provident Fund Act 1991 [Act 452]",
+    "question_type": "out_of_scope",
+    "section_count": "none",
+    "question": "What percentage of my salary must my employer contribute to EPF?",
+    "gold_doc_ids": [],
+    "supporting_quotes": [],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Governed by: Employees Provident Fund Act 1991 [Act 452] (not in the corpus). Employment-adjacent.",
+    "expected_status": [
+      "insufficient_info"
+    ]
+  },
+  {
+    "id": "Q53",
+    "in_scope": false,
+    "acts": [],
+    "related_law": "Minimum Retirement Age Act 2012 [Act 753]",
+    "question_type": "out_of_scope",
+    "section_count": "none",
+    "question": "At what age can a private-sector employer require me to retire?",
+    "gold_doc_ids": [],
+    "supporting_quotes": [],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Governed by: Minimum Retirement Age Act 2012 [Act 753]; EA s.60J mentions retirement benefits but not an age (not in the corpus). Employment-adjacent.",
+    "expected_status": [
+      "insufficient_info"
+    ]
+  },
+  {
+    "id": "Q54",
+    "in_scope": false,
+    "acts": [],
+    "related_law": "Sales Tax Act 2018 [Act 806]",
+    "question_type": "out_of_scope",
+    "section_count": "none",
+    "question": "What is the sales tax rate on a laptop I buy in a shop?",
+    "gold_doc_ids": [],
+    "supporting_quotes": [],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Governed by: Sales Tax Act 2018 [Act 806] and its orders; CPA s.140 only says receipts show tax (not in the corpus). Consumer-adjacent.",
+    "expected_status": [
+      "insufficient_info"
+    ]
+  },
+  {
+    "id": "Q55",
+    "in_scope": false,
+    "acts": [],
+    "related_law": "Stamp Act 1949 [Act 378]",
+    "question_type": "out_of_scope",
+    "section_count": "none",
+    "question": "How much stamp duty do I pay on a tenancy agreement?",
+    "gold_doc_ids": [],
+    "supporting_quotes": [],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Governed by: Stamp Act 1949 [Act 378] (not in the corpus). General.",
+    "expected_status": [
+      "insufficient_info"
+    ]
+  },
+  {
+    "id": "Q56",
+    "in_scope": false,
+    "acts": [],
+    "related_law": "Registration of Businesses Act 1956 [Act 197]",
+    "question_type": "out_of_scope",
+    "section_count": "none",
+    "question": "How do I register a sole proprietorship business with SSM?",
+    "gold_doc_ids": [],
+    "supporting_quotes": [],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Governed by: Registration of Businesses Act 1956 [Act 197] (not in the corpus). General.",
+    "expected_status": [
+      "insufficient_info"
+    ]
+  },
+  {
+    "id": "Q57",
+    "in_scope": false,
+    "acts": [],
+    "related_law": "Law Reform (Marriage and Divorce) Act 1976 [Act 164]",
+    "question_type": "out_of_scope",
+    "section_count": "none",
+    "question": "How do I file for a divorce by mutual consent?",
+    "gold_doc_ids": [],
+    "supporting_quotes": [],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Governed by: Law Reform (Marriage and Divorce) Act 1976 [Act 164] / state Islamic family law (not in the corpus). General.",
+    "expected_status": [
+      "insufficient_info"
+    ]
+  },
+  {
+    "id": "Q58",
+    "in_scope": false,
+    "acts": [],
+    "related_law": "Road Transport Act 1987 [Act 333]",
+    "question_type": "out_of_scope",
+    "section_count": "none",
+    "question": "How many demerit points do I lose for running a red light?",
+    "gold_doc_ids": [],
+    "supporting_quotes": [],
+    "cross_ref": null,
+    "counts_toward_cross_ref_target": false,
+    "cross_ref_target_note": null,
+    "distractor_reason": null,
+    "notes": "Governed by: Road Transport Act 1987 [Act 333] and rules made under it (not in the corpus). General.",
+    "expected_status": [
+      "insufficient_info"
+    ]
+  }
+]

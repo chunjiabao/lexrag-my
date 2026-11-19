@@ -6,6 +6,7 @@ from c3_provenance_check import check_provenance
 from c4_quote_match import locate_quote
 
 INSUFFICIENT_ANSWER = "Insufficient information in the provided Acts."
+GENERATION_ERROR_ANSWER = "Unable to generate a verified response."
 
 JUDGE_PROMPT = """Role: You check citations for a Malaysian statutory law assistant.
 
@@ -136,6 +137,9 @@ def answer_query(query, method, config, on_phase=None):
                    "not_covered": output["not_covered"], "checks": []}
         result["attempts"].append(attempt)
 
+        if output["status"] == "generation_error":
+            return {**result, "status": "generation_error", "sentences": [], "not_covered": []}
+
         if output["status"] == "insufficient_info":
             return {**result, "status": "insufficient_info", "sentences": [], "not_covered": output["not_covered"]}
 
@@ -157,6 +161,8 @@ def answer_query(query, method, config, on_phase=None):
 
 def format_answer(result):
     # The system assembles the displayed answer itself from the verified sentences
+    if result["status"] == "generation_error":
+        return GENERATION_ERROR_ANSWER
     if result["status"] == "insufficient_info":
         return INSUFFICIENT_ANSWER
 

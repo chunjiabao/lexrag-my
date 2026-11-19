@@ -1,0 +1,15 @@
+{
+  "triples": 40,
+  "confusion_matrix": {
+    "TP": 19,
+    "TN": 19,
+    "FP": 2,
+    "FN": 0
+  },
+  "agreement_rate": 0.95,
+  "precision": 0.9047619047619048,
+  "recall": 1.0,
+  "consistency": 1.0,
+  "second_labeller_triples": 0,
+  "labeller_agreement": null
+}

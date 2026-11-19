@@ -1,0 +1,33 @@
+﻿metric,top_k=3,top_k=5,top_k=10
+retrieval R@k,0.8,0.86,0.91
+retrieval P@k,0.3667,0.244,0.128
+ragas answers,39,42,44
+ragas faithfulness,0.8668,0.8808,0.9281
+ragas answer_relevancy,0.8348,0.8366,0.8331
+verified,0.58,0.64,0.62
+verified_after_retry,0.2,0.2,0.26
+insufficient_info,0.22,0.16,0.12
+generation_error,0.0,0.0,0.0
+out_of_scope_refused,1.0,1.0,1.0
+answer_coverage,0.78,0.84,0.88
+fail_not_retrieved,0.0,0.0,0.0
+fail_nonexistent,0.0076,0.0,0.0
+fail_quote_match,0.053,0.0552,0.0286
+fail_support,0.1061,0.1034,0.1429
+citation_precision,0.8333,0.8414,0.8286
+gold_citation_rate,0.88,0.9273,0.8947
+citation_recall_gold,0.8462,0.8929,0.8636
+citation_recall_gold_all,0.66,0.75,0.76
+citation_recall_gold_multi,0.6875,0.75,0.7222
+all_gold_cited_rate,0.7436,0.8095,0.7727
+expansion_share,0.02,0.0182,0.0175
+in_scope_questions,50,50,50
+first_attempt_sentences,132,145,140
+cited_sections,50,55,57
+displayed_answers,39,42,44
+multi_section_displayed,16,18,18
+gold_sections_in_displayed,55,60,62
+avg retrieved + expanded sections,4.6207,7.1379,12.7069
+avg input tokens per question,10031.2759,11329.2931,15146.0862
+avg cost per question (USD),0.0138,0.015,0.019
+avg seconds total,30.4136,25.3072,23.8985
